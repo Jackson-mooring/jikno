@@ -2,5 +2,5 @@ language: node_js
 node_js:
   - "11.2.0"
 scripts:
-  - npm build
-  - npm test
+  - npm run build
+  - npm run test
