@@ -1,3 +1,4 @@
+   
 .body 
     text-align: center
     color: white
@@ -18,7 +19,7 @@
     right:  20px
     left: 20px
     position: absolute
-    bottom: 37vh
+    bottom: 39vh
 
 @keyframes animate-top
   0%
@@ -30,7 +31,7 @@
     right:  20px
     left: 20px
     position: absolute
-    bottom: 37vh
+    bottom: 39vh
 
 .low
     right:  20px
@@ -42,7 +43,7 @@
     right:  20px
     left: 20px
     position: absolute
-    top: 38vh
+    top: 45vh
 
 
 @keyframes animate-bottom
@@ -55,7 +56,7 @@
     right:  20px
     left: 20px
     position: absolute
-    top: 38vh
+    top: 45vh
 
 #content
     text-align: center
@@ -94,3 +95,106 @@ a
     color: #620006
     font-size: 70px
     letter-spacing: 1.6px
+
+@media only screen and (max-width: 1000px)
+
+    .body 
+        text-align: center
+        color: white
+        position: fixed
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        background: linear-gradient(#620006 ,#444444)
+
+    .high
+        padding-bottom: 20px
+        right:  20px
+        left: 20px
+        position: absolute
+        bottom: -49vh
+        font-size: 25px
+        animation: animate-top .5s ease-in-out
+        right:  20px
+        left: 20px
+        position: absolute
+        bottom: 45vh
+
+    @keyframes animate-top
+        0%
+        right:  20px
+        left: 20px
+        position: absolute
+        bottom: -49vh
+        100%
+        right:  20px
+        left: 20px
+        position: absolute
+        bottom: 45vh
+
+    .low
+        padding-top: 20px
+        right:  20px
+        left: 20px
+        position: absolute
+        top: -49vh
+        font-size: 25px
+        animation: animate-bottom .5s ease-in-out
+        right:  20px
+        left: 20px
+        position: absolute
+        top: 45vh
+
+
+    @keyframes animate-bottom
+        0%
+        right:  20px
+        left: 20px
+        position: absolute
+        top: -49vh
+        100%
+        right:  20px
+        left: 20px
+        position: absolute
+        top: 45vh
+
+    #content
+        text-align: center
+        font-size: 17px
+        width: 88%
+        text-align: center
+        position: absolute
+        bottom: 50px
+        left: 15px
+        right: 15px
+        font-size: 20px
+        letter-spacing: 0px
+        font-family: monospace
+        font-weight: lighter
+        overflow: auto
+
+    .container 
+        background: #e9e5d9
+        position: absolute
+        top: 5px
+        right: 5px
+        bottom: 5px
+        left: 5px
+        color: #444444
+        padding: 20px
+        border-radius: 20px
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
+    a 
+        padding: 10px
+        padding-top: 20px
+        color: #2f75ab
+    .error
+        color: #620006
+        font-size: 90px
+        letter-spacing: 1.6px
+    .errmsg
+        display: inline
+        color: #620006
+        font-size: 70px
+        letter-spacing: 1.6px
