@@ -1,0 +1,23 @@
+.tooltip-container {
+	position: absolute;
+	bottom: 30px;
+	text-align: center;
+	max-width: calc(400px - 20px);
+	width: 100%;
+}
+.tooltip {
+	border-radius: 5px;
+	background-color: #555;
+	padding: 5px;
+	display: inline-block;
+}
+.tooltip::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}

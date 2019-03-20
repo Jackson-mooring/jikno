@@ -1,0 +1,17 @@
+a {
+	color: var(--links);
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	color: var(--links);
+	opacity: 0.5;
+}
+a::after {
+	color: var(--links);
+	text-decoration: none;
+	cursor: pointer;
+}

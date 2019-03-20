@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/scss/links.scss";
+@import "./app/scss/icons.scss";
+
+:root {
+	--danger: #ff0000;
+	--clear: #006d00;
+	--warning: #ffc800;
+
+	--theme1: #620006;
+	--theme1-grad1: #82000a;
+	--theme1-grad2: #440001;
+	--theme2: #021a4d;
+	--theme2-grad1: #021c55;
+	--theme2-grad2: #001239;
+
+	--primary: #333333;
+	--primary2: #444444;
+	--primary3: #555555;
+	--primary4: #666666;
+	--secondary: #e9e5d9;
+
+	--cover: #00000080;
+
+	--links: #2f75ab;
+
+	font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--primary2);
+}
