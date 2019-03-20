@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-jikno-app',
+  selector: 'jikno-app',
   templateUrl: './jikno-app.component.html',
   styleUrls: ['./jikno-app.component.sass']
 })
