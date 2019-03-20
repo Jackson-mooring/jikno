@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app-component/app.component';
+import { JiknoAppComponent } from './app-component/jikno-app/jikno-app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JiknoAppComponent
   ],
   imports: [
     BrowserModule,
