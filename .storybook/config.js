@@ -5,7 +5,7 @@ const { percyAddon, serializeStories } = createPercyAddon();
 setAddon(percyAddon);
 
 function loadStories() {
-    //require('../stories/index.js');
+    require('../stories/index.ts');
     // You can require as many stories as you need.
 }
 
