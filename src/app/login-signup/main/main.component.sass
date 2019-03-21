@@ -1,0 +1,65 @@
+    /* SASS LAYOUT FOR REFERENCE */
+ /* 
+     .example
+        position
+        width
+        height
+        color
+        padding
+        border
+
+ */   
+    
+    
+    
+    
+    
+// VARIABLES
+$OFFWHITE:                  #e9e5d9
+$COLORDARK:                 #444444
+$CARDWIDTH:                 400px
+$CARDHEIGHT:                500px
+$PADPOS:                    0px
+$BORRAD:                    4px
+$SHAD:                      0px 0px 10px 20px rgba(0,0,0, 100)
+
+// MIXINS
+
+// STYLES
+
+// Background
+.body
+    position:               relative
+
+// Holds content
+.container
+    position:               absolute
+    top:                    calc(50vh - 250px)
+    left:                   calc(50vw - 200px)
+    width:                  $CARDWIDTH
+    height:                 $CARDHEIGHT
+    background-color:       var(--secondary)
+    color:                  $COLORDARK
+    padding:                $PADPOS
+    border-radius:          $BORRAD
+    border:                 none
+    bow-shadow:             $SHAD
+    padding: 10px
+
+
+.img 
+    position:               absolute
+    top:                    20px
+    left:                   calc(50% - 100px)
+
+app-login
+    text-align: center
+    width: 100%
+    position: absolute
+    bottom: 20px
+
+.slogan
+    position:               absolute
+    bottom:                 190px
+    text-align:             center
+    width:                  100%
