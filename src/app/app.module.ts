@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HomeModule } from './apps/home/home.module';
 import { LoginSignupModule } from './login-signup/login-signup.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app-component/app.component';
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    LoginSignupModule
+    LoginSignupModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
