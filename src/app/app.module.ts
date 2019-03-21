@@ -7,6 +7,7 @@ import { AppComponent } from './app-component/app.component';
 import { JiknoAppComponent } from './app-component/jikno-app/jikno-app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { IconComponent } from './icon/icon.component';
+import { LoginSignupModule } from './login-signup/login-signup.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { IconComponent } from './icon/icon.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    LoginSignupModule
   ],
   providers: [],
   bootstrap: [AppComponent]
