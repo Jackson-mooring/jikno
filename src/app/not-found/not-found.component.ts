@@ -6,21 +6,23 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./not-found.component.sass']
 })
 export class NotFoundComponent implements OnInit {
+    public typing = '';
+    public txt = 'The page you are looking for cannot be found on this side of the Plannet.';
+    public speed = 80;
+    public count = 0;
+    constructor(
 
-    constructor() { }
+    ) { }
 
     ngOnInit() {
-        typeWriter();
+        this.typeWriter();
     }
-}
-        let i = 0;
-function typeWriter() {
 
-        const txt = 'The Page You are Looking for Cannot be Found On This Side Of The Plannet.';
-        if (i < txt.length) {
-        const speed = 50;
-        document.getElementById('content').innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
+    public typeWriter() {
+        const typeIt = setInterval( () => {
+            if (this.typing.length >= this.txt.length) clearInterval(typeIt);
+            this.typing += this.txt.charAt(this.count);
+            this.count++;
+        }, this.speed)
     }
-}
+}  
