@@ -18,5 +18,15 @@
       "es2018",
       "dom"
     ]
-  }
+  },
+  "extends": "../tsconfig.json",
+  "exclude": [
+    "../src/test.ts",
+    "../src/**/*.spec.ts",
+    "../projects/**/*.spec.ts"
+  ],
+  "include": [
+    "../src/**/*",
+    "../projects/**/*"
+  ]
 }
