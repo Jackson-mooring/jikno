@@ -7,13 +7,15 @@ import { AppComponent } from './app-component/app.component';
 import { JiknoAppComponent } from './app-component/jikno-app/jikno-app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { IconComponent } from './icon/icon.component';
+import { SidebarComponent } from './app-component/jikno-app/sidebar/sidebar-component/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JiknoAppComponent,
     NotFoundComponent,
-    IconComponent
+    IconComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
