@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
+import { DataService } from '../../../../service/data/data.service';
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -21,9 +23,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ],
 })
 export class SidebarComponent implements OnInit {
-  barIn = false;
-
-  constructor() { }
+  constructor(
+    public dataService: DataService,
+  ) { }
 
   ngOnInit() {
   }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DataService } from '../../service/data/data.service';
+
 @Component({
   selector: 'jikno-app',
   templateUrl: './jikno-app.component.html',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JiknoAppComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dataService: DataService,
+  ) { }
 
   ngOnInit() {
   }

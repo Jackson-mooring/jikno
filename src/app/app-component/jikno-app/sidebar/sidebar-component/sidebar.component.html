@@ -1,8 +1,8 @@
 <div class="over">
 
-    <div class="cover" (click)="barIn = false" *ngIf="barIn"></div>
+    <div class="cover" (click)="dataService.sidebarIsIn = false" *ngIf="dataService.sidebarIsIn"></div>
 
-    <div class="bar" [@showHideBar]="barIn ? 'in' : 'out' ">
+    <div class="bar" [@showHideBar]="dataService.sidebarIsIn ? 'in' : 'out' ">
         <div class="header">
 
         </div>
