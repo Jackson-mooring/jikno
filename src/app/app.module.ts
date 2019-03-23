@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HomeModule } from './apps/home/home.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app-component/app.component';
@@ -20,7 +21,8 @@ import { SidebarComponent } from './app-component/jikno-app/sidebar/sidebar-comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
