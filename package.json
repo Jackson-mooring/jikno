@@ -3,9 +3,10 @@
 	"version": "0.0.0",
 	"scripts": {
 		"ng": "ng",
-		"start": "ng serve",
-		"build": "ng build",
+		"start": "ng serve --open --port=3000",
+		"build": "ng build --prod=true",
 		"test": "rollup -c rollup.test.config.js | node ",
+		"dev": "ng serve --open --port=3000",
 		"lint": "ng lint",
 		"e2e": "ng e2e",
 		"storybook": "start-storybook",
