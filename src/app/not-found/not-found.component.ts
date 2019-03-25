@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
     public typing = '';
-    public txt = 'The page you are looking for cannot be found on this side of the Plannet.';
-    public speed = 80;
+    public txt = 'The page you are looking for cannot be found on this side of the plannet.';
+    public speed = 50;
     public count = 0;
 
     constructor() { }
