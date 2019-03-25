@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "rollup -c rollup.test.config.js | node ",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "storybook": "start-storybook",
+    "snapshot": "build-storybook && percy-storybook --widths=320,1280"
   },
   "private": true,
   "dependencies": {
@@ -31,9 +33,13 @@
     "@angular/cli": "~7.3.3",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
+    "@babel/core": "^7.4.0",
+    "@percy-io/percy-storybook": "^2.1.0",
+    "@storybook/angular": "^5.0.3",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "babel-loader": "^8.0.5",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
