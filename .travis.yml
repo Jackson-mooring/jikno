@@ -6,6 +6,3 @@ script:
   - npm run test
   - npm run build
   - npm run snapshot
-deploy:
-  - provider: script
-    skip_cleanup: true
