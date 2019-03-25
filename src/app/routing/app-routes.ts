@@ -4,5 +4,6 @@
 * Remember to always put a slash in front of the route. (e.g. '/some-route' not 'some-route' )
 */
 export const AppRoutes = [
-    '/home',
+	'/home',
+	'/habits',
 ]

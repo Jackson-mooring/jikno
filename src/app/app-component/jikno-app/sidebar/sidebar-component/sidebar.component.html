@@ -1,20 +1,20 @@
 <div class="over">
 
-    <div class="cover" (click)="
+	<div class="cover" (click)="
         dataService.sidebarIsIn = false;
         dataService.blur = false;
     " *ngIf="dataService.sidebarIsIn"></div>
 
-    <div class="bar" [@showHideBar]="dataService.sidebarIsIn ? 'in' : 'out' ">
-        <div class="header">
+	<div class="bar" [@showHideBar]="dataService.sidebarIsIn ? 'in' : 'out' ">
+		<div class="header">
 
-        </div>
-        <div class="main">
+		</div>
+		<div class="main">
+			<habits-sidebar></habits-sidebar>
+		</div>
+		<div class="footer">
 
-        </div>
-        <div class="footer">
-
-        </div>
-    </div>
+		</div>
+	</div>
 
 </div>

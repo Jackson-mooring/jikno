@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomSidebarComponentsAndPaths } from './custom-sidebar';
 
-const declarations = [];
-CustomSidebarComponentsAndPaths.map(route => {
-	declarations.push(route.component);
-})
+import { SidebarComponent } from './sidebar-component/sidebar.component'
+
+import { HabitsSidebarComponent } from '../../../apps/habits/sidebar/sidebar.component';
 
 @NgModule({
-	declarations: declarations,
+	declarations: [
+		HabitsSidebarComponent,
+		SidebarComponent,
+	],
 	imports: [
 		CommonModule
+	],
+	exports: [
+		SidebarComponent,
 	]
 })
 export class CustomSidebarModule { }

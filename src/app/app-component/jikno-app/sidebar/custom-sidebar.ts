@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
+import { HabitsSidebarComponent } from '../../../apps/habits/sidebar/sidebar.component';
 /*
 * This file is for all custom-sidebar components that are to be shown atr a certain route
 * Note whatever routes you insert in here, the linked component will be shown if a route starting with that is current.
@@ -9,5 +10,5 @@ import { Routes } from '@angular/router';
 */
 
 export const CustomSidebarComponentsAndPaths: Routes = [
-
+	{ path: 'habits', component: HabitsSidebarComponent },
 ]
