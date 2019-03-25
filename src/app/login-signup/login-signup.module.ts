@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
     ],
     imports: [
         CommonModule,
-        SharedModule
+        SharedModule,
+        FormsModule,
     ]
 })
 export class LoginSignupModule { }

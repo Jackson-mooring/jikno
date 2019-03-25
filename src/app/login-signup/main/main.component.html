@@ -1,15 +1,17 @@
 <div class="body">
   <div class="container">
-      <div class="tab1">Login</div>
-      <div class="tab2">Sign Up</div>
-    <div class="img">
-        <img src="../../../assets/logo-200.png" alt="">
-    </div>
-    <div class="slogan">
+    <div class="tab1 active">Login</div>
+    <div class="tab2 ">Sign Up</div>
+
+    <div class="padding">
+      <div class="img-container">
+        <img src="../../../assets/logo-200.png" alt="" class="img">
+      </div>
+      <div class="slogan">
         <h3>Jikno</h3>
-        <p>One Account, All of Our Services</p>
+        <p><i>One Account, All of Our Services</i></p>
+      </div>
+      <app-login></app-login>
     </div>
-    <app-login></app-login>
-    <app-icon class="settings" [iconName]=" 'settings' " [iconSize]="30" isButton></app-icon>
   </div>
 </div>

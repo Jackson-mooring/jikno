@@ -1,12 +1,27 @@
 <div class="input">
   <form action="">
-    <div class="rapper">
-      <input type="email" placeholder="Enter Your Email" reqired class="email">
-    </div>
-    <div class="rapper">
-      <input type="password" placeholder="Enter Password..." required class="password">
 
-    </div>
-    <button>Login</button>
+    <label>
+      <div class="input-container">
+        <input type="email" placeholder="Enter Email..." required="true" class="email" [(ngModel)]="email" name="email">
+      </div>
+    </label>
+
+    <label>
+      <div class="input-container">
+        <input type="password" placeholder="Enter Password..." required="true" class="password" #passwordInput
+          [(ngModel)]="password" name="password">
+
+        <app-icon class="icon" iconName="eye-slash" iconSize="25" isButton (click)="passwordInput.type = 'password'"
+          *ngIf="passwordInput.type == 'text'">
+        </app-icon>
+        <app-icon class="icon" iconName="eye" iconSize="25" isButton (click)="passwordInput.type = 'text'"
+          *ngIf="passwordInput.type == 'password'">
+        </app-icon>
+      </div>
+    </label>
+
+    <button [disabled]=" password.length == 0 || email.length == 0 ">Login</button>
+
   </form>
 </div>
