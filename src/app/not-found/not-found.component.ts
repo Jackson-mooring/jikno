@@ -10,9 +10,8 @@ export class NotFoundComponent implements OnInit {
     public txt = 'The page you are looking for cannot be found on this side of the Plannet.';
     public speed = 80;
     public count = 0;
-    constructor(
 
-    ) { }
+    constructor() { }
 
     ngOnInit() {
         this.typeWriter();

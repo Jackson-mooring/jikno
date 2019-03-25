@@ -5,6 +5,4 @@ node_js:
 script:
   - npm run test
   - npm run build
-deploy:
-  - provider: script
-    skip_cleanup: true
+  - npm run snapshot
