@@ -12,12 +12,14 @@ import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app-component/app.component';
 import { JiknoAppComponent } from './app-component/jikno-app/jikno-app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AppsOverlayComponent } from './apps-overlay/apps-overlay.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		JiknoAppComponent,
 		NotFoundComponent,
+		AppsOverlayComponent,
 	],
 	imports: [
 		BrowserModule,
