@@ -4,19 +4,19 @@ import { HomeModule } from './apps/home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomSidebarModule } from './app-component/jikno-app/sidebar/custom-sidebar.module';
 import { HabitsModule } from './apps/habits/habits.module'
+import { LoginSignupModule } from './login-signup/login-signup.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app-component/app.component';
 import { JiknoAppComponent } from './app-component/jikno-app/jikno-app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { IconComponent } from './icon/icon.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		JiknoAppComponent,
 		NotFoundComponent,
-		IconComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -25,6 +25,8 @@ import { IconComponent } from './icon/icon.component';
 		BrowserAnimationsModule,
 		CustomSidebarModule,
 		HabitsModule,
+    LoginSignupModule,
+    SharedModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

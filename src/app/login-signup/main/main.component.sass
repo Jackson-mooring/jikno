@@ -1,0 +1,78 @@
+   
+// VARIABLES
+$OFFWHITE:                  #e9e5d9
+$COLORDARK:                 #444444
+$CARDWIDTH:                 400px
+$CARDHEIGHT:                500px
+$PADPOS:                    0px
+$BORRAD:                    4px 4px 4px 4px
+
+@media (max-width: 400px)
+    border-radius:          0
+
+// STYLES
+
+// Background
+
+.body
+    position:               relative
+
+// Holds content
+.container
+    margin:                 auto
+    margin-top:             calc(calc(100vh - 580.938px) / 2)
+    max-width:              $CARDWIDTH
+    background-color:       var(--secondary)
+    color:                  $COLORDARK
+    border-radius:          $BORRAD
+    border:                 none
+
+// Display padding
+.padding
+    padding:                20px
+
+// Logo 
+img 
+    display:                block
+    margin:                 auto
+    margin-bottom:          30px
+    height:                 200px
+
+// Login Component
+app-login
+    text-align:             center
+    width:                  100%
+    margin-top:             100px
+
+// Slogan Phrase
+.slogan
+    text-align:             center
+    display:                block
+    margin:                 auto
+    margin-bottom:          20px
+
+// "Login" "Sign up" Tabs
+.tab1, .tab2,
+    display:                inline-block
+    background-color:       var(--primary)
+    text-align:             center
+    padding:                20px 0
+    cursor:                 pointer
+    width:                  50%
+    
+// Login Tab
+.tab1
+    border-radius:          4px 0 0 0
+    left:                   0
+    color:                  white
+
+// Sign Up Tab
+.tab2
+    border-radius:          0 4px 0 0
+    right:                  0
+    color:                  white
+
+// Active Tab
+.active
+    background-color:       var(--secondary)
+    color:                  #444444
