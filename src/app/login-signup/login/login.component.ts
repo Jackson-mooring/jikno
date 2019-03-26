@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.sass']
+	selector: 'app-login',
+	templateUrl: './login.component.html',
+	styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
-  password = '';
-  email = '';
+	password = '';
+	email = '';
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit() {
-    console.log(this.email, this.password);
-  }
+	ngOnInit() {
+	}
 
 }
