@@ -4,8 +4,9 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class DataService {
-  sidebarIsIn = false;
-  blur = false;
+	sidebarIsIn = false;
+	blur = false;
+	didFindRoute = true;
 
 	constructor() { }
 }

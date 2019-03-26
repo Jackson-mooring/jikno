@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+
+import { DataService } from '../service/data/data.service';
 
 @Component({
 	selector: 'app-not-found',
 	templateUrl: './not-found.component.html',
 	styleUrls: ['./not-found.component.sass']
 })
-export class NotFoundComponent implements OnInit {
+export class NotFoundComponent implements OnInit, OnDestroy {
 	public typing = '';
 	public txt = 'The page you are looking for cannot be found on this side of the plannet.';
 	public speed = 50;
@@ -17,9 +19,12 @@ export class NotFoundComponent implements OnInit {
 	constructor(
 		private activatedRoute: ActivatedRoute,
 		private routeLocation: Location,
+		private dataService: DataService,
 	) { }
 
 	ngOnInit() {
+		console.log(this.dataService.didFindRoute);
+		this.dataService.didFindRoute = false;
 		this.satisfyParams();
 		this.typeWriter();
 	}
@@ -38,4 +43,9 @@ export class NotFoundComponent implements OnInit {
 			if (route !== undefined) this.routeLocation.go(route);
 		})
 	}
+
+	ngOnDestroy() {
+		this.dataService.didFindRoute = true;
+	}
+
 }  
