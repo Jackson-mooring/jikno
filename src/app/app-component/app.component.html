@@ -1,6 +1,6 @@
-<div *ngIf="!isApp">
+<div *ngIf="!isApp()">
 	<router-outlet></router-outlet>
 </div>
-<div *ngIf="isApp">
+<div *ngIf="isApp()">
 	<jikno-app></jikno-app>
 </div>

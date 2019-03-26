@@ -6,6 +6,7 @@ import { CustomSidebarModule } from './app-component/jikno-app/sidebar/custom-si
 import { HabitsModule } from './apps/habits/habits.module'
 import { LoginSignupModule } from './login-signup/login-signup.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './shared/core.module';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app-component/app.component';
@@ -25,8 +26,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 		BrowserAnimationsModule,
 		CustomSidebarModule,
 		HabitsModule,
-    LoginSignupModule,
-    SharedModule,
+		LoginSignupModule,
+		SharedModule,
+		CoreModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
