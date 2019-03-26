@@ -25,11 +25,37 @@ import { DataService } from '../../../service/data/data.service';
 })
 export class AppsOverlayComponent implements OnInit {
 
+	noDismissClick = false;
+
 	constructor(
-		public dataService: DataService,
+		private dataService: DataService,
 	) { }
 
 	ngOnInit() {
+		this.childClick()
+	}
+
+	coverClick() {
+		if (!this.noDismissClick) this.dismiss();
+		this.noDismissClick = false;
+	}
+
+	childClick() {
+		const no = document.getElementsByClassName('no-dismiss');
+		for (
+			var elementNumber = 0;
+			elementNumber < no.length;
+			elementNumber++
+		) {
+			no.item(elementNumber).addEventListener('click', (event) => {
+				this.noDismissClick = true;
+			})
+		}
+	}
+
+	dismiss() {
+		this.dataService.showAppsOverlay = false;
+		this.dataService.blur = false;
 	}
 
 }

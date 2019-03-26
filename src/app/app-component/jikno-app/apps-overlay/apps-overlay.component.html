@@ -1,8 +1,13 @@
 <div class="over">
-	<div class="cover" [@zoom]="dataService.showAppsOverlay ? 'in' : 'out' " (click)="
-		dataService.blur = false;
-		dataService.showAppsOverlay = false;
-	">
-		Hello, User!
+	<div class="cover" [@zoom]="dataService.showAppsOverlay ? 'in' : 'out' " (click)="coverClick()">
+
+		<div class="bar">
+			<div class="input" class="no-dismiss">
+				<app-icon iconName="search" iconSize="18"></app-icon>
+				<input type="text">
+				<app-icon iconName="circle-times" iconSize="18"></app-icon>
+			</div>
+		</div>
+
 	</div>
 </div>
