@@ -1,5 +1,8 @@
 <div class="over">
-	<div class="cover">
+	<div class="cover" [@zoom]="dataService.showAppsOverlay ? 'in' : 'out' " (click)="
+		dataService.blur = false;
+		dataService.showAppsOverlay = false;
+	">
 		Hello, User!
 	</div>
 </div>

@@ -7,6 +7,7 @@ export class DataService {
 	sidebarIsIn = false;
 	blur = false;
 	didFindRoute = true;
+	showAppsOverlay = false;
 
 	constructor() { }
 }
