@@ -7,8 +7,12 @@ export class SearchService {
 
 	constructor() { }
 
-	search(query: string, keys?: any[]): boolean {
-		return true;
+	simpleSearch(query: string, ...keys: string[]): boolean {
+		if (query.length == 0) return true;
+		
+		if (keys.join('|').toLowerCase().indexOf(query.toLowerCase()) !== -1) return true;
+
+		return false;
 	}
 
 }
