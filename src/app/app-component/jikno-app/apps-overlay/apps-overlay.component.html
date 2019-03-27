@@ -12,15 +12,19 @@
 					class="search"
 				></app-icon>
 
-				<input type="text" [(ngModel)]="searchQuery" name="searchQuery">
+				<input
+					type="text"
+					[(ngModel)]="searchQuery"
+					name="searchQuery"
+				>
 
 				<app-icon
-					[@fade]="searchQuery.length == 0 ? 'hidden' : 'visible' "
+					[@fade]="searchQuery.length == 0 ? 'hidden' : 'visible'"
 					iconName="circle-times"
 					iconSize="18"
 					isButton="true"
 					class="times"
-					(click)="searchQuery = '' "
+					(click)="searchQuery = ''"
 				></app-icon>
 			</div>
 		</div>
