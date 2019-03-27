@@ -3,6 +3,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 
 import { DataService } from '../../../service/data/data.service';
 
+import { AppData } from '../../../model/app-data';
+
 @Component({
 	selector: 'apps-overlay',
 	templateUrl: './apps-overlay.component.html',
@@ -38,22 +40,24 @@ export class AppsOverlayComponent implements OnInit {
 
 	noDismissClick = false;
 	searchQuery = '';
-	apps = [
+	apps: AppData[] = [
 		{
 			branch: "example_app",
 			route: '/example_app',
 			name: "Example App",
-			icon: "https://www.jikno.com/api/cloud/app_icons/example_app",
+			icon: "https://www.api.jikno.com/cloud/app-icons/example_app.svg",
 			active_by_user: true,
-			popularity: 0.5
+			popularity: 0.5,
+			description: "This is an example app",
 		},
 		{
 			branch: "fake_software",
 			route: '/fake_software',
 			name: "Fake Software",
-			icon: "https://www.jikno.com/api/cloud/app_icons/fake_software",
+			icon: "https://www.jikno.com/api/cloud/app-icons/fake_software.svg",
 			active_by_user: true,
-			popularity: 0.5
+			popularity: 0.5,
+			description: 'This is a fake software',
 		}
 	]
 
