@@ -10,15 +10,32 @@
 .bar
 	height: 50px
 	text-align: center
+	overflow: auto
+	margin: 20px
+	margin-bottom: 0
 .input
-	display: inline-block
-	width: 250px
+	display: block
+	max-width: 300px
+	margin: auto
 	background-color: rgba(255, 255, 255, 0.1)
 	border-radius: 5px
 	border: 1px solid rgba(255, 255, 255, 0.3)
+	padding: 5px 8px
 input
 	background-color: rgba(0, 0, 0, 0)
 	border: none
 	outline: none
 	font-size: 18px
-	width: 200px
+	width: calc(100% - 50px)
+	color: var(--secondary)
+::placeholder
+	color: var(--secondary)
+	opacity: 0.6
+.search
+	position: relative
+	top: 2px
+	right: 8px
+.times
+	position: relative
+	top: 2px
+	left: 8px

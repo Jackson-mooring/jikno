@@ -20,12 +20,24 @@ import { DataService } from '../../../service/data/data.service';
 			transition('* => *', [
 				animate('200ms ease-in-out'),
 			])
+		]),
+		trigger('fade', [
+			state('hidden', style({
+				opacity: '0',
+			})),
+			state('visible', style({
+				opacity: '1',
+			})),
+			transition('* => *', [
+				animate('600ms ease-in-out')
+			])
 		])
 	]
 })
 export class AppsOverlayComponent implements OnInit {
 
 	noDismissClick = false;
+	searchQuery = '';
 
 	constructor(
 		private dataService: DataService,

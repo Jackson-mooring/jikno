@@ -1,13 +1,28 @@
 <div class="over">
-	<div class="cover" [@zoom]="dataService.showAppsOverlay ? 'in' : 'out' " (click)="coverClick()">
-
+	<div
+		class="cover"
+		[@zoom]="dataService.showAppsOverlay ? 'in' : 'out'"
+		(click)="coverClick()"
+	>
 		<div class="bar">
 			<div class="input no-dismiss">
-				<app-icon iconName="search" iconSize="18"></app-icon>
-				<input type="text">
-				<app-icon iconName="circle-times" iconSize="18"></app-icon>
+				<app-icon
+					iconName="search"
+					iconSize="18"
+					class="search"
+				></app-icon>
+
+				<input type="text" [(ngModel)]="searchQuery" name="searchQuery">
+
+				<app-icon
+					[@fade]="searchQuery.length == 0 ? 'hidden' : 'visible' "
+					iconName="circle-times"
+					iconSize="18"
+					isButton="true"
+					class="times"
+					(click)="searchQuery = '' "
+				></app-icon>
 			</div>
 		</div>
-
 	</div>
 </div>
