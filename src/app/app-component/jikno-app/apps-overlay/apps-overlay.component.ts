@@ -38,6 +38,24 @@ export class AppsOverlayComponent implements OnInit {
 
 	noDismissClick = false;
 	searchQuery = '';
+	apps = [
+		{
+			branch: "example_app",
+			route: '/example_app',
+			name: "Example App",
+			icon: "https://www.jikno.com/api/cloud/app_icons/example_app",
+			active_by_user: true,
+			popularity: 0.5
+		},
+		{
+			branch: "fake_software",
+			route: '/fake_software',
+			name: "Fake Software",
+			icon: "https://www.jikno.com/api/cloud/app_icons/fake_software",
+			active_by_user: true,
+			popularity: 0.5
+		}
+	]
 
 	constructor(
 		private dataService: DataService,
