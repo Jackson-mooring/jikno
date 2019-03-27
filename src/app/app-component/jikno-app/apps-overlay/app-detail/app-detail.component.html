@@ -1,3 +1,8 @@
 <div class="over">
-	<img [src]="appData.icon" alt="Logo" class="image">
+
+	<div class="main" [hidden]="!appData.active_by_user" [routerLink]="appData.route">
+		<img [src]="appData.icon" [alt]="appData.name" class="image">
+		<div class="name">{{ appData.name }}</div>
+	</div>
+	
 </div>
