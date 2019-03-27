@@ -49,6 +49,7 @@ export class AppsOverlayComponent implements OnInit {
 			active_by_user: true,
 			popularity: 0.5,
 			description: "This is an example app",
+			keyWords: [ 'example', 'app' ],
 		},
 		{
 			branch: "fake_software",
@@ -58,6 +59,7 @@ export class AppsOverlayComponent implements OnInit {
 			active_by_user: true,
 			popularity: 0.5,
 			description: 'This is a fake software',
+			keyWords: [ 'fake', 'software', 'joke' ],
 		}
 	]
 

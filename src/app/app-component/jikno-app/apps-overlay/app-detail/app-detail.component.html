@@ -1,6 +1,6 @@
 <div class="over">
 
-	<div class="main" [hidden]="!appData.active_by_user" [routerLink]="appData.route">
+	<div class="main" [hidden]="!appData.active_by_user || searchService.search(searchQuery, [[appData.name], appData.keyWords])" [routerLink]="appData.route">
 		<img [src]="appData.icon" [alt]="appData.name" class="image">
 		<div class="name">{{ appData.name }}</div>
 	</div>

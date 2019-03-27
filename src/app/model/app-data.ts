@@ -6,4 +6,5 @@ export class AppData {
 	active_by_user: boolean;
 	popularity: number;
 	description: string;
+	keyWords: string[];
 }

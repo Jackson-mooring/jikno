@@ -10,6 +10,7 @@ import { AppData } from '../../../../model/app-data';
 export class AppDetailComponent implements OnInit {
 
 	@Input() appData: AppData;
+	@Input() searchQuery: string;
 
 	constructor() { }
 
