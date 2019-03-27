@@ -17,6 +17,7 @@
 						type="text"
 						[(ngModel)]="searchQuery"
 						name="searchQuery"
+						(keyup)="checkResults()"
 					>
 
 					<app-icon
@@ -32,7 +33,17 @@
 		</div>
 
 		<div class="main">
-			<app-detail *ngFor="let app of apps" [appData]="app" [searchQuery]="searchQuery"></app-detail>
+			<app-detail
+				*ngFor="let app of apps"
+				[appData]="app"
+				[searchQuery]="searchQuery"
+			></app-detail>
+		</div>
+
+		<div class="no-matches" [hidden]="results">
+			<h1>No Results</h1>
+			<p>You might find an app like this somewhere else though.</p>
+			<h3><a routerLink="/library">Search the library</a></h3>
 		</div>
 
 	</div>

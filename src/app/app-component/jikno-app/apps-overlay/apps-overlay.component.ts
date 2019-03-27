@@ -4,6 +4,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { DataService } from '../../../service/data/data.service';
 
 import { AppData } from '../../../model/app-data';
+import { SearchService } from 'src/app/service/search/search.service';
 
 @Component({
 	selector: 'apps-overlay',
@@ -40,6 +41,7 @@ export class AppsOverlayComponent implements OnInit {
 
 	noDismissClick = false;
 	searchQuery = '';
+	results = true;
 	apps: AppData[] = [
 		{
 			branch: "example_app",
@@ -65,6 +67,7 @@ export class AppsOverlayComponent implements OnInit {
 
 	constructor(
 		private dataService: DataService,
+		private searchService: SearchService,
 	) { }
 
 	ngOnInit() {
@@ -92,6 +95,16 @@ export class AppsOverlayComponent implements OnInit {
 	dismiss() {
 		this.dataService.showAppsOverlay = false;
 		this.dataService.blur = false;
+	}
+
+	checkResults() {
+		let results = false;
+
+		this.apps.map(app => {
+			if (this.searchService.simpleSearch(this.searchQuery, app.name, app.keyWords.join('|'))) results = true
+		})
+
+		this.results = results;
 	}
 
 }
