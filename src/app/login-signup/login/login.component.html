@@ -22,7 +22,12 @@
 			</div>
 		</label>
 
+		<div class="forgot">
+			<a routerLink="/login/forgot-password" class="forgot-password">Forgot Password?</a>
+		</div>
+		
 		<button [disabled]=" password.length == 0 || email.length == 0 ">Login</button>
 
 	</form>
+	
 </div>
