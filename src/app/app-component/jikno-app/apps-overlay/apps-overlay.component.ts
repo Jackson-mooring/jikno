@@ -66,7 +66,7 @@ export class AppsOverlayComponent implements OnInit {
 	]
 
 	constructor(
-		private dataService: DataService,
+		public dataService: DataService,
 		private searchService: SearchService,
 	) { }
 

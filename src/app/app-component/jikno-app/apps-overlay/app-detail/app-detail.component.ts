@@ -14,7 +14,7 @@ export class AppDetailComponent implements OnInit {
 	@Input() searchQuery: string;
 
 	constructor(
-		private searchService: SearchService,
+		public searchService: SearchService,
 	) { }
 
 	ngOnInit() {
