@@ -1,3 +1,82 @@
-<p>
-  sign-up works!
-</p>
+<div class="input">
+	<form action="">
+		<label>
+			<div class="input-container">
+				<input
+					type="email"
+					placeholder="Enter Email..."
+					required="true"
+					class="email"
+					[(ngModel)]="email"
+					name="email"
+				>
+			</div>
+		</label>
+
+		<label>
+			<div class="input-container">
+				<input
+					type="password"
+					placeholder="Enter Password..."
+					required="true"
+					class="password"
+					#passwordInput
+					[(ngModel)]="password"
+					name="password"
+					spellcheck="false"
+				>
+
+				<app-icon
+					class="icon"
+					iconName="eye-slash"
+					iconSize="25"
+					isButton="true"
+					(click)="passwordInput.type = 'password' "
+					*ngIf="passwordInput.type == 'text' "
+				></app-icon>
+
+				<app-icon
+					class="icon"
+					iconName="eye"
+					iconSize="25"
+					isButton="true"
+					(click)="passwordInput.type = 'text' "
+					*ngIf="passwordInput.type == 'password' "
+				></app-icon>
+			</div>
+
+			<div class="input-container">
+				<input
+					type="password"
+					placeholder="Confirm Password..."
+					required="true"
+					class="password"
+					#ConfirmInput
+					[(ngModel)]="confirmPassword"
+					name="ConfirmInput"
+					spellcheck="false"
+				>
+
+				<app-icon
+					class="icon"
+					iconName="eye-slash"
+					iconSize="25"
+					isButton="true"
+					(click)="ConfirmInput.type = 'password' "
+					*ngIf="ConfirmInput.type == 'text' "
+				></app-icon>
+
+				<app-icon
+					class="icon"
+					iconName="eye"
+					iconSize="25"
+					isButton="true"
+					(click)="ConfirmInput.type = 'text' "
+					*ngIf="ConfirmInput.type == 'password' "
+				></app-icon>
+			</div>
+		</label>
+
+		<button [disabled]="validatePassed()">Login</button>
+	</form>
+</div>
