@@ -1,4 +1,7 @@
+// tslint:disable: indent
 import { Component, OnInit } from '@angular/core';
+
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-main',
@@ -6,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./main.component.sass']
 })
 export class MainComponent implements OnInit {
+	public login = false;
 
-	constructor() { }
+	constructor(
+		public routerLocation: Location,
+	) { }
 
 	ngOnInit() {
 	}
