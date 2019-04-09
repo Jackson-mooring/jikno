@@ -33,11 +33,16 @@
 		</div>
 
 		<div class="main">
-			<app-detail
-				*ngFor="let app of apps"
-				[appData]="app"
-				[searchQuery]="searchQuery"
-			></app-detail>
+
+			<app-dragover></app-dragover>
+
+			<div class="app-target" *ngFor="let app of apps">
+				<app-detail
+					[appData]="app"
+					[searchQuery]="searchQuery"
+				></app-detail>
+				<app-dragover></app-dragover>
+			</div>
 		</div>
 
 		<div class="no-matches" [hidden]="results">
