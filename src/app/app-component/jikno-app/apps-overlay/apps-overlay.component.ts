@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { DataService } from '../../../service/data/data.service';
-
-import { AppData } from '../../../model/app-data';
 import { SearchService } from 'src/app/service/search/search.service';
+import { AppsOverlayService } from '../../../service/apps-overlay/apps-overlay.service'; 
 
 @Component({
 	selector: 'apps-overlay',
@@ -42,32 +41,11 @@ export class AppsOverlayComponent implements OnInit {
 	noDismissClick = false;
 	searchQuery = '';
 	results = true;
-	apps: AppData[] = [
-		{
-			branch: "example_app",
-			route: '/example_app',
-			name: "Example App",
-			icon: "../../../../assets/logo-200.png",
-			active_by_user: true,
-			popularity: 0.5,
-			description: "This is an example app",
-			keyWords: [ 'example', 'app' ],
-		},
-		{
-			branch: "fake_software",
-			route: '/fake_software',
-			name: "Fake Software",
-			icon: "../../../../assets/logo-200.png",
-			active_by_user: true,
-			popularity: 0.5,
-			description: 'This is a fake software',
-			keyWords: [ 'fake', 'software', 'joke' ],
-		}
-	]
 
 	constructor(
 		public dataService: DataService,
 		private searchService: SearchService,
+		public appsOverlayService: AppsOverlayService,
 	) { }
 
 	ngOnInit() {
@@ -100,7 +78,7 @@ export class AppsOverlayComponent implements OnInit {
 	checkResults() {
 		let results = false;
 
-		this.apps.map(app => {
+		this.appsOverlayService.apps.map(app => {
 			if (this.searchService.simpleSearch(this.searchQuery, app.name, app.keyWords.join('|'))) results = true
 		})
 
@@ -109,8 +87,8 @@ export class AppsOverlayComponent implements OnInit {
 
 	getIndex(data: any): number {
 		var val = 0;
-		this.apps.map( (app, index) => {
-			if (app === data) val = index + 1;
+		this.appsOverlayService.apps.map( (app, index) => {
+			if (app === data) val = index;
 		})
 		return val;
 	}

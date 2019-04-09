@@ -33,15 +33,12 @@
 		</div>
 
 		<div class="main">
-
-			<app-dragover indexData="0"></app-dragover>
-
-			<div class="app-target" *ngFor="let app of apps">
+			<div class="app-target" *ngFor="let app of appsOverlayService.apps">
+				<app-dragover [indexData]=" getIndex(app) "></app-dragover>
 				<app-detail
 					[appData]="app"
 					[searchQuery]="searchQuery"
 				></app-detail>
-				<app-dragover [indexData]=" getIndex(app) "></app-dragover>
 			</div>
 		</div>
 

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { DataService } from '../../../../service/data/data.service';
+import { AppsOverlayService } from 'src/app/service/apps-overlay/apps-overlay.service';
+import { AppData } from 'src/app/model/app-data';
 
 @Component({
 	selector: 'app-dragover',
@@ -14,13 +16,23 @@ export class DragoverComponent implements OnInit {
 
 	constructor(
 		private dataService: DataService,
+		private appsOverlayService: AppsOverlayService,
 	) { }
 
 	ngOnInit() {
 	}
 
 	drop() {
-		alert(this.indexData + " | " + this.dataService.appBeingDraggedCurrentlyInAppsOverlay);
+		var oldIndex: number;
+		this.appsOverlayService.apps.map( (data, index) => {
+			if (data.branch === this.dataService.appBeingDraggedCurrentlyInAppsOverlay) oldIndex = index;
+		})
+
+		var newApp = this.appsOverlayService.apps[oldIndex]
+
+
+		this.appsOverlayService.apps.splice(oldIndex, 1);
+		this.appsOverlayService.apps.splice(this.indexData, 0, newApp)
 	}
 
 }
