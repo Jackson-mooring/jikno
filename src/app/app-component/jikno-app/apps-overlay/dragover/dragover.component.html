@@ -1,0 +1,10 @@
+<div class="over">
+	<div
+		class="main"
+		[style.width]=" removed ? '5px' : '80px' "
+		(dragover)="removed = false"
+		(dragleave)="removed = true"
+		(drop)="removed = true; drop()"
+	>
+	</div>
+</div>

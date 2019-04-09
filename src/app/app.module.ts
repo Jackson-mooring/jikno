@@ -15,6 +15,7 @@ import { JiknoAppComponent } from './app-component/jikno-app/jikno-app.component
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppsOverlayComponent } from './app-component/jikno-app/apps-overlay/apps-overlay.component';
 import { AppDetailComponent } from './app-component/jikno-app/apps-overlay/app-detail/app-detail.component';
+import { DragoverComponent } from './app-component/jikno-app/apps-overlay/dragover/dragover.component';
 
 @NgModule({
 	declarations: [
@@ -23,6 +24,7 @@ import { AppDetailComponent } from './app-component/jikno-app/apps-overlay/app-d
 		NotFoundComponent,
 		AppsOverlayComponent,
 		AppDetailComponent,
+		DragoverComponent,
 	],
 	imports: [
 		BrowserModule,
