@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar-component/sidebar.component'
 
 import { HabitsSidebarComponent } from '../../../apps/habits/sidebar/sidebar.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
 	declarations: [
@@ -11,7 +12,8 @@ import { HabitsSidebarComponent } from '../../../apps/habits/sidebar/sidebar.com
 		SidebarComponent,
 	],
 	imports: [
-		CommonModule
+		CommonModule,
+		SharedModule,
 	],
 	exports: [
 		SidebarComponent,
