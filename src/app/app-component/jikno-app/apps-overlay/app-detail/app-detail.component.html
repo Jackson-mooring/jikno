@@ -3,7 +3,7 @@
 	<div
 		draggable="true"
 		moveable="true"
-		(dragstart)="removed = true"
+		(dragstart)="startDrag()"
 		class="main"
 		*ngIf="!appData.active_by_user || searchService.simpleSearch(searchQuery, appData.name, appData.keyWords.join('|'))" [routerLink]="appData.route">
 		

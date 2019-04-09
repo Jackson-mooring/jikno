@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { DataService } from '../../../../service/data/data.service';
 
 @Component({
 	selector: 'app-dragover',
@@ -8,14 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class DragoverComponent implements OnInit {
 
 	removed = true;
+	@Input() indexData: number;
 
-	constructor() { }
+	constructor(
+		private dataService: DataService,
+	) { }
 
 	ngOnInit() {
 	}
 
 	drop() {
-		alert('droped');
+		alert(this.indexData + " | " + this.dataService.appBeingDraggedCurrentlyInAppsOverlay);
 	}
 
 }

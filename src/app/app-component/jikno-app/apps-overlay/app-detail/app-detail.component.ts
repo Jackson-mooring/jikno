@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { AppData } from '../../../../model/app-data';
 import { SearchService } from '../../../../service/search/search.service';
+import { DataService } from 'src/app/service/data/data.service';
 
 @Component({
 	selector: 'app-detail',
@@ -17,9 +18,15 @@ export class AppDetailComponent implements OnInit {
 
 	constructor(
 		public searchService: SearchService,
+		public dataService: DataService
 	) { }
 
 	ngOnInit() {
+	}
+
+	startDrag() {
+		this.removed = true;
+		this.dataService.appBeingDraggedCurrentlyInAppsOverlay = this.appData.branch;
 	}
 
 }

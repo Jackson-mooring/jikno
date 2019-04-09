@@ -107,4 +107,12 @@ export class AppsOverlayComponent implements OnInit {
 		this.results = results;
 	}
 
+	getIndex(data: any): number {
+		var val = 0;
+		this.apps.map( (app, index) => {
+			if (app === data) val = index + 1;
+		})
+		return val;
+	}
+
 }

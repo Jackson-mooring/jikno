@@ -34,14 +34,14 @@
 
 		<div class="main">
 
-			<app-dragover></app-dragover>
+			<app-dragover indexData="0"></app-dragover>
 
 			<div class="app-target" *ngFor="let app of apps">
 				<app-detail
 					[appData]="app"
 					[searchQuery]="searchQuery"
 				></app-detail>
-				<app-dragover></app-dragover>
+				<app-dragover [indexData]=" getIndex(app) "></app-dragover>
 			</div>
 		</div>
 
