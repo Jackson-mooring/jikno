@@ -32,7 +32,11 @@ export class DragoverComponent implements OnInit {
 
 
 		this.appsOverlayService.apps.splice(oldIndex, 1);
-		this.appsOverlayService.apps.splice(this.indexData, 0, newApp)
+		this.appsOverlayService.apps.splice(this.indexData - (oldIndex < this.indexData ? 1 : 0 ), 0, newApp)
+
+		this.dataService.appBeingDraggedCurrentlyInAppsOverlay = undefined;
+		
+		new Audio("../../../../../assets/sound/achievement_unlocked.mp3").play();
 	}
 
 }

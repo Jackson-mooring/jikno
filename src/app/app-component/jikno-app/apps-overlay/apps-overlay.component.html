@@ -34,12 +34,19 @@
 
 		<div class="main">
 			<div class="app-target" *ngFor="let app of appsOverlayService.apps">
-				<app-dragover [indexData]=" getIndex(app) "></app-dragover>
+				<app-dragover
+					*ngIf="dataService.appBeingDraggedCurrentlyInAppsOverlay !== undfined"
+					[indexData]=" getIndex(app) "
+				></app-dragover>
 				<app-detail
 					[appData]="app"
 					[searchQuery]="searchQuery"
 				></app-detail>
 			</div>
+			<app-dragover
+				*ngIf="dataService.appBeingDraggedCurrentlyInAppsOverlay !== undfined"
+				[indexData]="appsOverlayService.apps.length"
+			></app-dragover>
 		</div>
 
 		<div class="no-matches" [hidden]="results">

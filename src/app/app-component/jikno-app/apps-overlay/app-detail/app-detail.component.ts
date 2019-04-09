@@ -24,9 +24,4 @@ export class AppDetailComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	startDrag() {
-		this.removed = true;
-		this.dataService.appBeingDraggedCurrentlyInAppsOverlay = this.appData.branch;
-	}
-
 }

@@ -3,8 +3,10 @@
 	<div
 		draggable="true"
 		moveable="true"
-		(dragstart)="startDrag()"
+		(dragstart)="dataService.appBeingDraggedCurrentlyInAppsOverlay = appData.branch"
+		(dragend)="dataService.appBeingDraggedCurrentlyInAppsOverlay = undefined"
 		class="main"
+		[style.margin]="dataService.appBeingDraggedCurrentlyInAppsOverlay !== undefined ? '15px 0' : '15px' "
 		*ngIf="!appData.active_by_user || searchService.simpleSearch(searchQuery, appData.name, appData.keyWords.join('|'))" [routerLink]="appData.route">
 		
 		<img draggable="false" [src]="appData.icon" [alt]="appData.name" class="image">

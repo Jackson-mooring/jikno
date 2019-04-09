@@ -29,6 +29,36 @@ export class AppsOverlayService {
 			popularity: 0.5,
 			description: 'This is a fake software',
 			keyWords: [ 'fake', 'software', 'joke' ],
+		},
+		{
+			branch: "done",
+			route: '/done',
+			name: "Done",
+			icon: "../../../../assets/logo-200.png",
+			active_by_user: true,
+			popularity: 0.5,
+			description: 'This is a fake software',
+			keyWords: [ 'fake', 'software', 'joke' ],
+		},
+		{
+			branch: "counter",
+			route: '/counter',
+			name: "Counter",
+			icon: "../../../../assets/logo-200.png",
+			active_by_user: true,
+			popularity: 0.5,
+			description: 'This is a fake software',
+			keyWords: [ 'fake', 'software', 'joke' ],
+		},
+		{
+			branch: "search",
+			route: '/search',
+			name: "Search",
+			icon: "../../../../assets/logo-200.png",
+			active_by_user: true,
+			popularity: 0.5,
+			description: 'This is a fake software',
+			keyWords: [ 'fake', 'software', 'joke' ],
 		}
 	]
 
