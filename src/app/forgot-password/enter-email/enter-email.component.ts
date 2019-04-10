@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/service/data/data.service';
+
+
 
 @Component({
 	selector: 'app-enter-email',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnterEmailComponent implements OnInit {
 
-	constructor() { }
+	email = '';
+
+	constructor(
+		private router: Router,
+		private dataService: DataService,
+	) { }
 
 	ngOnInit() {
+	}
+
+	sub(email: string) {
+		this.dataService.emailForForgotPassword = email;
+		this.router.navigateByUrl('forgot-password/enter-code');
 	}
 
 }

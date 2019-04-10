@@ -1,3 +1,14 @@
-<p>
-  enter-email works!
-</p>
+<div class="over">
+	<div class="container">
+		<h3>Forgot your password ehh?</h3>
+		<h5>Don't worry!  We've got you covered.</h5>
+	</div>
+	<form (submit)="sub(email)">
+		<div class="row">
+			<app-icon iconName="mail" iconSize="20"></app-icon>
+			<input autofocus="true" type="email" placeholder="Enter your email" [(ngModel)]="email" name="email">
+		</div>
+		
+		<button [disabled]="email == '' ">Next</button>
+	</form>
+</div>
