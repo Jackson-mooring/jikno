@@ -16,10 +16,11 @@ export class SendEmailService {
 	public sendEmail(content: string, email: string, subject: string): Observable<any> {
 		const body = `content=${content}&email=${email}&subject=${subject}`;
 		const params = "?action=email_user&key=" + JIKNO_API_KEY;
-		return this.http.post(JIKNO_API_ROOT + params, body, POST_HEADERS)
+		return this.http.post<any>(JIKNO_API_ROOT + params, body, POST_HEADERS)
 		.pipe(
 			map(res => {
 				console.log(res);
+				if (res.code !== "OK") return "Could not connect to email";
 				return "EMAILED";
 			}),
 			retry(3),
