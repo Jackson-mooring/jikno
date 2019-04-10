@@ -5,7 +5,9 @@
 	</div>
 	<form (submit)="sub(email)">
 		<div class="row">
-			<app-icon iconName="mail" iconSize="20"></app-icon>
+			<div class="icon">
+				<app-icon iconName="mail" iconSize="20"></app-icon>
+			</div>
 			<input autofocus="true" type="email" placeholder="Enter your email" [(ngModel)]="email" name="email">
 		</div>
 		
