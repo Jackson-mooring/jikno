@@ -43,5 +43,9 @@
 		<img *ngIf=" iconName == 'white-shield' " src="../../assets/apps-icon.svg" alt="apps"
 			[style.width]=" iconSize + 'px' " [style.height]=" iconSize + 'px' ">
 
+		<div *ngIf="iconName == 'loader'">
+			Loading...
+		</div>
+
 	</div>
 </div>

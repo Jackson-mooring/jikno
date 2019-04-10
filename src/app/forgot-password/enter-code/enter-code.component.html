@@ -1,7 +1,17 @@
 <div class="over container">
 	<div class="status" *ngIf="status !== 'EMAILED'">
 		<h4 class="message" [hidden]="status == 'INVALID_USER' ">{{ status }}</h4>
-		<app-icon iconName="loader" iconSize="50" [hidden]="status == 'INVALID_USER' "></app-icon>
+
+		<div class="loader">
+			<app-icon [hidden]="status == 'Could not connect to database' " iconName="loader" iconSize="50" [hidden]="status == 'INVALID_USER' "></app-icon>
+			<p [hidden]="status != 'Could not connect to database'">
+				<a (click)="sendEmail()">Retry</a>
+				&nbsp;•&nbsp;
+				<a routerLink="/forgot-password/enter-email">Back</a>
+			</p>
+		</div>
+
+		
 		<h4 [hidden]="status != 'INVALID_USER' ">We couldn't find a user to match that email</h4>
 		<p [hidden]="status != 'INVALID_USER'">
 			<a routerLink="/forgot-password/enter-email">Change Email</a>
