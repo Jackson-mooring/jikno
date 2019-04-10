@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { EnterEmailComponent } from './enter-email/enter-email.component';
 import { EnterCodeComponent } from './enter-code/enter-code.component';
 import { MainComponent } from './main/main.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { ContinueComponent } from './continue/continue.component';
+
 
 @NgModule({
 	declarations: [
@@ -20,7 +22,8 @@ import { ContinueComponent } from './continue/continue.component';
 	imports: [
 		CommonModule,
 		SharedModule,
-		FormsModule
+		FormsModule,
+		RouterModule,
 	]
 })
 export class ForgotPasswordModule { }

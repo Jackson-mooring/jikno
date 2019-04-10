@@ -1,3 +1,23 @@
-<p>
-  enter-code works!
-</p>
+<div class="over container">
+	<div class="status" *ngIf="status !== 'EMAILED'">
+		<h4 class="message">{{ status }}</h4>
+		<app-icon iconName="loader" iconSize="50" [hidden]="status == 'INVALID_EMAIL' "></app-icon>
+	</div>
+	<div class="main" [hidden]="status !== 'EMAILED'">
+		<h2>Email sent!</h2>
+		<h5>Please check you spam folder.</h5>
+		<p class="options">
+			<a (click)="sendEmail()">Resend Code</a>
+			&nbsp;•&nbsp;
+			<a routerLink="/forgot-password/enter-email">Change Email</a>
+		</p>
+		<form (submit)="sub()">
+			<div class="row" id="code">
+				<app-icon iconName="mail" iconSize="20"></app-icon>
+				<input autofocus="true" autocomplete="off" type="email" placeholder="Enter your 10 digit code..." [(ngModel)]="userCode" name="userCode">
+			</div>
+
+			<button [disabled]="userCode === '' ">Next</button>
+		</form>
+	</div>
+</div>
