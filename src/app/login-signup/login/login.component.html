@@ -13,16 +13,23 @@
 				<input type="password" placeholder="Enter Password..." required="true" class="password" #passwordInput
 					[(ngModel)]="password" name="password">
 
-				<app-icon class="icon" iconName="eye-slash" iconSize="25" isButton
+				<app-icon class="icon" iconName="eye" iconSize="25" isButton="true"
 					(click)="passwordInput.type = 'password'" *ngIf="passwordInput.type == 'text'">
 				</app-icon>
-				<app-icon class="icon" iconName="eye" iconSize="25" isButton (click)="passwordInput.type = 'text'"
+				<app-icon class="icon" iconName="eye-slash" iconSize="25" isButton (click)="passwordInput.type = 'text'"
 					*ngIf="passwordInput.type == 'password'">
 				</app-icon>
 			</div>
 		</label>
 
+		
+
 		<button [disabled]=" password.length == 0 || email.length == 0 ">Login</button>
 
+		<div class="forgot">
+			<a routerLink="/forgot-password" class="forgot-password">Forgot Password?</a>
+		</div>
+		
 	</form>
+	
 </div>
