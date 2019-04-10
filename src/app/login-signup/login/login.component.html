@@ -13,7 +13,7 @@
 				<input type="password" placeholder="Enter Password..." required="true" class="password" #passwordInput
 					[(ngModel)]="password" name="password">
 
-				<app-icon class="icon" iconName="eye" iconSize="25" isButton
+				<app-icon class="icon" iconName="eye" iconSize="25" isButton="true"
 					(click)="passwordInput.type = 'password'" *ngIf="passwordInput.type == 'text'">
 				</app-icon>
 				<app-icon class="icon" iconName="eye-slash" iconSize="25" isButton (click)="passwordInput.type = 'text'"
