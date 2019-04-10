@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-main',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-	constructor() { }
+	constructor(
+		public routeLocation: Location,
+	) { }
 
 	ngOnInit() {
 	}
