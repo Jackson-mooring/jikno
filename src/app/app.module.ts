@@ -7,6 +7,7 @@ import { HabitsModule } from './apps/habits/habits.module'
 import { LoginSignupModule } from './login-signup/login-signup.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './shared/core.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app-component/app.component';
@@ -31,6 +32,7 @@ import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
 		SharedModule,
 		CoreModule,
 		ForgotPasswordModule,
+		HttpClientModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
