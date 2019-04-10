@@ -23,6 +23,7 @@ export class EnterCodeComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
+		if (this.dataService.emailForForgotPassword === undefined) this.router.navigateByUrl("/forgot-password/enter-email");
 		this.sendEmail();
 	}
 
