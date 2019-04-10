@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RandomStringService } from 'src/app/service/random-string/random-string.service';
 
 @Component({
 	selector: 'app-enter-code',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnterCodeComponent implements OnInit {
 
-	constructor() { }
+	constructor(
+		private randomStringService: RandomStringService,
+	) { }
 
 	ngOnInit() {
+		alert(this.randomStringService.getRandomString(100, 'random', true, true, true));
 	}
 
 }
