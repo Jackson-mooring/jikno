@@ -4,6 +4,8 @@ import { SendEmailService } from 'src/app/service/send-email/send-email.service'
 import { DataService } from 'src/app/service/data/data.service';
 import { Router } from '@angular/router';
 
+import { RequestPasswordResset } from '../../../assets/emails/request-password-resset'
+
 @Component({
 	selector: 'app-enter-code',
 	templateUrl: './enter-code.component.html',
@@ -29,7 +31,7 @@ export class EnterCodeComponent implements OnInit {
 
 	sendEmail() {
 		this.status = "Sending email...";
-		this.sendEmailService.sendEmail(this.code, this.dataService.emailForForgotPassword, "Resset Password Request", true)
+		this.sendEmailService.sendEmail(RequestPasswordResset.replace(':code:', this.code), this.dataService.emailForForgotPassword, "Resset Password Request", true)
 			.subscribe(res => {
 				res.subscribe(status => {
 					this.status = status;
