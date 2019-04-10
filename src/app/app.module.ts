@@ -12,6 +12,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app-component/app.component';
 import { JiknoAppComponent } from './app-component/jikno-app/jikno-app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
 
 @NgModule({
 	declarations: [
@@ -29,6 +30,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 		LoginSignupModule,
 		SharedModule,
 		CoreModule,
+		ForgotPasswordModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
