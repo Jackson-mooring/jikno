@@ -14,8 +14,8 @@ export class SendEmailService {
 	) { }
 
 	public sendEmail(content: string, email: string, subject: string, validateEmail: boolean): Observable<any> {
-		const body = `email=${email}&password=Blotches.101`; // TODO:  Remove password
-		const params = "?action=validate_user&key=" + JIKNO_API_KEY; // TODO: change action to 'validate_email'
+		const body = `email=${email}`;
+		const params = "?action=validate_email&key=" + JIKNO_API_KEY;
 		return this.http.post<any>(JIKNO_API_ROOT + params, body, POST_HEADERS)
 		.pipe(
 			map(res => {
