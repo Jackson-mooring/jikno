@@ -1,7 +1,13 @@
 <div class="over container">
 	<div class="status" *ngIf="status !== 'EMAILED'">
-		<h4 class="message">{{ status }}</h4>
-		<app-icon iconName="loader" iconSize="50" [hidden]="status == 'INVALID_EMAIL' "></app-icon>
+		<h4 class="message" [hidden]="status == 'INVALID_USER' ">{{ status }}</h4>
+		<app-icon iconName="loader" iconSize="50" [hidden]="status == 'INVALID_USER' "></app-icon>
+		<h4 [hidden]="status != 'INVALID_USER' ">We couldn't find a user to match that email</h4>
+		<p [hidden]="status != 'INVALID_USER'">
+			<a routerLink="/forgot-password/enter-email">Change Email</a>
+			&nbsp;•&nbsp;
+			<a routerLink="/sign-up">Create a new account</a>
+		</p>
 	</div>
 	<div class="main" [hidden]="status !== 'EMAILED'">
 		<h2>Email sent!</h2>
@@ -14,7 +20,8 @@
 		<form (submit)="sub()">
 			<div class="row" id="code">
 				<app-icon iconName="mail" iconSize="20"></app-icon>
-				<input autofocus="true" autocomplete="off" type="email" placeholder="Enter your 10 digit code..." [(ngModel)]="userCode" name="userCode">
+				<input autofocus="true" autocomplete="off" type="email" placeholder="Enter your 10 digit code..."
+					[(ngModel)]="userCode" name="userCode">
 			</div>
 
 			<button [disabled]="userCode === '' ">Next</button>
