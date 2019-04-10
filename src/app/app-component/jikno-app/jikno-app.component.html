@@ -1,11 +1,13 @@
 <div class="over">
-
-	<div class="navbar" [@blurInOut]=" dataService.blur ? 'in' : 'out' ">
+	<div
+		class="navbar"
+		[@blurInOut]="dataService.blur ? 'in' : 'out'"
+	>
 		<div class="container">
 			<app-icon class="menu" [iconName]=" 'menu' " [iconSize]="30" isButton="true" (click)="
 					dataService.sidebarIsIn = true;
-                    dataService.blur = true;
-                "></app-icon>
+          dataService.blur = true;
+      "></app-icon>
 			<app-icon class="apps" [iconName]=" 'white-shield' " [iconSize]="30" isButton="true" (click)="
 				dataService.blur = true;
 				dataService.showAppsOverlay = true;
@@ -14,11 +16,13 @@
 		</div>
 	</div>
 
-	<div class="container main" [@blurInOut]=" dataService.blur ? 'in' : 'out' ">
+	<div
+		class="container main"
+		[@blurInOut]="dataService.blur ? 'in' : 'out'"
+	>
 		<router-outlet></router-outlet>
 	</div>
 
 	<app-sidebar></app-sidebar>
 	<apps-overlay></apps-overlay>
-
 </div>
