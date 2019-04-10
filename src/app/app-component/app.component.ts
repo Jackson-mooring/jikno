@@ -27,13 +27,11 @@ export class AppComponent implements OnInit {
 	isApp(): boolean {
 		var isApp = false;
 
-		if (this.dataService.didFindRoute) {
-			for (var i in AppRoutes) {
-				const route = AppRoutes[i];
-				const path = this.routeLocation.path().slice(0, route.length);
-				if (route === path) {
-					isApp = true;
-				}
+		for (var i in AppRoutes) {
+			const route = AppRoutes[i];
+			const path = this.routeLocation.path().slice(0, route.length);
+			if (route === path) {
+				isApp = true;
 			}
 		}
 
