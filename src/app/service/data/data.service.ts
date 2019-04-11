@@ -8,6 +8,8 @@ export class DataService {
 	blur = false;
 	emailForForgotPassword: string;
 	resetPassword = false;
+	showAppsOverlay = false;
+	appBeingDraggedCurrentlyInAppsOverlay: string;
 
 	constructor() { }
 }

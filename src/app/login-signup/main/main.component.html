@@ -1,17 +1,40 @@
 <div class="body">
 	<div class="main">
-		<div class="tab1 active">Login</div>
-		<div class="tab2 ">Sign Up</div>
+		<div
+			class="tab1"
+			[class.active]="routerLocation.path() == '/login'"
+			(click)="login = true"
+			routerLink="/login"
+		>Login</div>
+
+		<div
+			class="tab2"
+			[class.active]="routerLocation.path() == '/sign-up'"
+			(click)="login = false"
+			routerLink="/sign-up"
+		>Sign Up</div>
 
 		<div class="padding">
 			<div class="img-container">
-				<img src="../../../assets/logo-200.png" alt="" class="img">
+				<img
+					src="../../../assets/logo-200.png"
+					alt=""
+					class="img"
+				>
 			</div>
+
 			<div class="slogan">
 				<h3>Jikno</h3>
-				<p><i>One Account, All of Our Services</i></p>
+
+				<p>
+					<i>
+						One Account, All of Our Services
+					</i>
+				</p>
 			</div>
-			<app-login></app-login>
+
+			<app-login *ngIf="routerLocation.path() == '/login'"></app-login>
+			<app-sign-up *ngIf="routerLocation.path() == '/sign-up'"></app-sign-up>
 		</div>
 	</div>
 </div>

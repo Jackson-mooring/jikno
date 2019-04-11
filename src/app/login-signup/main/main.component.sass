@@ -20,14 +20,15 @@ $BORRAD:                    4px 4px 4px 4px
 // Holds content
 .main
     margin:                 auto
-    margin-top:             calc(calc(100vh - 580.938px) / 2)
+    @media (min-height: 645.94px)
+        margin-top:             calc(50vh - calc(645.94px / 2))
     max-width:              $CARDWIDTH
     background-color:       var(--secondary)
     color:                  $COLORDARK
     border-radius:          $BORRAD
     border:                 none
 
-// Display padding
+// Display padding //648.938px
 .padding
     padding:                20px
 
@@ -59,6 +60,7 @@ app-login
     padding:                20px 0
     cursor:                 pointer
     width:                  50%
+    outline: 				none
     
 // Login Tab
 .tab1

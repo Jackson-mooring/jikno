@@ -1,0 +1,59 @@
+<div class="over">
+	<div
+		class="cover"
+		[@zoom]="dataService.showAppsOverlay ? 'in' : 'out'"
+		(click)="coverClick()"
+	>
+		<div class="bar">
+			<label>
+				<div class="input no-dismiss">
+					<app-icon
+						iconName="search"
+						iconSize="18"
+						class="search"
+					></app-icon>
+
+					<input
+						type="text"
+						[(ngModel)]="searchQuery"
+						name="searchQuery"
+						(keyup)="checkResults()"
+					>
+
+					<app-icon
+						[@fade]="searchQuery.length == 0 ? 'hidden' : 'visible'"
+						iconName="circle-times"
+						iconSize="18"
+						isButton="true"
+						class="times"
+						(click)="searchQuery = ''"
+					></app-icon>
+				</div>
+			</label>
+		</div>
+
+		<div class="main">
+			<div class="app-target" *ngFor="let app of appsOverlayService.apps">
+				<app-dragover
+					*ngIf="dataService.appBeingDraggedCurrentlyInAppsOverlay !== undfined"
+					[indexData]=" getIndex(app) "
+				></app-dragover>
+				<app-detail
+					[appData]="app"
+					[searchQuery]="searchQuery"
+				></app-detail>
+			</div>
+			<app-dragover
+				*ngIf="dataService.appBeingDraggedCurrentlyInAppsOverlay !== undefined"
+				[indexData]="appsOverlayService.apps.length"
+			></app-dragover>
+		</div>
+
+		<div class="no-matches" [hidden]="results">
+			<h1>No Results</h1>
+			<p>You might find an app like this somewhere else though.</p>
+			<h3><a routerLink="/library">Search the library</a></h3>
+		</div>
+
+	</div>
+</div>
