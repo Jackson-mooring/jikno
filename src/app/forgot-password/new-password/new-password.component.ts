@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ValidateValuesService } from '../../service/validate-values/validate-values.service';
 
 @Component({
 	selector: 'app-new-password',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewPasswordComponent implements OnInit {
 
-	constructor() { }
+	password = '';
+	confirm = '';
+
+	passwordTooltip = false;
+	confirmTooltip = false;
+
+	constructor(
+		public validateValuesService: ValidateValuesService,
+	) { }
 
 	ngOnInit() {
+	}
+
+	sub() {
+		event.preventDefault();
 	}
 
 }
