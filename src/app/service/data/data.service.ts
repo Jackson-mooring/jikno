@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class DataService {
 	sidebarIsIn = false;
 	blur = false;
+	showAppsOverlay = false;
+	appBeingDraggedCurrentlyInAppsOverlay: string;
 
 	constructor() { }
 }

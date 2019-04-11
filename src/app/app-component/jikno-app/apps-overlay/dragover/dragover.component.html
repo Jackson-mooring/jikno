@@ -1,0 +1,14 @@
+<div class="over">
+	<div
+		class="main"
+		(dragover)="removed = false"
+		(dragleave)="removed = true"
+		(drop)="removed = true; drop()"
+	>
+		<div
+			class="indicator"
+			[style.backgroundColor]=" removed ? 'rgba(0, 0, 0, 0)' : 'green' "
+		>
+		</div>
+	</div>
+</div>

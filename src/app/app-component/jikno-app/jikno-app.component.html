@@ -8,7 +8,10 @@
 					dataService.sidebarIsIn = true;
           dataService.blur = true;
       "></app-icon>
-			<app-icon class="apps" [iconName]=" 'white-shield' " [iconSize]="30" isButton="true"></app-icon>
+			<app-icon class="apps" [iconName]=" 'white-shield' " [iconSize]="30" isButton="true" (click)="
+				dataService.blur = true;
+				dataService.showAppsOverlay = true;
+			"></app-icon>
 			<app-icon class="settings" [iconName]=" 'settings' " [iconSize]="30" isButton="true"></app-icon>
 		</div>
 	</div>
@@ -21,4 +24,5 @@
 	</div>
 
 	<app-sidebar></app-sidebar>
+	<apps-overlay></apps-overlay>
 </div>
