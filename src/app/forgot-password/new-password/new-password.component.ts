@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ValidateValuesService } from '../../service/validate-values/validate-values.service';
 import { ChangeValuesService } from 'src/app/service/change-values/change-values.service';
 import { DataService } from 'src/app/service/data/data.service';
@@ -23,7 +23,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 		])
 	]
 })
-export class NewPasswordComponent implements OnInit {
+export class NewPasswordComponent implements OnInit, OnDestroy {
 
 	password = '';
 	confirm = '';
@@ -41,6 +41,10 @@ export class NewPasswordComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
+	}
+
+	ngOnDestroy() {
+		this.dataService.resetPassword = false;
 	}
 
 	sub() {
