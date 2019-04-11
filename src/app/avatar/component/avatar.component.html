@@ -1,0 +1,20 @@
+<div class="over">
+	<div
+		class="main"
+		[class.circle]="isCircle"
+		[class.bounce]="shouldBounce"
+		[class.shadow]="showShadow"
+
+		[style.height]="avatarSize + 'px'"
+		[style.width]="avatarSize + 'px'"
+		[style.backgroundImage]="image"
+		[style.backgroundColor]="color"
+	>
+		<div
+			class="letter"
+			
+			[style.fontSize]="avatarSize * 0.7 + 'px'"
+			[style.top]="avatarSize * 0.08 + 'px'"
+		>{{letter}}</div>
+	</div>
+</div>
