@@ -32,7 +32,7 @@ export class ChangeValuesService {
 		)
 	}
 
-	private change(value: API_Response) {
+	private change(value: API_Response): string {
 		if (value.code != "OK") {
 			console.error(`${value.code} - ${value.data}`)
 			if (value.code == "FAILED") return "The server crashed - please try again later.";
@@ -40,5 +40,4 @@ export class ChangeValuesService {
 		}
 		else return "CHANGED";
 	}
-
 }

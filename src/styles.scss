@@ -36,3 +36,16 @@ body {
 .container {
 	padding: 0 16px
 }
+
+.error {
+	background-color: var(--danger);
+	color: var(--secondary);
+	border-radius: 5px;
+	height: 0;
+	text-align: center;
+	overflow: hidden;
+}
+.error p {
+	padding: 8px;
+	margin: 0;
+}
