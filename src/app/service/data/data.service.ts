@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Injectable({
 	providedIn: 'root'
@@ -10,13 +11,16 @@ export class DataService {
 	showAppsOverlay = false;
 	appBeingDraggedCurrentlyInAppsOverlay: string;
 	secondaryRoute = false;
-	pastTitle = "Home";
+	routes = [];
 
-	constructor(router: Router) {
+	constructor(
+		private router: Router,
+		private routeLocation: Location,
+		) {
 		router.events.forEach((event) => {
 			if (event instanceof NavigationStart) {
-				this.pastTitle = document.querySelector("title").innerHTML
 				this.secondaryRoute = false;
+				this.routes.push(this.routeLocation.path());
 			}
 		});
 	}
