@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { DataService } from '../../service/data/data.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'jikno-app',
@@ -26,9 +28,15 @@ export class JiknoAppComponent implements OnInit {
 
 	constructor(
 		public dataService: DataService,
+		private routeLocation: Location,
+		private router: Router,
 	) { }
 
 	ngOnInit() {
+	}
+
+	goBack() {
+		this.routeLocation.back();
 	}
 
 }
