@@ -46,6 +46,7 @@ export class JiknoAppComponent implements OnInit {
 		AppRoutes.map(route => {
 			if (this.routeLocation.path().indexOf(route) != -1) newRoute = route;
 		})
+		if (newRoute === undefined) return "/home";
 		return newRoute;
 	}
 
