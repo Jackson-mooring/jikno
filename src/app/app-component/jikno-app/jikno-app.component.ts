@@ -29,7 +29,6 @@ export class JiknoAppComponent implements OnInit {
 	constructor(
 		public dataService: DataService,
 		private routeLocation: Location,
-		private router: Router,
 	) { }
 
 	ngOnInit() {
