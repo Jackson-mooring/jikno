@@ -6,6 +6,14 @@
     margin-bottom:              17.3333333333333px
     border:                     none
     border-bottom:              3px solid var(--theme1)
+    position:                   relative
+
+
+.good
+	color: var(--clear) !important
+
+.bad
+	color: var(--danger)
 
 // Input Styles
 input
@@ -19,9 +27,12 @@ input
 
 input[type=password],
 input[type=text]
-    width:                      calc(100% - 40px)
+    width:                      calc(100% - 70px)
     display:                    inline-block
 
+input[type=email]
+    width:                     calc(100% - 40px)
+    display:                   inline-block
 
 ::placeholder
     user-selec:                 none
@@ -33,6 +44,7 @@ input[type=text]
     width:                      25px
     position:                   relative
     top:                        7px
+
 
 button
     outline:                    none
