@@ -3,6 +3,7 @@
 */
 export const NoLogin = [
 	"/login",
+	"/login",
 	"/sign-up",
 	"/forgot-password/enter-email",
 	"/forgot-password",

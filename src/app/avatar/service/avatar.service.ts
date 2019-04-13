@@ -35,12 +35,18 @@ export class AvatarService {
 	}
 
 	private manipulateValues(values: API_Response): AvatarResponse {
-		console.log(values);
-		return {
+		if (this.user.isUser) return {
 			color: values.data.avatar ? '': (values.data.color ? values.data.color : '#021c55'),
 			letter: values.data.avatar ? '' : (this.user.getUser().email.charAt(0).toUpperCase()),
 			image: values.data.avatar ? values.data.avatar : '',
 			error: false
+		}; else {
+			return {
+				color: '',
+				letter: '',
+				image: '',
+				error: false
+			}
 		}
 	}
 }
