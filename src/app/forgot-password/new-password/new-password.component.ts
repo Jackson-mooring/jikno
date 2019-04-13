@@ -41,6 +41,7 @@ export class NewPasswordComponent implements OnInit, OnDestroy {
 	) { }
 
 	ngOnInit() {
+		if(!this.dataService.resetPassword) this.router.navigateByUrl('/forgot-password/enter-email');
 	}
 
 	ngOnDestroy() {
