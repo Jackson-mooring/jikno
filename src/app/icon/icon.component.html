@@ -62,5 +62,10 @@
 			</path>
 		</svg>
 
+		<!-- loader (not from fontawesome) -->
+		<div *ngIf=" iconName == 'loader' || iconName == 'loader-dark'" class="loader loader-dark" [class.loader-light]="iconName == 'loader'">
+			<div class="spinner" [style.width]="iconSize - 10 + 'px'" [style.height]="iconSize - 10 + 'px'"></div>
+		</div>
+
 	</div>
 </div>
