@@ -1,12 +1,16 @@
 <div class="over">
 	<div class="navbar" [@blurInOut]="dataService.blur ? 'in' : 'out'">
 		<div class="container">
-			<app-icon class="menu" [iconName]=" 'menu' " [iconSize]="30" isButton="true" (click)="
+
+			<app-icon *ngIf="!dataService.secondaryRoute" class="menu" [iconName]=" 'menu' " [iconSize]="30" isButton="true" (click)="
 				dataService.sidebarIsIn = true;
-				dataService.blur = true;
+        		dataService.blur = true;
 			"></app-icon>
-			<app-icon [popper]="appsPopper" popperTrigger="hover" popperDelay="200" class="apps" [iconName]=" 'white-shield' "
-				[iconSize]="30" isButton="true" (click)="
+			<app-icon class="menu" [iconName]=" 'angle-left' " [iconSize]="22" isButton="true" (click)="goBack()"
+				*ngIf="dataService.secondaryRoute"></app-icon>
+			<div class="back" *ngIf="dataService.secondaryRoute" (click)="goBack()">Back</div>
+
+			<app-icon class="apps" [iconName]=" 'white-shield' " [iconSize]="30" isButton="true" (click)="
 				dataService.blur = true;
 				dataService.showAppsOverlay = true;
 			"></app-icon>

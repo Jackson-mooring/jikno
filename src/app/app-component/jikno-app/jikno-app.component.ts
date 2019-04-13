@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { DataService } from '../../service/data/data.service';
+import { AppRoutes } from 'src/app/routing/app-routes';
 
 @Component({
 	selector: 'jikno-app',
@@ -26,9 +29,25 @@ export class JiknoAppComponent implements OnInit {
 
 	constructor(
 		public dataService: DataService,
+		private routeLocation: Location,
+		private router: Router,
 	) { }
 
 	ngOnInit() {
+	}
+
+	goBack() {
+		if (this.dataService.routes.length > 1) this.routeLocation.back();
+		else this.router.navigateByUrl(this.newRoute());
+	}
+
+	newRoute(): string {
+		var newRoute: string;
+		AppRoutes.map(route => {
+			if (this.routeLocation.path().indexOf(route) != -1) newRoute = route;
+		})
+		if (newRoute === undefined) return "/home";
+		return newRoute;
 	}
 
 }
