@@ -14,14 +14,12 @@
 				dataService.blur = true;
 				dataService.showAppsOverlay = true;
 			"></app-icon>
-			<popper-content #appsPopper>My Apps</popper-content>
 
 			<app-icon [popper]="settingsPopper" popperTrigger="hover" class="settings" [iconName]=" 'settings' " [iconSize]="30" isButton="true">
 			</app-icon>
+
 			<popper-content #settingsPopper>User Settings</popper-content>
-
-
-
+			<popper-content #appsPopper>My Apps</popper-content>
 
 		</div>
 	</div>

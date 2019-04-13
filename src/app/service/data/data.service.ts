@@ -8,6 +8,8 @@ import { Location } from '@angular/common';
 export class DataService {
 	sidebarIsIn = false;
 	blur = false;
+	emailForForgotPassword: string;
+	resetPassword = false;
 	showAppsOverlay = false;
 	appBeingDraggedCurrentlyInAppsOverlay: string;
 	secondaryRoute = false;
