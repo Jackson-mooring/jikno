@@ -8,5 +8,5 @@ export const NoLogin = [
 	"/forgot-password",
 	"/forgot-password/enter-code",
 	"/new-password",
-	"/forgot-password/continue",
+	"/forgot-password/continue"
 ]

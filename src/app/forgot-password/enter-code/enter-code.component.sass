@@ -1,0 +1,63 @@
+.over
+	overflow: auto
+
+.status
+	text-align: center
+
+.options
+	text-align: right
+
+.row
+	margin: auto
+	border: none
+	border-bottom: 3px solid var(--theme1)
+	background-color: rgba(0, 0, 0, 0)
+	padding: 5px 0
+
+.failed
+	animation: failed 0.15s ease
+	position: relative
+
+@keyframes failed
+	0%
+		left: 0
+	20%
+		left: -10px
+	80%
+		left: 10px
+	100%
+		left: 0
+	
+
+.icon
+	position: relative
+	margin-right: 4px
+	left: 3px
+	
+input
+	width: calc(100% - 32px)
+	border: none
+	display: inline-block
+	background-color: rgba(0, 0, 0, 0)
+	font-size: 1rem
+	color: var(--secondary)
+	padding: 0 3px
+	outline: none
+
+button
+	width: 100%
+	margin: 20px auto
+	border: none
+	cursor: pointer
+	background-color: var(--theme1)
+	padding: 7px
+	border-radius: 5px
+	display: block
+	font-size: 1rem
+	color: var(--secondary)
+	background-image: linear-gradient(var(--theme1-grad1), var(--theme1-grad2))
+	outline: none
+
+button:disabled
+	opacity: 0.5
+	cursor: not-allowed

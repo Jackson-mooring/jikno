@@ -1,9 +1,11 @@
 .over
 	display: inline-block
-	
+
 .icon
 	display: inline-block
-	
+	overflow: hidden
+	position: relative
+
 .button 
     user-select: none
     cursor: pointer
@@ -19,3 +21,47 @@ svg
         transform: rotate(0deg)
     to
         transform: rotate(360deg)
+
+.loader
+	overflow: hidden
+.loader>.spinner
+	border-radius: 50%
+	border: 5px solid var(--theme1)
+	border-top: 5px solid rgba(0, 0, 0, 0)
+.loader-dark>.spinner
+	animation: color-dark 5s linear infinite
+.loader-light>.spinner
+	animation: color-light 5s linear infinite
+@keyframes color-dark
+	0%
+		border: 5px solid var(--theme1-grad1)
+		border-top: 5px solid rgba(0, 0, 0, 0)
+		transform: rotate(0)
+	10%
+		border: 5px solid var(--theme1-grad2)
+		border-top: 5px solid rgba(0, 0, 0, 0)
+	40%
+		border: 5px solid var(--theme2-grad1)
+		border-top: 5px solid rgba(0, 0, 0, 0)
+	50%
+		border: 5px solid var(--theme2-grad2)
+		border-top: 5px solid rgba(0, 0, 0, 0)
+	80%
+		border: 5px solid var(--primary)
+		border-top: 5px solid rgba(0, 0, 0, 0)
+	100%
+		border: 5px solid var(--theme1-grad1)
+		border-top: 5px solid rgba(0, 0, 0, 0)
+		transform: rotate(calc(360deg * 7))
+@keyframes color-light
+	0%
+		border: 5px solid var(--secondary)
+		border-top: 5px solid rgba(0, 0, 0, 0)
+		transform: rotate(0)
+	50%
+		border: 5px solid var(--primary4)
+		border-top: 5px solid rgba(0, 0, 0, 0)
+	100%
+		border: 5px solid var(--secondary)
+		border-top: 5px solid rgba(0, 0, 0, 0)
+		transform: rotate(calc(360deg * 7))
