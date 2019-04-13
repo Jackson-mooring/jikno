@@ -35,10 +35,9 @@ export class AppComponent implements OnInit {
 			}
 		}
 
-		let routeIt = true;
-
-
+		let routeIt = false;
 		if (!this.userService.isUser()) {
+			routeIt = true;
 			NoLogin.map(route => {
 				if (route === this.routeLocation.path().slice(0, route.length)) {
 					routeIt = false;
