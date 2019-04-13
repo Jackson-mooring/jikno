@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AvatarService } from '../service/avatar.service';
 
 @Component({
 	selector: 'app-avatar',
@@ -16,10 +17,22 @@ export class AvatarComponent implements OnInit {
 	public image = '';
 	public color = 'green';
 	public letter = '';
+	public error = false;
+	public waiting = true;
 
-	constructor() { }
+	constructor(
+		private avatar: AvatarService,
+	) { }
 
 	ngOnInit() {
+		this.avatar.getAvatar().subscribe(res => {
+			console.log(res);
+			this.letter = res.letter;
+			this.color = res.color;
+			this.image = res.image;
+			this.error = res.error;
+			this.waiting = false;
+		});
 	}
 
 }
