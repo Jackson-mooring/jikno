@@ -9,9 +9,11 @@ export class IconComponent implements OnInit {
 	@Input() iconName: string;
 	@Input() isButton: boolean;
 	@Input() shouldSpin: boolean;
-	@Input() iconSize: number;
+	@Input() iconSize: number | string;
 
-	constructor() { }
+	constructor() {
+		this.iconSize = Number(this.iconSize);
+	}
 
 	ngOnInit() {
 	}

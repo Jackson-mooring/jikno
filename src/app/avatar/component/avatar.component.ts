@@ -12,10 +12,10 @@ export class AvatarComponent implements OnInit {
 	@Input() avatarClick = () => {console.log("Clicked on avatar")};
 	@Input() shouldBounce = false;
 	@Input() isCircle = true;
-	@Input() showShadow = true;
+	@Input() showShadow: boolean;
 
 	public image = '';
-	public color = 'green';
+	public color = '#333333';
 	public letter = '';
 	public error = false;
 	public waiting = true;
@@ -26,12 +26,13 @@ export class AvatarComponent implements OnInit {
 
 	ngOnInit() {
 		this.avatar.getAvatar().subscribe(res => {
-			console.log(res);
 			this.letter = res.letter;
 			this.color = res.color;
 			this.image = res.image;
 			this.error = res.error;
 			this.waiting = false;
+
+			if (res.image == '' && this.showShadow == undefined) this.showShadow = true;
 		});
 	}
 
