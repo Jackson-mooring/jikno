@@ -10,7 +10,7 @@
 				*ngIf="dataService.secondaryRoute"></app-icon>
 			<div class="back" *ngIf="dataService.secondaryRoute" (click)="goBack()">Back</div>
 
-			<app-icon class="apps" [iconName]=" 'white-shield' " [iconSize]="30" isButton="true" (click)="
+			<app-icon [popper]="appsPopper" popperTrigger="hover" class="apps" [iconName]=" 'white-shield' " [iconSize]="30" isButton="true" (click)="
 				dataService.blur = true;
 				dataService.showAppsOverlay = true;
 			"></app-icon>
