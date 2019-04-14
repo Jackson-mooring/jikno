@@ -19,7 +19,7 @@ export class DataService {
 		private router: Router,
 		private routeLocation: Location,
 		) {
-		router.events.forEach((event) => {
+		this.router.events.forEach((event) => {
 			if (event instanceof NavigationStart) {
 				this.secondaryRoute = false;
 				this.routes.push(this.routeLocation.path());
