@@ -13,12 +13,18 @@
 		<div
 			[hidden]="waiting"
 			class="letter"
+			*ngIf="!error"
 			
 			[style.fontSize]="avatarSize * 0.7 + 'px'"
 			[style.top]="avatarSize * 0.08 + 'px'"
 		>{{letter}}</div>
-		<div class="loader" *ngIf="waiting" [style.marginTop]="avatarSize * 0.2 + 'px'">
+		<div *ngIf="error" class="retry" [style.marginTop]="avatarSize * 0.25 + 'px'">
+			<app-icon iconName="arrow-loop" isButton="true" [iconSize]="avatarSize * 0.5" (click)="getAvatar()"></app-icon>
+		</div>
+
+		<div class="loader" *ngIf="waiting" [style.marginTop]="avatarSize * 0.25 + 'px'">
 			<app-icon [iconSize]="avatarSize * 0.5" iconName="loader"></app-icon>
 		</div>
 	</div>
+	
 </div>

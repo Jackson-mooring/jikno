@@ -9,13 +9,13 @@ import { AvatarService } from '../service/avatar.service';
 export class AvatarComponent implements OnInit {
 
 	@Input() avatarSize: number;
-	@Input() avatarClick = () => {console.log("Clicked on avatar")};
+	@Input() avatarClick = () => { console.log("Clicked on avatar") };
 	@Input() shouldBounce = false;
 	@Input() isCircle = true;
 	@Input() showShadow: boolean;
 
 	public image = '';
-	public color = '#333333';
+	public color = '#021c55';
 	public letter = '';
 	public error = false;
 	public waiting = true;
@@ -25,6 +25,16 @@ export class AvatarComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
+		this.getAvatar();
+	}
+
+	getAvatar() {
+		this.image = '';
+		this.color = '#021c55';
+		this.letter = '';
+		this.error = false;
+		this.waiting = true;
+		this.showShadow = undefined;
 		this.avatar.getAvatar().subscribe(res => {
 			this.letter = res.letter;
 			this.color = res.color;
