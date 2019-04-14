@@ -7,7 +7,7 @@
 
 	<div class="bar" [@showHideBar]="dataService.sidebarIsIn ? 'in' : 'out' ">
 		<div class="header">
-			<app-avatar avatarSize="150"></app-avatar>
+			<app-avatar class="avatar" avatarSize="150"></app-avatar>
 		</div>
 		<div class="main">
 			<habits-sidebar *ngIf=" route == '/habits' "></habits-sidebar>
