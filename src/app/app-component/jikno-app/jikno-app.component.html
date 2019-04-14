@@ -1,6 +1,6 @@
 <div class="over">
 	<div class="navbar" [@blurInOut]="dataService.blur ? 'in' : 'out'">
-		<div class="container">
+		<div class="whole">
 
 			<app-icon *ngIf="!dataService.secondaryRoute" class="menu" [iconName]=" 'menu' " [iconSize]="30" isButton="true" (click)="
 				dataService.sidebarIsIn = true;
@@ -24,7 +24,7 @@
 		</div>
 	</div>
 
-	<div class="container main" [@blurInOut]="dataService.blur ? 'in' : 'out'">
+	<div class="whole main" [@blurInOut]="dataService.blur ? 'in' : 'out'">
 		<router-outlet></router-outlet>
 	</div>
 
