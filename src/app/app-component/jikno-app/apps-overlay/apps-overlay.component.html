@@ -55,7 +55,7 @@
 			<h3><a routerLink="/library">Search the library</a></h3>
 		</div>
 
-		<div class="center" [hidden]="appsOverlayService.error.length != 0 && appsOverlayService.loading && appsOverlayService.apps.length != 0">
+		<div class="center" [hidden]="appsOverlayService.error.length != 0 || appsOverlayService.loading || appsOverlayService.apps.length != 0">
 			<h1>No Apps</h1>
 			<p>But you might find one in the library.</p>
 			<h3><a routerLink="/library">Search the library</a></h3>

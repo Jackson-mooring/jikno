@@ -78,9 +78,12 @@ export class AppsOverlayComponent implements OnInit {
 	checkResults() {
 		let results = false;
 
-		this.appsOverlayService.apps.map(app => {
-			if (this.searchService.simpleSearch(this.searchQuery, app.name, app.keyWords.join('|'))) results = true
-		})
+		if (this.appsOverlayService.apps == null) this.results = results;
+		else {
+			this.appsOverlayService.apps.map(app => {
+				if (this.searchService.simpleSearch(this.searchQuery, app.name, app.keyWords.join('|'))) results = true
+			})
+		}
 
 		this.results = results;
 	}
