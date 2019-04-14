@@ -26,6 +26,9 @@ export class AppsOverlayService {
 	}
 
 	getApps() {
+		this.loading = true;
+		this.error = '';
+
 		const queryParams = `?key=${JIKNO_API_KEY}&action=get_content`;
 		const body = `email=${this.user.getUser().email}&password=${this.user.getUser().password}&branch_name=user_apps`;
 		this.http.post<API_Response>(JIKNO_API_ROOT + queryParams, body, POST_HEADERS)

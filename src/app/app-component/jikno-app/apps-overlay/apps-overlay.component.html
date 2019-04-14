@@ -49,10 +49,19 @@
 			></app-dragover>
 		</div>
 
-		<div class="no-matches" [hidden]="results">
+		<div class="center" [hidden]="results">
 			<h1>No Results</h1>
 			<p>You might find an app like this somewhere else though.</p>
 			<h3><a routerLink="/library">Search the library</a></h3>
+		</div>
+
+		<div class="center" [hidden]="!appsOverlayService.loading">
+			<app-icon iconSize="50" iconName="loader"></app-icon>
+		</div>
+		
+		<div class="center no-dismiss" [hidden]="appsOverlayService.error.length == 0">
+			<p>{{appsOverlayService.error}}</p>
+			<h3><a (click)="appsOverlayService.getApps()">Retry</a></h3>
 		</div>
 
 	</div>
