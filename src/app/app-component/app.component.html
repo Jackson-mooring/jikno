@@ -5,19 +5,22 @@
 
 	<div *ngIf="isApp()">
 		<jikno-app></jikno-app>
-	</div>
 
-	<div class="retry" (click)="log('hi')"></div>
+		<div [class.offline]="!dataService.isInternet" [class.online]="dataService.isInternet">
+			<span *ngIf="!dataService.isInternet">Offline</span>
+			<span *ngIf="dataService.isInternet">Online</span>
+			<app-icon iconName="arrow-loop" iconSize="15" isButton="true" [shouldSpin]="syncService.isSyncing"
+				class="icon" (click)="retryAll(); syncService.sync()"></app-icon>
+			<app-icon [popper]="appsPopper" popperTrigger="click" iconName="circle-question" class="icon" iconSize="18"
+				isButton="true"></app-icon>
 
-	<div [class.offline]="!dataService.isInternet" [class.online]="dataService.isInternet">
-		<span *ngIf="!dataService.isInternet">Offline</span>
-		<span *ngIf="dataService.isInternet">Online</span>
-		<app-icon iconName="arrow-loop" iconSize="15" isButton="true" [shouldSpin]="syncService.isSyncing" class="icon" (click)="retryAll(); syncService.sync()"></app-icon>
-		<app-icon [popper]="appsPopper" popperTrigger="click" iconName="circle-question" class="icon" iconSize="18" isButton="true"></app-icon>
-		
-		<popper-content #appsPopper>
-			<span *ngIf="dataService.isInternet">All&nbsp;changes&nbsp;will&nbsp;be&nbsp;saved in&nbsp;your&nbsp;database.</span>
-			<span *ngIf="!dataService.isInternet">Changes&nbsp;won't&nbsp;be&nbsp;lost, but&nbsp;they&nbsp;won't&nbsp;sync&nbsp;with your&nbsp;other&nbsp;devices.</span>
-		</popper-content>
+			<popper-content #appsPopper>
+				<span *ngIf="dataService.isInternet">All&nbsp;changes&nbsp;will&nbsp;be&nbsp;saved
+					in&nbsp;your&nbsp;database.</span>
+				<span *ngIf="!dataService.isInternet">Changes&nbsp;won't&nbsp;be&nbsp;lost,
+					but&nbsp;they&nbsp;won't&nbsp;sync&nbsp;with your&nbsp;other&nbsp;devices.</span>
+			</popper-content>
+		</div>
+
 	</div>
 </div>
