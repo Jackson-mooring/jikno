@@ -14,7 +14,7 @@ export class DataService {
 	appBeingDraggedCurrentlyInAppsOverlay: string;
 	secondaryRoute = false;
 	routes = [];
-	isInternet = false;
+	isInternet = true;
 
 	constructor(
 		private router: Router,

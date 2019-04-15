@@ -6,6 +6,7 @@ import { AppRoutes } from '../routing/app-routes';
 import { NoLogin } from '../routing/no-login';
 import { UserService } from '../service/user/user.service';
 import { DataService } from '../service/data/data.service';
+import { SyncService } from '../service/sync/sync.service';
 
 @Component({
 	selector: 'app-root',
@@ -19,6 +20,7 @@ export class AppComponent implements OnInit {
 		private routeLocation: Location,
 		private userService: UserService,
 		private dataService: DataService,
+		public syncService: SyncService,
 	) { }
 
 	ngOnInit() {
