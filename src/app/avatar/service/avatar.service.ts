@@ -6,6 +6,7 @@ import { API_Response } from 'src/app/model/api-response';
 import { JIKNO_API_ROOT, POST_HEADERS, JIKNO_API_KEY } from '../../constants/constants';
 import { retry, timeout, catchError, map } from 'rxjs/operators';
 import { UserService } from 'src/app/service/user/user.service';
+import { DataService } from 'src/app/service/data/data.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -15,6 +16,7 @@ export class AvatarService {
 	constructor(
 		private http: HttpClient,
 		private user: UserService,
+		private dataService: DataService,
 	) { }
 
 	getAvatar(): Observable<AvatarResponse> {
@@ -35,18 +37,24 @@ export class AvatarService {
 	}
 
 	private manipulateValues(values: API_Response): AvatarResponse {
-		if (values.code != "OK") return {
-			color: '#021c55',
-			letter: '',
-			image: '',
-			error: true
-		}
-		if (this.user.isUser) return {
-			color: values.data.avatar ? '' : (values.data.color ? values.data.color : '#021c55'),
-			letter: values.data.avatar ? '' : (this.user.getUser().email.charAt(0).toUpperCase()),
-			image: values.data.avatar ? values.data.avatar : '',
-			error: false
-		}; else {
+		if (values.code != "OK") {
+			this.dataService.isInternet = false;
+			return {
+				color: '#021c55',
+				letter: '',
+				image: '',
+				error: true
+			}
+		}if (this.user.isUser) {
+			this.dataService.isInternet = true;
+			return {
+				color: values.data.avatar ? '' : (values.data.color ? values.data.color : '#021c55'),
+				letter: values.data.avatar ? '' : (this.user.getUser().email.charAt(0).toUpperCase()),
+				image: values.data.avatar ? values.data.avatar : '',
+				error: false
+			}
+		} else {
+			this.dataService.isInternet = false;
 			return {
 				color: '#021c55',
 				letter: '',

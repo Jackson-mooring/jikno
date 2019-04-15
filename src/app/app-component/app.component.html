@@ -7,10 +7,12 @@
 		<jikno-app></jikno-app>
 	</div>
 
+	<div class="retry" (click)="log('hi')"></div>
+
 	<div [class.offline]="!dataService.isInternet" [class.online]="dataService.isInternet">
 		<span *ngIf="!dataService.isInternet">Offline</span>
 		<span *ngIf="dataService.isInternet">Online</span>
-		<app-icon iconName="arrow-loop" iconSize="15" isButton="true" [shouldSpin]="syncService.isSyncing" class="icon" (click)="syncService.sync()"></app-icon>
+		<app-icon iconName="arrow-loop" iconSize="15" isButton="true" [shouldSpin]="syncService.isSyncing" class="icon" (click)="retryAll(); syncService.sync()"></app-icon>
 		<app-icon [popper]="appsPopper" popperTrigger="click" iconName="circle-question" class="icon" iconSize="18" isButton="true"></app-icon>
 		
 		<popper-content #appsPopper>
