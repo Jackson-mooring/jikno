@@ -18,10 +18,11 @@ export class AppComponent implements OnInit {
 		private router: Router,
 		private routeLocation: Location,
 		private userService: UserService,
-		private dataService: DataService
+		private dataService: DataService,
 	) { }
 
 	ngOnInit() {
+		if (localStorage.getItem('redirect') !== null) this.router.navigateByUrl(localStorage.getItem('redirect'));
 	}
 
 	isApp(): boolean {
