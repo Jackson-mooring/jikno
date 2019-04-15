@@ -25,7 +25,6 @@ export class AppsOverlayService {
 		private dataService: DataService,
 	) {
 		this.getApps();
-		this.subData();
 	}
 
 	getApps() {

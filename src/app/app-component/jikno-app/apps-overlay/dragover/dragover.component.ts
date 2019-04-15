@@ -37,6 +37,8 @@ export class DragoverComponent implements OnInit {
 		this.dataService.appBeingDraggedCurrentlyInAppsOverlay = undefined;
 		
 		new Audio("../../../../../assets/sound/achievement_unlocked.mp3").play();
+
+		this.appsOverlayService.subData();
 	}
 
 }
