@@ -96,4 +96,8 @@ export class AppsOverlayComponent implements OnInit {
 		return val;
 	}
 
+	stringIs(string: string): boolean {
+		return string.length != 0;
+	}
+
 }

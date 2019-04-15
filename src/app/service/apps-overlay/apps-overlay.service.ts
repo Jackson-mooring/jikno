@@ -14,7 +14,7 @@ import { UserService } from '../user/user.service';
 })
 export class AppsOverlayService {
 
-	error = '';
+	error: string = '';
 	loading = false;
 	apps: AppData[] = []
 
@@ -40,7 +40,9 @@ export class AppsOverlayService {
 				return of({correct: false, message: "Could not connect to database"})
 			}),
 			map((res: API_Response) => {
+				if (res.data == null) res.data = [];
 				console.log(res);
+
 				if (res.code == "OK") return {
 					correct: true,
 					message: res.data
