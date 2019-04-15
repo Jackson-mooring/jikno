@@ -54,6 +54,8 @@ export class AppsOverlayService {
 			this.loading = false;
 			if (data.correct) this.apps = data.message;
 			else this.error = data.message;
+
+			this.dataService.isInternet = data.correct;
 		})
 	}
 
@@ -68,6 +70,7 @@ export class AppsOverlayService {
 			map((res: API_Response) => res.code == "OK" ? true : false)
 		)
 		.subscribe(res => {
+			if (!res) localStorage.setItem('user_apps', JSON.stringify(this.apps));
 			this.dataService.isInternet = res;
 		})
 	}

@@ -53,4 +53,15 @@ export class AppComponent implements OnInit {
 		return isApp;
 	}
 
+	retryAll() {
+		const retry = document.getElementsByClassName("retry") as HTMLCollectionOf<HTMLElement>;
+		for (let x in retry) {
+			if (retry[x].click) retry[x].click();
+		}
+	}
+
+	log(val) {
+		console.log(val);
+	}
+
 }

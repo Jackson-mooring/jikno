@@ -67,7 +67,7 @@
 		
 		<div class="center no-dismiss" [hidden]="!stringIs(appsOverlayService.error)">
 			<p>{{appsOverlayService.error}}</p>
-			<h3><a (click)="appsOverlayService.getApps()">Retry</a></h3>
+			<h3><a class="retry" (click)="appsOverlayService.getApps()">Retry</a></h3>
 		</div>
 
 	</div>
