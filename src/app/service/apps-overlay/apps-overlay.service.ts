@@ -8,6 +8,7 @@ import { map, retry, timeout, catchError } from 'rxjs/operators';
 import { ValidationResponse } from '../../model/validationResponse';
 import { of } from 'rxjs';
 import { UserService } from '../user/user.service';
+import { DataService } from '../data/data.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -21,8 +22,10 @@ export class AppsOverlayService {
 	constructor(
 		private http: HttpClient,
 		private user: UserService,
+		private dataService: DataService,
 	) {
 		this.getApps();
+		this.subData();
 	}
 
 	getApps() {
@@ -35,13 +38,9 @@ export class AppsOverlayService {
 		.pipe(
 			retry(10),
 			timeout(5000),
-			catchError(err => {
-				console.error(err);
-				return of({correct: false, message: "Could not connect to database"})
-			}),
+			catchError(err => of({correct: false, message: "Could not connect to database"})),
 			map((res: API_Response) => {
 				if (res.data == null) res.data = [];
-				console.log(res);
 
 				if (res.code == "OK") return {
 					correct: true,
@@ -56,6 +55,21 @@ export class AppsOverlayService {
 			this.loading = false;
 			if (data.correct) this.apps = data.message;
 			else this.error = data.message;
+		})
+	}
+
+	subData() {
+		const params = `?key=${JIKNO_API_KEY}&action=sub_content`;
+		const body = `email=${this.user.getUser().email}&password=${this.user.getUser().password}&branch_name=user_apps&content=${JSON.stringify(this.apps)}`;
+		this.http.post<API_Response>(JIKNO_API_ROOT + params, body, POST_HEADERS)
+		.pipe(
+			retry(3),
+			timeout(5000),
+			catchError(err => of(false)),
+			map((res: API_Response) => res.code == "OK" ? true : false)
+		)
+		.subscribe(res => {
+			this.dataService.isInternet = res;
 		})
 	}
 
