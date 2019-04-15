@@ -5,3 +5,7 @@
 <div *ngIf="isApp()">
 	<jikno-app></jikno-app>
 </div>
+
+<div class="offline" [hidden]="dataService.isInternet">
+	Offline
+</div>
