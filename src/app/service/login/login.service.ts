@@ -1,4 +1,3 @@
-// tslint:disable
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ValidationResponse } from '../../model/validationResponse';

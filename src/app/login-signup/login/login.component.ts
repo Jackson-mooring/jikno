@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
 
 		this.loginService.logUser(this.email, this.password)
 		.subscribe(res => {
-			if (res.correct) alert("Logged");
+			if (res.correct) this.router.navigateByUrl('/home');
 			else this.error = res.message;
 		});
 	}
