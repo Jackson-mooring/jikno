@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
 
 	ngOnInit() {
 	}
+
 	subForm() {
 		this.error = '';
 		event.preventDefault();
