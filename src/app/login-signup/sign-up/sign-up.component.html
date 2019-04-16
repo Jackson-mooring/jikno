@@ -30,14 +30,14 @@
 
 				<app-icon
 					*ngIf="validateValuesService.validateEmail(email).correct"
-					class="icon x-check"
+					class="icon x-check check"
 					iconName="check"
 					iconSize="20"
 				></app-icon>
 
 				<app-icon
 					*ngIf="!validateValuesService.validateEmail(email).correct"
-					class="icon x-check"
+					class="icon x-check times"
 					iconName="times"
 					iconSize="15"
 				></app-icon>
@@ -75,14 +75,14 @@
 
 				<app-icon
 					*ngIf="validateValuesService.validatePassword(password).correct"
-					class="icon x-check"
+					class="icon x-check check"
 					iconName="check"
 					iconSize="20"
 				></app-icon>
 
 				<app-icon
 					*ngIf="!validateValuesService.validatePassword(password).correct"
-					class="icon x-check"
+					class="icon x-check times"
 					iconName="times"
 					iconSize="15"
 				></app-icon>
