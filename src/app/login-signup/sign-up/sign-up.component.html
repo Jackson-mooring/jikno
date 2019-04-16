@@ -139,14 +139,14 @@
 
 				<app-icon
 					*ngIf="password === confirmPassword && validateValuesService.validatePassword(password).correct"
-					class="icon x-check"
+					class="icon x-check check"
 					iconName="check"
 					iconSize="20"
 				></app-icon>
 
 				<app-icon
 					*ngIf="!(password === confirmPassword && validateValuesService.validatePassword(password).correct)"
-					class="icon x-check"
+					class="icon x-check times"
 					iconName="times"
 					iconSize="15"
 				></app-icon>
