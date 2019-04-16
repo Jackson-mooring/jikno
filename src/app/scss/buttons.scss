@@ -1,0 +1,24 @@
+button {
+	border: none;
+	cursor: pointer;
+	background-color: var(--theme1);
+	padding: 7px;
+	border-radius: 5px;
+	font-size: 1rem;
+	color: var(--secondary);
+	background-color: var(--theme1-grad1);
+	background-image: linear-gradient(var(--theme1-grad1), var(--theme1-grad2));
+	outline: none;
+	transition: 0.3s;
+}
+button.block {
+	display: block;
+	width: 100%;
+}
+button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+button:active {
+	opacity: 0.5;
+}
