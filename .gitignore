@@ -47,3 +47,6 @@ Thumbs.db
 
 # Snapshots
 storybook-static
+
+# API keys and other valuable info
+constants.ts

@@ -1,0 +1,15 @@
+<div class="over">
+	<div class="main">
+		<div class="left-side">
+			<div class="card">
+				<app-enter-email *ngIf="routeLocation.path() == '/forgot-password/enter-email'"></app-enter-email>
+				<app-enter-code *ngIf="routeLocation.path() == '/forgot-password/enter-code'"></app-enter-code>
+				<app-new-password *ngIf="routeLocation.path() == '/new-password'"></app-new-password>
+				<app-continue *ngIf="routeLocation.path() == '/forgot-password/continue'"></app-continue>
+			</div>
+		</div>
+		<div class="right-side">
+			<img src="../../../assets/logo-500.png" alt="Loading..." class="logo">
+		</div>
+	</div>
+</div>

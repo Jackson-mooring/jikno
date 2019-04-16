@@ -1,4 +1,4 @@
 export class ValidationResponse {
 	correct: boolean;
-	message: string;
+	message: any;
 }

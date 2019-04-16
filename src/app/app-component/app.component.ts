@@ -35,13 +35,18 @@ export class AppComponent implements OnInit {
 			}
 		}
 
-		NoLogin.map(route => {
-			if (route != this.routeLocation.path().slice(0, route.length)) {
-				// if (!this.userService.isUser()) this.router.navigateByUrl('/login');
-			};
-		})
+		let routeIt = false;
+		if (!this.userService.isUser()) {
+			routeIt = true;
+			NoLogin.map(route => {
+				if (route === this.routeLocation.path().slice(0, route.length)) {
+					routeIt = false;
+				};
+			})
+		}
+		if (routeIt) this.router.navigateByUrl('/login');
 
-		console.log('Created Route Actions');
+		console.log('App updated');
 		return isApp;
 	}
 

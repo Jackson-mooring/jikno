@@ -1,0 +1,60 @@
+.cover
+	position: fixed
+	top: 0
+	right: 0
+	left: 0
+	bottom: 0
+	z-index: 10000
+	visibility: hidden
+	color: var(--secondary)
+.bar
+	height: 50px
+	text-align: center
+	overflow: auto
+	margin: 20px
+	margin-bottom: 0
+.input
+	display: block
+	max-width: 300px
+	margin: auto
+	background-color: rgba(255, 255, 255, 0.1)
+	border-radius: 5px
+	border: 1px solid rgba(255, 255, 255, 0.3)
+	padding: 5px 8px
+input
+	background-color: rgba(0, 0, 0, 0)
+	border: none
+	outline: none
+	font-size: 18px
+	width: calc(100% - 50px)
+	color: var(--secondary)
+::placeholder
+	color: var(--secondary)
+	opacity: 0.6
+.search
+	position: relative
+	top: 2px
+	right: 8px
+.times
+	position: relative
+	top: 2px
+	left: 8px
+
+.main
+	height: calc(100vh - 70px)
+	margin: 0 20px
+	overflow: auto
+	text-align: center
+	@media (min-width: 780px)
+		margin: 0 100px
+	@media (min-width: 1300px)
+		margin: 0 200px
+
+.app-target
+	display: inline-block
+
+.center
+	position: absolute
+	top: calc(50vh - calc(160.312px / 2))
+	width: 100vw
+	text-align: center
