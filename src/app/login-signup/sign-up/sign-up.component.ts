@@ -20,6 +20,7 @@ export class SignUpComponent implements OnInit {
 
 	ngOnInit() {
 	}
+
 	public validatePassed(): boolean {
 		if (this.validateValuesService.validatePassword(this.password).correct && this.validateValuesService.validateEmail(this.email).correct && this.password === this.confirmPassword) return true;
 		return false;
