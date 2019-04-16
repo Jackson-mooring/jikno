@@ -10,9 +10,9 @@ export class SignUpComponent implements OnInit {
 	password = '';
 	email = '';
 	confirmPassword = '';
-	showTolltipE:boolean
-	showTolltipP:boolean
-	showTolltipCP:boolean
+	showTooltipE:boolean
+	showTooltipP:boolean
+	showTooltipCP:boolean
 
 	constructor(
 		public validateValuesService: ValidateValuesService
