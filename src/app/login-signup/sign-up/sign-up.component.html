@@ -118,7 +118,7 @@
 					<span class="tooltip bad"
 						[class.good]="(password === confirmPassword && password.length !== 0)"
 					>
-						{{ password === confirmPassword && password.length !== 0 ? "Looks good!" : "Passwords must match!" }}
+						{{ password.length === 0 ? "Your password can't be nothing..." : (password === confirmPassword && password.length !== 0 ? "Looks good!" : "Passwords must match!") }}
 					</span>
 				</div>
 
