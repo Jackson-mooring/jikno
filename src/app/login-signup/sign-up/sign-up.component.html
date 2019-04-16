@@ -141,14 +141,14 @@
 				>
 
 				<app-icon
-					*ngIf="password === confirmPassword"
+					*ngIf="password === confirmPassword && password.length !== 0"
 					class="icon x-check check"
 					iconName="check"
 					iconSize="20"
 				></app-icon>
 
 				<app-icon
-					*ngIf="!(password === confirmPassword)"
+					*ngIf="!(password === confirmPassword && password.length !== 0)"
 					class="icon x-check times"
 					iconName="times"
 					iconSize="15"
