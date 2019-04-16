@@ -1,7 +1,23 @@
 <div class="input">
 	<form action="">
+		
+
+			<!-- Email Start -->
 		<label>
 			<div class="input-container">
+				<div
+					class="tooltip-container"
+					*ngIf="showTooltipE"
+				>
+					<span class="tooltip bad"
+						[class.good]="validateValuesService.validateEmail(email).correct"
+					>
+						{{ validateValuesService.validateEmail(email).message }}
+					</span>
+				</div>
+
+
+
 				<input
 					type="email"
 					placeholder="Enter Email..."
@@ -9,10 +25,44 @@
 					class="email"
 					[(ngModel)]="email"
 					name="email"
+					(focus)="showTooltipE = true"
+					(blur)="showTooltipE = false"
 				>
+
+				<app-icon
+					*ngIf="validateValuesService.validateEmail(email).correct"
+					class="icon x-check check"
+					iconName="check"
+					iconSize="20"
+				></app-icon>
+
+				<app-icon
+					*ngIf="!validateValuesService.validateEmail(email).correct"
+					class="icon x-check times"
+					iconName="times"
+					iconSize="15"
+				></app-icon>
 			</div>
-			
+		</label>
+			<!-- Email End -->
+
+
+
+			<!-- Password Start -->
+		<label>
 			<div class="input-container">
+
+				<div
+					class="tooltip-container"
+					*ngIf="showTooltipP"
+				>
+					<span class="tooltip bad"
+						[class.good]="validateValuesService.validatePassword(password).correct"
+					>
+						{{ validateValuesService.validatePassword(password).message }}
+					</span>
+				</div>
+
 				<input
 					type="password"
 					placeholder="Enter Password..."
@@ -22,15 +72,31 @@
 					[(ngModel)]="password"
 					name="password"
 					spellcheck="false"
+					(focus)="showTooltipP = true"
+					(blur)="showTooltipP = false"
 				>
+
+				<app-icon
+					*ngIf="validateValuesService.validatePassword(password).correct"
+					class="icon x-check check"
+					iconName="check"
+					iconSize="20"
+				></app-icon>
+
+				<app-icon
+					*ngIf="!validateValuesService.validatePassword(password).correct"
+					class="icon x-check times"
+					iconName="times"
+					iconSize="15"
+				></app-icon>
 
 				<app-icon
 					class="icon"
 					iconName="eye"
 					iconSize="25"
 					isButton="true"
-					(click)="passwordInput.type = 'password' "
-					*ngIf="passwordInput.type == 'text' "
+					(click)="passwordInput.type = 'password'"
+					*ngIf="passwordInput.type == 'text'"
 				></app-icon>
 
 				<app-icon
@@ -38,12 +104,29 @@
 					iconName="eye-slash"
 					iconSize="25"
 					isButton="true"
-					(click)="passwordInput.type = 'text' "
-					*ngIf="passwordInput.type == 'password' "
+					(click)="passwordInput.type = 'text'"
+					*ngIf="passwordInput.type == 'password'"
 				></app-icon>
 			</div>
+		</label>
+			<!-- Password End -->
 
+
+			<!-- Confirm Password Start -->
+		<label>
 			<div class="input-container">
+
+				<div
+					class="tooltip-container"
+					*ngIf="showTooltipCP"
+				>
+					<span class="tooltip bad"
+						[class.good]="(password === confirmPassword && password.length !== 0)"
+					>
+						{{ password.length === 0 ? "Your password can't be nothing..." : (password === confirmPassword && password.length !== 0 ? "Looks good!" : "Passwords must match!") }}
+					</span>
+				</div>
+
 				<input
 					type="password"
 					placeholder="Confirm Password..."
@@ -53,15 +136,31 @@
 					[(ngModel)]="confirmPassword"
 					name="ConfirmInput"
 					spellcheck="false"
+					(focus)="showTooltipCP = true"
+					(blur)="showTooltipCP = false"
 				>
+
+				<app-icon
+					*ngIf="password === confirmPassword && password.length !== 0"
+					class="icon x-check check"
+					iconName="check"
+					iconSize="20"
+				></app-icon>
+
+				<app-icon
+					*ngIf="!(password === confirmPassword && password.length !== 0)"
+					class="icon x-check times"
+					iconName="times"
+					iconSize="15"
+				></app-icon>
 
 				<app-icon
 					class="icon"
 					iconName="eye"
 					iconSize="25"
 					isButton="true"
-					(click)="ConfirmInput.type = 'password' "
-					*ngIf="ConfirmInput.type == 'text' "
+					(click)="ConfirmInput.type = 'password'"
+					*ngIf="ConfirmInput.type == 'text'"
 				></app-icon>
 
 				<app-icon
@@ -69,12 +168,13 @@
 					iconName="eye-slash"
 					iconSize="25"
 					isButton="true"
-					(click)="ConfirmInput.type = 'text' "
-					*ngIf="ConfirmInput.type == 'password' "
+					(click)="ConfirmInput.type = 'text'"
+					*ngIf="ConfirmInput.type == 'password'"
 				></app-icon>
 			</div>
 		</label>
+			<!-- Confirm Password End -->
 
-		<button [disabled]="validatePassed()">Login</button>
+		<button [disabled]="!validatePassed()">Create Account</button>
 	</form>
 </div>
