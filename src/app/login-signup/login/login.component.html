@@ -1,5 +1,9 @@
 <div class="input">
-	<form action="">
+	<form action="" (submit)="subForm()">
+
+		<div class="error" [@slideError]="error.length == 0 ? 'down' : 'up' ">
+			<p>{{error}}</p>
+		</div>
 
 		<label>
 			<div class="input-container">
