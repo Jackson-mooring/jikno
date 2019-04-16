@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../service/login/login.service';
 import { trigger, state, style, animate, transition, } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-login',
@@ -27,7 +28,8 @@ export class LoginComponent implements OnInit {
 	error = '';
 
 	constructor(
-		private loginService: LoginService
+		private loginService: LoginService,
+    private router: Router,
 	) { }
 
 	ngOnInit() {
