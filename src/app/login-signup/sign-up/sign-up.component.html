@@ -42,11 +42,13 @@
 					iconSize="15"
 				></app-icon>
 			</div>
+		</label>
 			<!-- Email End -->
 
 
 
 			<!-- Password Start -->
+		<label>
 			<div class="input-container">
 
 				<div
@@ -105,10 +107,12 @@
 					*ngIf="passwordInput.type == 'password'"
 				></app-icon>
 			</div>
+		</label>
 			<!-- Password End -->
 
 
 			<!-- Confirm Password Start -->
+		<label>
 			<div class="input-container">
 
 				<div
@@ -167,8 +171,9 @@
 					*ngIf="ConfirmInput.type == 'password'"
 				></app-icon>
 			</div>
-			<!-- Confirm Password End -->
 		</label>
+			<!-- Confirm Password End -->
+
 
 		<button [disabled]="!validatePassed()">Login</button>
 	</form>
