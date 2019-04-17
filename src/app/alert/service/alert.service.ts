@@ -36,8 +36,8 @@ export class AlertService {
 			if (this.countdownString == undefined && this.showAlert && this.showCountdown) {
 				this.countdownTime--;
 				if (this.countdownTime <= 0) {
-					this.reset();
 					this.onclose();
+					this.reset();
 				}
 			}
 		}, 1000)
