@@ -18,6 +18,8 @@ import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
 import { AppsOverlayComponent } from './app-component/jikno-app/apps-overlay/apps-overlay.component';
 import { AppDetailComponent } from './app-component/jikno-app/apps-overlay/app-detail/app-detail.component';
 import { DragoverComponent } from './app-component/jikno-app/apps-overlay/dragover/dragover.component';
+import { AlertComponent } from './alert/component/alert.component';
+import { NoSpacesPipe } from './pipes/no-spaces/no-spaces.pipe';
 
 @NgModule({
 	declarations: [
@@ -27,6 +29,8 @@ import { DragoverComponent } from './app-component/jikno-app/apps-overlay/dragov
 		AppsOverlayComponent,
 		AppDetailComponent,
 		DragoverComponent,
+		AlertComponent,
+		NoSpacesPipe,
 	],
 	imports: [
 		BrowserModule,

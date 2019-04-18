@@ -1,0 +1,47 @@
+.over
+	overflow: hidden
+	position: absolute
+	bottom: 15px
+	right: 200px
+	left: 200px
+	@media (max-width: 600px)
+		right: 150px
+		left: 150px
+	@media (max-width: 450px)
+		right: 15px 
+		left: 150px
+	@media (min-width: 900px)
+		right: 300px
+		left: 300px
+	@media (min-width: 1200px)
+		right: 400px
+		left: 400px
+	@media (min-width: 1500px)
+		right: 550px
+		left: 550px
+	@media (min-width: 1700px)
+		right: 750px
+		left: 750px
+	background-color: var(--secondary)
+	border-radius: 5px
+	padding: 10px
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
+	color: var(--primary)
+	visibility: hidden
+
+.main
+	width: calc(90% - 40px)
+	overflow: hidden
+	word-break: break-all
+
+.icon
+	position: absolute
+	top: 9px
+	right: 10px
+	color: var(--primary)
+.countdown
+	position: absolute
+	top: 4px
+	right: 10px
+	color: var(--primary)
+	font-size: 27px

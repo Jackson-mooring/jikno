@@ -6,6 +6,8 @@ import { AppRoutes } from '../routing/app-routes';
 import { NoLogin } from '../routing/no-login';
 import { UserService } from '../service/user/user.service';
 import { DataService } from '../service/data/data.service';
+import { SyncService } from '../service/sync/sync.service';
+import { AlertService } from '../alert/service/alert.service';
 
 @Component({
 	selector: 'app-root',
@@ -18,10 +20,18 @@ export class AppComponent implements OnInit {
 		private router: Router,
 		private routeLocation: Location,
 		private userService: UserService,
-		private dataService: DataService
+		private dataService: DataService,
+		private alertService: AlertService,
+		public syncService: SyncService,
 	) { }
 
 	ngOnInit() {
+		if (localStorage.getItem('redirect') !== null) this.router.navigateByUrl(localStorage.getItem('redirect'));
+		setTimeout(() => {
+			this.alertService.showAlert = true;
+			this.alertService.message = "Wow!  What a party!  Here is a bunch of nonesense: Some text. Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.";
+			this.alertService.showCountdown = true;
+		}, 5000)
 	}
 
 	isApp(): boolean {
@@ -48,6 +58,17 @@ export class AppComponent implements OnInit {
 
 		console.log('App updated');
 		return isApp;
+	}
+
+	retryAll() {
+		const retry = document.getElementsByClassName("retry") as HTMLCollectionOf<HTMLElement>;
+		for (let x in retry) {
+			if (retry[x].click) retry[x].click();
+		}
+	}
+
+	log(val) {
+		console.log(val);
 	}
 
 }
