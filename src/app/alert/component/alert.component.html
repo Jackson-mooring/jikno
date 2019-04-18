@@ -1,4 +1,4 @@
-<div class="over" *ngIf="a.showAlert" (click)="a.onclick()">
+<div class="over" (click)="a.onclick()" [@slide]="a.showAlert ? 'up' : 'down' ">
 	<div class="main">{{a.message}}</div>
 	<app-icon *ngIf="!a.showCountdown" (click)="a.onclose(); a.reset();" class="icon" iconName="times" iconSize="15" isButton="true"></app-icon>
 	<div *ngIf="a.showCountdown" class="countdown">
