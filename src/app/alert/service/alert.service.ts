@@ -26,19 +26,21 @@ export class AlertService {
 
 	public reset() {
 		this.showAlert = false;
-		this.showCountdown = true;
-		this.message = '';
+		setInterval(() => {
+			this.showCountdown = true;
+			this.message = '';
 
-		this.countdownString = undefined;
-		this.countdownTime = 5;
-		this.shouldCountdown = true;
+			this.countdownString = undefined;
+			this.countdownTime = 5;
+			this.shouldCountdown = true;
 
-		this.linkText = undefined;
-		this.onLinkClick = () => { };
-		this.dismissOnLinkClick = true;
+			this.linkText = undefined;
+			this.onLinkClick = () => { };
+			this.dismissOnLinkClick = true;
 
-		this.onclick = () => { };
-		this.onclose = () => { };
+			this.onclick = () => { };
+			this.onclose = () => { };
+		}, 200)
 	}
 
 	private countdown() {
