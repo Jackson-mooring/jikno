@@ -19,7 +19,7 @@ export class SyncService {
 		this.sync(false);
 	}
 
-	sync(sendStatus: boolean) {
+	sync(sendStatus?: boolean) {
 		if (sendStatus === undefined) sendStatus = true;
 
 		this.isSyncing = true;
@@ -60,7 +60,12 @@ export class SyncService {
 	showAlert(positive: boolean) {
 		this.alertService.reset();
 		this.alertService.showAlert = true;
+		this.alertService.showCountdown = false;
 		this.alertService.message = positive ? "Everything up to date!" : "Could not connect to database!";
+		if (!positive) {
+			this.alertService.linkText = "Retry";
+			this.alertService.onLinkClick = () => {this.sync()}
+		}
 	}
 
 }

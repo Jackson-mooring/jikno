@@ -16,6 +16,10 @@ export class AlertService {
 	public countdownString: string;
 	public countdownTime: number = 10;
 
+	public linkText: string;
+	public onLinkClick: Function = () => { };
+	public dismissOnLinkClick: boolean = true;
+
 	public onclick: Function = () => { };
 	public onclose: Function = () => { };
 
@@ -26,6 +30,10 @@ export class AlertService {
 
 		this.countdownString = undefined;
 		this.countdownTime = 5;
+
+		this.linkText = undefined;
+		this.onLinkClick = () => { };
+		this.dismissOnLinkClick = true;
 
 		this.onclick = () => { };
 		this.onclose = () => { };
@@ -41,5 +49,10 @@ export class AlertService {
 				}
 			}
 		}, 1000)
+	}
+
+	public clickLink() {
+		this.onLinkClick();
+		if (this.dismissOnLinkClick) this.reset();
 	}
 }
