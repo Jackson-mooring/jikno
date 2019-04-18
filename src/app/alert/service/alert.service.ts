@@ -15,6 +15,7 @@ export class AlertService {
 
 	public countdownString: string;
 	public countdownTime: number = 10;
+	public shouldCountdown: boolean = true;
 
 	public linkText: string;
 	public onLinkClick: Function = () => { };
@@ -30,6 +31,7 @@ export class AlertService {
 
 		this.countdownString = undefined;
 		this.countdownTime = 5;
+		this.shouldCountdown = true;
 
 		this.linkText = undefined;
 		this.onLinkClick = () => { };
@@ -41,7 +43,7 @@ export class AlertService {
 
 	private countdown() {
 		setInterval(() => {
-			if (this.countdownString == undefined && this.showAlert && this.showCountdown) {
+			if (this.shouldCountdown && this.showAlert) {
 				this.countdownTime--;
 				if (this.countdownTime <= 0) {
 					this.onclose();
