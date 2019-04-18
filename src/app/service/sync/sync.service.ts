@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BRANCHES } from '../../constants/branches';
 import { SubDataService } from '../sub-data/sub-data.service';
 import { DataService } from '../data/data.service';
+import { AlertService } from '../../alert/service/alert.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -13,6 +14,7 @@ export class SyncService {
 	constructor(
 		private subData: SubDataService,
 		private dataService: DataService,
+		private alertService: AlertService,
 	) {
 		this.sync(false);
 	}
@@ -45,12 +47,20 @@ export class SyncService {
 	}
 
 	check(str: string) {
-		if (str.indexOf('0') === -1) {
-			if (this.dataService.isInternet) alert("Everything up to date!");
-			else alert("Could not connect to database!");
-		}else{
-			alert("Could not connect to database!");
-		}
+		setTimeout(() => {
+			if (str.indexOf('0') === -1) {
+				if (this.dataService.isInternet) this.showAlert(true);
+				else this.showAlert(false);
+			}else{
+				this.showAlert(false);
+			}
+		}, 1000)
+	}
+
+	showAlert(positive: boolean) {
+		this.alertService.reset();
+		this.alertService.showAlert = true;
+		this.alertService.message = positive ? "Everything up to date!" : "Could not connect to database!";
 	}
 
 }
