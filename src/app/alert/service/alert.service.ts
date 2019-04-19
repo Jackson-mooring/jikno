@@ -6,6 +6,8 @@ import { MessageBundle } from '@angular/compiler';
 })
 export class AlertService {
 
+	private toRun: Function[] = [];
+
 	constructor() {
 	}
 
@@ -34,6 +36,11 @@ export class AlertService {
 
 			this.onclick = () => { };
 			this.onclose = () => { };
+
+			if (this.toRun.length >= 1) {
+				this.toRun[this.toRun.length - 1]();
+				this.toRun.pop();
+			}
 		}, 300)
 	}
 
@@ -50,19 +57,23 @@ export class AlertService {
 		onclick: Function = () => { },
 		onclose: Function = () => { },
 	) {
-		this.reset();
-		setTimeout(() => {
-			this.showAlert = true;
-			this.countdownTime = countDownTime;
-			this.message = message;
-			this.onclick = onclick;
-			this.onclose = onclose;
-			this.dismissOnLinkClick = dismissOnLinkClick;
-			this.linkText = linkText;
-			this.onLinkClick = onLinkClick;
+		if (!this.showAlert) {
+			this.reset();
+			setTimeout(() => {
+				this.showAlert = true;
+				this.countdownTime = countDownTime;
+				this.message = message;
+				this.onclick = onclick;
+				this.onclose = onclose;
+				this.dismissOnLinkClick = dismissOnLinkClick;
+				this.linkText = linkText;
+				this.onLinkClick = onLinkClick;
 
-			if (countdown) this.countdown();
-		}, 300)
+				if (countdown) this.countdown();
+			}, 300)
+		}else{
+			this.toRun.push(() => {this.set(message, countdown, countDownTime, dismissOnLinkClick, linkText, onLinkClick, onclick, onclose)})
+		}
 	}
 
 	private countdown() {

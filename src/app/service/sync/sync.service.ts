@@ -58,7 +58,7 @@ export class SyncService {
 	}
 
 	showAlert(positive: boolean) {
-		this.alertService.set(positive ? "You're all up to date!" : "Could not connect to database!", true, 10000, true, positive ? undefined : "Retry")
+		this.alertService.set(positive ? "You're all up to date!" : "Could not connect to database!", true, positive ? 3000 : 10000, true, positive ? undefined : "Retry")
 	}
 
 }
