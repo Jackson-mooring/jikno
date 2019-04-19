@@ -6,4 +6,5 @@
 export const AppRoutes = [
 	'/home',
 	'/habits',
+	'/notifications'
 ]

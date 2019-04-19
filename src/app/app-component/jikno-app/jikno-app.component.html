@@ -1,30 +1,80 @@
 <div class="over">
-	<div class="navbar" [@blurInOut]="dataService.blur ? 'in' : 'out'">
+	<div
+		class="navbar"
+		[@blurInOut]="dataService.blur ? 'in' : 'out'"
+	>
 		<div class="whole">
+			<app-icon
+				*ngIf="!dataService.secondaryRoute"
+				class="menu"
+				[iconName]="'menu'"
+				[iconSize]="30"
+				isButton="true"
+				(click)="dataService.sidebarIsIn = true;
+        		dataService.blur = true;"
+			></app-icon>
 
-			<app-icon *ngIf="!dataService.secondaryRoute" class="menu" [iconName]=" 'menu' " [iconSize]="30" isButton="true" (click)="
-				dataService.sidebarIsIn = true;
-        		dataService.blur = true;
-			"></app-icon>
-			<app-icon class="menu" [iconName]=" 'angle-left' " [iconSize]="22" isButton="true" (click)="goBack()"
-				*ngIf="dataService.secondaryRoute"></app-icon>
-			<div class="back" *ngIf="dataService.secondaryRoute" (click)="goBack()">Back</div>
+			<app-icon
+				class="menu"
+				[iconName]="'angle-left'"
+				[iconSize]="22"
+				isButton="true"
+				(click)="goBack()"
+				*ngIf="dataService.secondaryRoute"
+			></app-icon>
 
-			<app-icon [popper]="appsPopper" popperTrigger="hover" class="apps" [iconName]=" 'white-shield' " [iconSize]="30" isButton="true" (click)="
-				dataService.blur = true;
-				dataService.showAppsOverlay = true;
-			"></app-icon>
+			<div
+				class="back"
+				*ngIf="dataService.secondaryRoute"
+				(click)="goBack()"
+			>Back</div>
 
-			<app-icon [popper]="settingsPopper" popperTrigger="hover" class="settings" [iconName]=" 'settings' " [iconSize]="30" isButton="true">
-			</app-icon>
+			<app-icon
+				[popper]="appsPopper"
+				popperTrigger="hover"
+				class="apps"
+				[iconName]="'white-shield'"
+				[iconSize]="30"
+				isButton="true"
+				(click)="dataService.blur = true;
+				dataService.showAppsOverlay = true;"
+			></app-icon>
+
+			<app-icon
+				[iconName]=" 'bell' "
+				[popper]="notiPopper"
+				popperTrigger="hover"
+				
+				[iconSize]="28.5"
+				class="noti"
+				style="position: absolute;
+				top: 20px;
+				right: calc(80px + var(--p-ipad));"
+				isButton="true"
+				routerLink='/notifications'
+			></app-icon>
+
+			<app-icon
+				[popper]="settingsPopper"
+				popperTrigger="hover"
+				class="settings"
+				[iconName]="'settings'"
+				[iconSize]="30"
+				isButton="true"
+			></app-icon>
 
 			<popper-content #settingsPopper>User Settings</popper-content>
+
 			<popper-content #appsPopper>My Apps</popper-content>
 
+			<popper-content #notiPopper>Notifications</popper-content>
 		</div>
 	</div>
 
-	<div class="whole main" [@blurInOut]="dataService.blur ? 'in' : 'out'">
+	<div
+		class="whole main"
+		[@blurInOut]="dataService.blur ? 'in' : 'out'"
+	>
 		<router-outlet></router-outlet>
 	</div>
 
