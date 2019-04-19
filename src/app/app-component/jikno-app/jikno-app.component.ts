@@ -20,7 +20,7 @@ import { AppRoutes } from '../../routing/app-routes';
 				filter: 'blur(0px)',
 			})),
 			transition('* => *', [
-				animate('200ms ease-in-out'),
+				animate('400ms ease-in-out'),
 			])
 		]),
 	]

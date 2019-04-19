@@ -14,13 +14,15 @@ import { AppsOverlayService } from '../../../service/apps-overlay/apps-overlay.s
 			state('in', style({
 				visibility: 'visible',
 				transform: 'scale(1, 1)',
+				opacity: '1',
 			})),
 			state('out', style({
 				visibility: 'hidden',
-				transform: 'scale(2, 2)',
+				transform: 'scale(1.5, 1.5)',
+				opacity: '0',
 			})),
 			transition('* => *', [
-				animate('200ms ease-in-out'),
+				animate('300ms ease-in-out'),
 			])
 		]),
 		trigger('fade', [
