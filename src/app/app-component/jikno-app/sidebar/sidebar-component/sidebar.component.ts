@@ -5,6 +5,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { DataService } from '../../../../service/data/data.service';
+import { TouchscreenService } from 'src/app/service/touchscreen/touchscreen.service';
 
 @Component({
 	selector: 'app-sidebar',
@@ -29,6 +30,7 @@ export class SidebarComponent implements OnInit {
 		public dataService: DataService,
 		private router: Router,
 		private routeLocation: Location,
+		public touchscreen: TouchscreenService,
 	) { }
 
 	route: string = '';

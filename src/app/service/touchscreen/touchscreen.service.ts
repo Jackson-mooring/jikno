@@ -15,4 +15,9 @@ export class TouchscreenService {
 			return false;
 		}
 	}
+
+	hover() {
+		if (this.isTouchscreen()) return 'none';
+		else return 'hover';
+	}
 }

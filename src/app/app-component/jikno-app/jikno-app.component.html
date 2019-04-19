@@ -31,7 +31,7 @@
 
 			<app-icon
 				[popper]="appsPopper"
-				popperTrigger="hover"
+				[popperTrigger]="touchscreen.hover()"
 				class="apps"
 				[iconName]="'white-shield'"
 				[iconSize]="30"
@@ -43,7 +43,7 @@
 			<app-icon
 				[iconName]=" 'bell' "
 				[popper]="notiPopper"
-				popperTrigger="hover"
+				[popperTrigger]="touchscreen.hover()"
 				
 				[iconSize]="28.5"
 				class="noti"
@@ -56,7 +56,7 @@
 
 			<app-icon
 				[popper]="settingsPopper"
-				popperTrigger="hover"
+				[popperTrigger]="touchscreen.hover()"
 				class="settings"
 				[iconName]="'settings'"
 				[iconSize]="30"
