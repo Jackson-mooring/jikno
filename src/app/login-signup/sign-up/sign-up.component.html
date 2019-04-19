@@ -1,8 +1,11 @@
 <div class="input">
-	<form action="">
+	<form (submit)="subForm()">
 		
+		<div class="error" [@slideError]="error.length == 0 ? 'down' : 'up' ">
+			<p>{{error}}</p>
+		</div>
 
-			<!-- Email Start -->
+		<!-- Email Start -->
 		<label>
 			<div class="input-container">
 				<div
@@ -175,6 +178,9 @@
 		</label>
 			<!-- Confirm Password End -->
 
-		<button [disabled]="!validatePassed()">Create Account</button>
+		<button [disabled]="!validatePassed() || waiting">
+			<span *ngIf="!waiting">Create Account</span>
+			<app-icon *ngIf="waiting" iconSize="20" iconName="loader"></app-icon>
+		</button>
 	</form>
 </div>
