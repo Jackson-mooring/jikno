@@ -1,8 +1,4 @@
 <div class="over" (click)="a.onclick()" [@slide]="a.showAlert ? 'up' : 'down' ">
 	<div class="main">{{a.message}}<span *ngIf="a.linkText != undefined"> - <a (click)="a.clickLink()">{{a.linkText}}</a></span></div>
-	<app-icon *ngIf="!a.showCountdown" (click)="a.onclose(); a.reset();" class="icon" iconName="times" iconSize="15" isButton="true"></app-icon>
-	<div *ngIf="a.showCountdown" class="countdown">
-		<span *ngIf="a.countdownString === undefined">{{a.countdownTime}}</span>
-		<span *ngIf="a.countdownString !== undefined">{{a.countdownString}}</span>
-	</div>
+	<app-icon (click)="a.onclose(); a.reset();" class="icon" iconName="times" iconSize="15" isButton="true"></app-icon>
 </div>

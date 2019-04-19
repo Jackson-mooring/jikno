@@ -58,14 +58,7 @@ export class SyncService {
 	}
 
 	showAlert(positive: boolean) {
-		this.alertService.reset();
-		this.alertService.showAlert = true;
-		this.alertService.showCountdown = false;
-		this.alertService.message = positive ? "Everything up to date!" : "Could not connect to database!";
-		if (!positive) {
-			this.alertService.linkText = "Retry";
-			this.alertService.onLinkClick = () => {this.sync()}
-		}
+		this.alertService.set(positive ? "You're all up to date!" : "Could not connect to database!", true, 10000, true, positive ? undefined : "Retry")
 	}
 
 }
