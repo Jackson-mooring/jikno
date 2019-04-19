@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './shared/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NotiModule } from './notifications/noti.module';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app-component/app.component';
@@ -20,6 +21,7 @@ import { AppDetailComponent } from './app-component/jikno-app/apps-overlay/app-d
 import { DragoverComponent } from './app-component/jikno-app/apps-overlay/dragover/dragover.component';
 import { AlertComponent } from './alert/component/alert.component';
 import { NoSpacesPipe } from './pipes/no-spaces/no-spaces.pipe';
+
 
 @NgModule({
 	declarations: [
@@ -45,6 +47,7 @@ import { NoSpacesPipe } from './pipes/no-spaces/no-spaces.pipe';
 		ForgotPasswordModule,
 		HttpClientModule,
 		FormsModule,
+		NotiModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

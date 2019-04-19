@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { DataService } from '../../service/data/data.service';
-import { AppRoutes } from 'src/app/routing/app-routes';
+import { AppRoutes } from '../../routing/app-routes';
 
 @Component({
 	selector: 'jikno-app',
@@ -46,7 +46,7 @@ export class JiknoAppComponent implements OnInit {
 		AppRoutes.map(route => {
 			if (this.routeLocation.path().indexOf(route) != -1) newRoute = route;
 		})
-		if (newRoute === undefined) return "/home";
+		if (newRoute === undefined || newRoute === '/notifications') return "/home";
 		return newRoute;
 	}
 
