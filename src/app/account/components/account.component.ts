@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/service/data/data.service';
 
 @Component({
 	selector: 'app-account',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
 
-	constructor() { }
+	constructor(
+		private dataService: DataService,
+	) {
+		this.dataService.secondaryRoute = true;
+	}
 
 	ngOnInit() {
 	}
