@@ -11,7 +11,7 @@ export class AccountComponent implements OnInit {
 	constructor(
 		private dataService: DataService,
 	) {
-		this.dataService.secondaryRoute = true;
+		this.dataService.secondaryRoute = true; 
 	}
 
 	ngOnInit() {

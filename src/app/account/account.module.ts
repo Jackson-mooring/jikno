@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AccountComponent } from './components/account.component';
+import { AccountComponent } from './components/main/account.component';
 import { RouterModule } from "@angular/router";
 import { SharedModule } from '../shared/shared.module';
 
