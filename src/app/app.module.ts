@@ -10,6 +10,7 @@ import { CoreModule } from './shared/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NotiModule } from './notifications/noti.module';
+import { AccountModule } from './account/account.module';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app-component/app.component';
@@ -48,6 +49,7 @@ import { NoSpacesPipe } from './pipes/no-spaces/no-spaces.pipe';
 		HttpClientModule,
 		FormsModule,
 		NotiModule,
+		AccountModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
