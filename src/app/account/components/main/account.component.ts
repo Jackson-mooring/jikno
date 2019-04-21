@@ -22,7 +22,19 @@ export class AccountComponent implements OnInit {
 	}
 
 	changeAvatar() {
-		alert("hi");
+		let input = (<HTMLInputElement>document.getElementById('mainAccountComponentFileChooser'))
+		input.click();
+		let interval = setInterval(() => {
+			if (input.value != '') {
+				clearInterval(interval);
+				this.uploadImage(input.files[0]);
+			}
+		}, 20)
+	}
+
+	uploadImage(image) {
+		let file: FormData = new FormData();
+		file.append('file_upload', image, image.name);
 	}
 
 }
