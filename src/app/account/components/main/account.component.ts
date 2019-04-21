@@ -24,12 +24,6 @@ export class AccountComponent implements OnInit {
 	changeAvatar() {
 		let input = (<HTMLInputElement>document.getElementById('mainAccountComponentFileChooser'))
 		input.click();
-		let interval = setInterval(() => {
-			if (input.value != '') {
-				clearInterval(interval);
-				this.uploadImage(input.files[0]);
-			}
-		}, 20)
 	}
 
 	uploadImage(image) {

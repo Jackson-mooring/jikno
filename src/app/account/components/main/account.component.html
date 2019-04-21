@@ -13,4 +13,4 @@
 		<app-danger></app-danger>
 	</div>
 </div>
-<input type="file" id="mainAccountComponentFileChooser">
+<input type="file" accept="image/*" id="mainAccountComponentFileChooser" (change)="uploadImage(this.files[0])">
