@@ -1,7 +1,10 @@
-<div class="over">
+<div class="over container">
 	<h1>User Settings</h1>
 	<div class="avatar">
-		<app-avatar avatarSize="100"></app-avatar>
+		<app-avatar avatarSize="120"></app-avatar>
+		<div (click)="changeAvatar()" class="change" [style.display]="touchscreen.isTouchscreen() ? 'block' : 'auto' ">
+			<div class="text">Change Avatar</div>
+		</div>
 	</div>
 	<div class="user">
 		<app-user></app-user>
