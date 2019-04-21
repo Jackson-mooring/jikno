@@ -16,3 +16,14 @@ export const POST_HEADERS = {
 	redirect: "follow",
 	referrer: "no-referrer",
 };
+export const IMAGE_HEADERS = {
+	method: "POST",
+	mode: "cors",
+	cache: "no-cache",
+	credentials: "same-origin",
+	headers: {
+		'Content-Type': 'multipart/form-data'
+	},
+	redirect: "follow",
+	referrer: "no-referrer",
+};
