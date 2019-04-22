@@ -43,7 +43,7 @@ export class AccountService {
 				console.error(err);
 				return of({correct: false, message: "Could not connect to database!"});
 			}),
-			timeout(5000)
+			timeout(40000)
 		)
 		.subscribe((res: ValidationResponse) => {
 			if (res.correct) {
