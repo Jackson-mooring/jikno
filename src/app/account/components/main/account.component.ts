@@ -3,8 +3,8 @@ import { DataService } from 'src/app/service/data/data.service';
 import { AccountService } from 'src/app/service/account/account.service';
 import { TouchscreenService } from 'src/app/service/touchscreen/touchscreen.service';
 import { UploadFileService } from 'src/app/service/upload-file/upload-file.service';
-import { FileUploader } from 'ng2-file-upload';
-import { JIKNO_API_KEY, JIKNO_API_ROOT } from '../../../constants/constants';
+import { UserService } from '../../../service/user/user.service';
+import { last } from '@angular/router/src/utils/collection';
 
 @Component({
 	selector: 'app-account',
@@ -13,19 +13,15 @@ import { JIKNO_API_KEY, JIKNO_API_ROOT } from '../../../constants/constants';
 })
 export class AccountComponent implements OnInit {
 
-	url = `${JIKNO_API_ROOT}?action=upload_file&key=${JIKNO_API_KEY}`;
-	//url = `${JIKNO_API_ROOT}test.php`
-
 	constructor(
 		private dataService: DataService,
 		public accountService: AccountService,
 		public touchscreen: TouchscreenService,
 		private uploadFileService: UploadFileService,
+		private user: UserService,
 	) {
 		this.dataService.secondaryRoute = true;
 	}
-
-	public uploader = new FileUploader({ url: this.url })
 
 	ngOnInit() {
 	}
@@ -41,12 +37,22 @@ export class AccountComponent implements OnInit {
 		let image = (<HTMLInputElement>document.getElementById('mainAccountComponentFileChooser')).files[0]
 
 		let file: FormData = new FormData();
-		file.append('file', image, image.name);
+		file.append('file', image, this.changeName(image.name));
 
 		this.uploadFileService.upload(file)
 		.subscribe(res => {
 			console.log(res);
 		})
+	}
+
+	changeName(name: string): string {
+		const dotsTest = name;
+		let lastDotIndex: number;
+		dotsTest.split('').map((char, index) => {
+			if (char === '.') lastDotIndex = index;
+		})
+
+		return `${this.user.getUser().email}${name.slice(lastDotIndex)}`
 	}
 
 }
