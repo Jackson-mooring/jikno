@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DangerComponent implements OnInit {
 
+	selectedOption = 'none';
+	showDanger = false;
+
 	constructor() { }
 
 	ngOnInit() {

@@ -1,3 +1,19 @@
-<p>
-  danger works!
-</p>
+<div class="over">
+	<div class="simple">
+		<button *ngIf="!showDanger" class="danger" (click)="showDanger = !showDanger">Show Danger Settings</button>
+		<button *ngIf="showDanger" class="clear draw-attention" (click)="showDanger = !showDanger">Hide Danger Settings</button>
+	</div>
+
+	<div class="main" *ngIf="showDanger">
+		<h3>Danger Zone</h3>
+		<div class="choices" *ngIf="selectedOption == 'none'">
+			<div class="half">
+				<button class="danger">Erase Account</button>
+			</div>
+			<div class="half">
+				<button class="danger">Delete Account</button>
+			</div>
+			<p></p>
+		</div>
+	</div>
+</div>

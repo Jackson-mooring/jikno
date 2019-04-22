@@ -54,6 +54,15 @@ body {
     outline: none;
 }
 
+button.danger {
+	background: unset;
+	background-color: var(--danger);
+}
+.clear {
+	background: unset;
+	background-color: var(--clear);
+}
+
 /* for popper.js */
 .ngxp__container {
 	background-color: #111;
