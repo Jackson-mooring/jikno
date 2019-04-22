@@ -1,10 +1,13 @@
 <div class="over container">
 	<h1>User Settings</h1>
-	<div class="avatar">
-		<app-avatar avatarSize="120"></app-avatar>
-		<div (click)="changeAvatar()" class="change" [style.display]="touchscreen.isTouchscreen() ? 'block' : 'auto' ">
-			<div class="text">Change Avatar</div>
+	<div class="avatar-container">
+		<div class="avatar">
+			<app-avatar avatarSize="120"></app-avatar>
+			<div (click)="changeAvatar()" class="change" [style.display]="touchscreen.isTouchscreen() ? 'block' : 'auto' ">
+				<div class="text">Change Avatar</div>
+			</div>
 		</div>
+		<button (click)="logout()">Logout</button>
 	</div>
 	<div class="user">
 		<app-user></app-user>

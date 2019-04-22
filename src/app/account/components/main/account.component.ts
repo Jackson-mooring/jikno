@@ -7,6 +7,7 @@ import { UserService } from '../../../service/user/user.service';
 import { JIKNO_API_ROOT } from '../../../constants/constants';
 import { SyncService } from '../../../service/sync/sync.service';
 import { RandomNumberService } from 'src/app/service/random-number/random-number.service';
+import { AlertService } from 'src/app/alert/service/alert.service';
 
 @Component({
 	selector: 'app-account',
@@ -23,6 +24,7 @@ export class AccountComponent implements OnInit {
 		private user: UserService,
 		private syncService: SyncService,
 		private randomNumberService: RandomNumberService,
+		private alert: AlertService,
 	) {
 		this.dataService.secondaryRoute = true;
 	}
@@ -66,6 +68,21 @@ export class AccountComponent implements OnInit {
 		})
 
 		return `${this.user.getUser().email}${this.randomNumberService.getNumber(0, 90000)}${name.slice(lastDotIndex)}`
+	}
+
+	logoutTries = 0;
+	logout() {
+		if (this.dataService.isInternet || !this.syncService.isChanges()) {
+			this.user.cleanUser();
+			return 0;
+		}
+		else this.syncService.sync();
+
+		setTimeout(() => {
+			this.logoutTries++
+			if (this.logoutTries <= 2) this.logout();
+			else this.logoutTries == 0;
+		}, 3000);
 	}
 
 }
