@@ -13,4 +13,7 @@
 		<app-danger></app-danger>
 	</div>
 </div>
-<input type="file" accept="image/*" id="mainAccountComponentFileChooser" (change)="uploadImage(this.files[0])">
+<form (submit)="uploadImage()" method="post" enctype="multipart/form-data">
+	<input name="file" type="file" accept="image/*" id="mainAccountComponentFileChooser">
+	<input name="submit" type="submit">
+</form>
