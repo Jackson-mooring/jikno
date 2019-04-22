@@ -41,6 +41,7 @@ export class AccountComponent implements OnInit {
 		let image = (<HTMLInputElement>document.getElementById('mainAccountComponentFileChooser')).files[0]
 
 		let newName = this.changeName(image.name);
+		if (newName === this.accountService.userInfo.avatar) this.uploadImage();
 
 		let file: FormData = new FormData();
 		file.append('file', image, newName);
