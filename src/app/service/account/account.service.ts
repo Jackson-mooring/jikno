@@ -4,10 +4,11 @@ import { JIKNO_API_ROOT, POST_HEADERS, JIKNO_API_KEY } from '../../constants/con
 import { retry, map, catchError, timeout } from 'rxjs/operators';
 import { API_Response } from '../../model/api-response';
 import { ValidationResponse } from 'src/app/model/validationResponse';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 import { DataService } from '../data/data.service';
 import { UserService } from '../user/user.service';
 import { SubDataService } from '../sub-data/sub-data.service';
+import { UserInfo } from '../../model/user-info';
 
 @Injectable({
 	providedIn: 'root'
@@ -26,7 +27,7 @@ export class AccountService {
 		}, 1000 * 60 * 10)
 	}
 
-	public userInfo: Object;
+	public userInfo: UserInfo;
 	public loading = true;
 	public error: string;
 
@@ -64,8 +65,15 @@ export class AccountService {
 		else return { correct: false, message: res.data };
 	}
 
-	public setUserInfo() {
-		this.subDataService.subData(JSON.stringify(this.userInfo), 'user_info');
+	public setUserInfo(): Observable<boolean> {
+		return this.subDataService.subData(JSON.stringify(this.userInfo), 'user_info')
+	}
+
+	public subData() {
+		this.subDataService.subData(JSON.stringify(this.userInfo), 'user_info')
+		.subscribe(res => {
+			console.log(res);
+		})
 	}
 
 }
