@@ -51,7 +51,14 @@ export class SyncService {
 		}
 	}
 
-	check(str: string) {
+	isChanges(): boolean {
+		for (var i in BRANCHES) {
+			const branch = localStorage.getItem(BRANCHES[i]);
+			if (branch != null) return true;
+		}
+	}
+
+	private check(str: string) {
 		setTimeout(() => {
 			if (str.indexOf('0') === -1) {
 				if (this.dataService.isInternet) this.showAlert(true);
@@ -62,7 +69,7 @@ export class SyncService {
 		}, 1000)
 	}
 
-	showAlert(positive: boolean) {
+	private showAlert(positive: boolean) {
 		this.alertService.set(positive ? "You're all up to date!" : "Could not connect to database!", true, positive ? 3000 : 10000, true, positive ? undefined : "Retry", () => {this.sync()})
 	}
 
