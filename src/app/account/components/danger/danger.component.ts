@@ -57,6 +57,9 @@ export class DangerComponent implements OnInit {
 		}else{
 			this.user.cleanUser();
 		}
+		this.loading = false;
+		this.selectedOption = 'none';
+		this.showDanger = false;
 	}
 
 	private fail(message: string, copy: boolean) {

@@ -7,7 +7,7 @@
 
 		[style.height]="avatarSize + 'px'"
 		[style.width]="avatarSize + 'px'"
-		[style.backgroundImage]="'url(' + image + ')'"
+		[style.backgroundImage]="image == '' ? 'none' : 'url(' + image + ')'"
 		[style.backgroundColor]="color"
 	>
 		<div
