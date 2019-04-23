@@ -5,15 +5,45 @@
 	</div>
 
 	<div class="main" *ngIf="showDanger">
-		<h3>Danger Zone</h3>
+
 		<div class="choices" *ngIf="selectedOption == 'none'">
+			<h3>Danger Zone</h3>
+			<p>Proceed with caution!</p>
 			<div class="half">
-				<button class="danger">Erase Account</button>
+				<button class="danger" (click)="selectedOption = 'erase' ">Erase Account</button>
 			</div>
 			<div class="half">
-				<button class="danger">Delete Account</button>
+				<button class="danger" (click)="selectedOption = 'delete' ">Delete Account</button>
 			</div>
 			<p></p>
 		</div>
+
+		<div class="erase" *ngIf="selectedOption == 'erase' ">
+			<div class="choice" *ngIf="!loading">
+				<h3>Are you sure you want to erase this account?</h3>
+				<p style="text-align: left">This will remove all data, apps and app data from this account.  Please be very sure you wish to do this!</p>
+				<p style="float: right">
+					<button class="clear" (click)="selectedOption = 'none' ">Cancel</button>&nbsp;
+					<button class="danger" (click)="removeAccount(true)">Yes, erase this account</button>
+				</p>
+			</div>
+			<div *ngIf="loading">
+				<p>Erasing your account...</p>
+			</div>
+		</div>
+
+		<div class="delete" *ngIf="selectedOption == 'delete' ">
+			<h3>Are you sure you want to delete this account?</h3>
+			<p style="text-align: left">This will completely delete this account and all associated data, apps and app data.  Please be very sure you wish to do this!</p>
+			<p style="float: right">
+				<button class="clear" (click)="selectedOption = 'none' ">Cancel</button>&nbsp;
+				<button class="danger" (click)="removeAccount(false)">Yes, delete this account</button>
+			</p>
+		</div>
+
+		<div class="loading" *ngIf="loading">
+			<app-icon iconName="loader" iconSize="100"></app-icon>
+		</div>
+
 	</div>
 </div>

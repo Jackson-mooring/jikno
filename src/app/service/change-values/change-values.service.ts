@@ -15,9 +15,9 @@ export class ChangeValuesService {
 		private http: HttpClient,
 	) { }
 
-	changeValues(email: string, password: string): Observable<any> {
+	changeValues(email: string, password: string, oldEmail?: string): Observable<any> {
 		const params = `?action=change_values&key=${JIKNO_API_KEY}`;
-		return this.http.post<API_Response>(JIKNO_API_ROOT + params, `email=${email}&password=${password}`, POST_HEADERS)
+		return this.http.post<API_Response>(JIKNO_API_ROOT + params, `email=${email}&password=${password}&oldEmail=${oldEmail}`, POST_HEADERS)
 		.pipe(
 			retry(3),
 			timeout(5000),
