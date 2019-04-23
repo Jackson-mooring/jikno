@@ -6,6 +6,7 @@ import { CheckTypingService } from 'src/app/service/check-typing/check-typing.se
 import { ValidateValuesService } from 'src/app/service/validate-values/validate-values.service';
 import { CheckEmailService } from 'src/app/service/validate-email/check-email.service';
 import { DataService } from 'src/app/service/data/data.service';
+import { SyncService } from 'src/app/service/sync/sync.service';
 
 @Component({
 	selector: 'app-user',
@@ -22,6 +23,7 @@ export class UserComponent implements OnInit {
 		private validateValuesService: ValidateValuesService,
 		private checkEmailService: CheckEmailService,
 		private dataService: DataService,
+		private syncService: SyncService,
 	) { }
 
 	username: string = '';
@@ -59,7 +61,12 @@ export class UserComponent implements OnInit {
 	}
 
 	keyUp(what: string) {
-		if (what == 'username') this.checkTyping.check(() => { this.accountService.subData() }, 2000);
+		if (what == 'username') this.checkTyping.check(() => {
+			this.accountService.setUserInfo()
+			.subscribe(res => {
+				if (res) this.syncService.sync(false);
+			});
+		}, 2000);
 		else if (what == 'email') this.checkTyping.check(() => { this.changeValues() }, 1000);
 	}
 
