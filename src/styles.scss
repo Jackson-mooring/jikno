@@ -63,6 +63,13 @@ button.danger {
 	background-color: var(--clear);
 }
 
+.w3-card {
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.w3-card-4 {
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
 /* for popper.js */
 .ngxp__container {
 	background-color: #111;
