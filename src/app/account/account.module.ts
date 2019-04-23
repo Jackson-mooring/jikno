@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { SharedModule } from '../shared/shared.module';
 import { DangerComponent } from './components/danger/danger.component';
 import { UserComponent } from './components/user/user.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -16,6 +17,7 @@ import { UserComponent } from './components/user/user.component';
 		CommonModule,
 		RouterModule,
 		SharedModule,
+		FormsModule,
 	]
 })
 export class AccountModule { }

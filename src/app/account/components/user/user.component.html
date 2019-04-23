@@ -1,3 +1,30 @@
-<p>
-  user works!
-</p>
+<div class="over">
+	<div class="main w3-card">
+
+		<p></p>
+		<div class="row">
+			<div class="label">Username</div>
+			<input type="text" class="username" placeholder="Username" [value]="username">
+		</div>
+		<p></p>
+
+		<label>
+			<div class="row">
+				<div class="label">Email</div>
+				<input type="text" placeholder="Email" [value]="user.getUser().email">
+			</div>
+		</label>
+
+		<p></p>
+		<div class="row">
+			<div class="label">Password</div>
+			<input type="password" disabled="true" placeholder="Password" [(ngModel)]="password">
+		</div>
+		<div style="max-width: 450px; margin: auto; text-align: right">
+			<a>Change password</a>
+		</div>
+		
+		<p></p>
+
+	</div>
+</div>
