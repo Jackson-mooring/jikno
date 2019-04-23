@@ -3,6 +3,7 @@ import { UserService } from '../../../service/user/user.service';
 import { AccountService } from '../../../service/account/account.service';
 import { ChangeValuesService } from '../../../service/change-values/change-values.service';
 import { CheckTypingService } from 'src/app/service/check-typing/check-typing.service';
+import { ValidateValuesService } from 'src/app/service/validate-values/validate-values.service';
 
 @Component({
 	selector: 'app-user',
@@ -16,24 +17,35 @@ export class UserComponent implements OnInit {
 		public accountService: AccountService,
 		private changeValuesService: ChangeValuesService,
 		private checkTyping: CheckTypingService,
+		private validateValuesService: ValidateValuesService,
 	) { }
 
 	username: string = '';
 	email: string = this.user.getUser().email;
+	emailIsValid: boolean = true;
+	emailInUse: boolean = false;
 
 	ngOnInit() {
 	}
 	
 	changeValues() {
-		this.changeValuesService.changeValues(this.email, this.user.getUser().password, this.user.getUser().email)
-			.subscribe(res => {
-				if (res == "CHANGED") this.user.setUser(this.email, this.user.getUser().password);
-			})
+		if (this.email !== '' && this.validateValuesService.validateEmail(this.email).correct) {
+			if (true) {
+				this.changeValuesService.changeValues(this.email, this.user.getUser().password, this.user.getUser().email)
+					.subscribe(res => {
+						if (res == "CHANGED") this.user.setUser(this.email, this.user.getUser().password);
+					})
+			} else {
+				this.emailInUse = true;
+			}
+		} else {
+			this.emailIsValid == false;
+		}
 	}
 
 	keyUp(what: string) {
-		if (what == 'username') this.checkTyping.check(() => {this.accountService.subData()}, 200);
-		else if (what == 'email') this.checkTyping.check(() => {this.changeValues()}, 200)
+		if (what == 'username') this.checkTyping.check(() => {this.accountService.subData()}, 2000);
+		else if (what == 'email') this.checkTyping.check(() => {this.changeValues()}, 2000);
 	}
 
 }
