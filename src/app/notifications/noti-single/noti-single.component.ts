@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DateService } from 'src/app/service/date/date.service';
 
 @Component({
 	selector: 'app-noti-single',
@@ -8,10 +9,21 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NotiSingleComponent implements OnInit {
 
 	@Input() noti;
+	
+	date: string = '';
 
-	constructor() { }
+	constructor(
+		public dateService: DateService
+	) { }
 
 	ngOnInit() {
+		this.countDate();
 	}
 
+	countDate() {
+		this.date = this.dateService.auto(this.noti.date);
+		setInterval(() => {
+			this.date = this.dateService.auto(this.noti.date);
+		}, 1000);
+	}
 }

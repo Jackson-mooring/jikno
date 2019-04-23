@@ -1,7 +1,7 @@
 
 <h1 class="title">Notifications</h1>
 <hr class="divider" *ngIf="notiService.notifications.length !== 0">
-<app-noti-single *ngFor="let noti of notiService.notifications" [noti]="noti" [routerLink]="noti.link"></app-noti-single>
+<app-noti-single *ngFor="let noti of notiService.notifications" [noti]="noti"></app-noti-single>
 
 <div class="nothing" *ngIf="notiService.notifications.length === 0">
 	<span class="nothing-text"><h2 class="h1-text">There Aren't Any Notifications Here.</h2>

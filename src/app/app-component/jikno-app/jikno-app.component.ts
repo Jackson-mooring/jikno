@@ -6,7 +6,6 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 
 import { DataService } from '../../service/data/data.service';
 import { AppRoutes } from '../../routing/app-routes';
-import { TouchscreenService } from 'src/app/service/touchscreen/touchscreen.service';
 
 @Component({
 	selector: 'jikno-app',
@@ -21,7 +20,7 @@ import { TouchscreenService } from 'src/app/service/touchscreen/touchscreen.serv
 				filter: 'blur(0px)',
 			})),
 			transition('* => *', [
-				animate('400ms ease-in-out'),
+				animate('200ms ease-in-out'),
 			])
 		]),
 	]
@@ -32,7 +31,6 @@ export class JiknoAppComponent implements OnInit {
 		public dataService: DataService,
 		private routeLocation: Location,
 		private router: Router,
-		public touchscreen: TouchscreenService,
 	) { }
 
 	ngOnInit() {

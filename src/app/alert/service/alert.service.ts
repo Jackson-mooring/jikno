@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
-import { MessageBundle } from '@angular/compiler';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AlertService {
 
-	private toRun: Function[] = [];
-
 	constructor() {
+		this.countdown();
 	}
 
 	public showAlert: boolean = false;
+	public showCountdown: boolean = true;
 	public message: string = '';
 
+	public countdownString: string;
 	public countdownTime: number = 10;
+	public shouldCountdown: boolean = true;
 
 	public linkText: string;
 	public onLinkClick: Function = () => { };
@@ -25,10 +26,13 @@ export class AlertService {
 
 	public reset() {
 		this.showAlert = false;
-		setTimeout(() => {
+		setInterval(() => {
+			this.showCountdown = true;
 			this.message = '';
 
-			this.countdownTime = 5000;
+			this.countdownString = undefined;
+			this.countdownTime = 5;
+			this.shouldCountdown = true;
 
 			this.linkText = undefined;
 			this.onLinkClick = () => { };
@@ -36,51 +40,19 @@ export class AlertService {
 
 			this.onclick = () => { };
 			this.onclose = () => { };
-
-			if (this.toRun.length >= 1) {
-				this.toRun[this.toRun.length - 1]();
-				this.toRun.pop();
-			}
-		}, 300)
-	}
-
-	public set(
-		message: string,
-		countdown: boolean,
-
-		countDownTime: number = 10,
-		dismissOnLinkClick: boolean = true,
-
-		linkText?: string,
-		onLinkClick?: Function,
-
-		onclick: Function = () => { },
-		onclose: Function = () => { },
-	) {
-		if (!this.showAlert) {
-			this.reset();
-			setTimeout(() => {
-				this.showAlert = true;
-				this.countdownTime = countDownTime;
-				this.message = message;
-				this.onclick = onclick;
-				this.onclose = onclose;
-				this.dismissOnLinkClick = dismissOnLinkClick;
-				this.linkText = linkText;
-				this.onLinkClick = onLinkClick;
-
-				if (countdown) this.countdown();
-			}, 300)
-		}else{
-			this.toRun.push(() => {this.set(message, countdown, countDownTime, dismissOnLinkClick, linkText, onLinkClick, onclick, onclose)})
-		}
+		}, 200)
 	}
 
 	private countdown() {
-		setTimeout(() => {
-			this.onclose();
-			this.reset();
-		}, this.countdownTime)
+		setInterval(() => {
+			if (this.shouldCountdown && this.showAlert) {
+				this.countdownTime--;
+				if (this.countdownTime <= 0) {
+					this.onclose();
+					this.reset();
+				}
+			}
+		}, 1000)
 	}
 
 	public clickLink() {

@@ -27,6 +27,11 @@ export class AppComponent implements OnInit {
 
 	ngOnInit() {
 		if (localStorage.getItem('redirect') !== null) this.router.navigateByUrl(localStorage.getItem('redirect'));
+		setTimeout(() => {
+			this.alertService.showAlert = true;
+			this.alertService.message = "Wow!  What a party!  Here is a bunch of nonesense: Some text. Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.Sometext.";
+			this.alertService.showCountdown = true;
+		}, 5000)
 	}
 
 	isApp(): boolean {

@@ -33,6 +33,7 @@ import { NoSpacesPipe } from './pipes/no-spaces/no-spaces.pipe';
 		DragoverComponent,
 		AlertComponent,
 		NoSpacesPipe,
+		
 	],
 	imports: [
 		BrowserModule,

@@ -20,11 +20,6 @@ export class SyncService {
 	}
 
 	sync(sendStatus?: boolean) {
-		const retry = document.getElementsByClassName("retry") as HTMLCollectionOf<HTMLElement>;
-		for (let x in retry) {
-			if (retry[x].click) retry[x].click();
-		}
-
 		if (sendStatus === undefined) sendStatus = true;
 
 		this.isSyncing = true;
@@ -63,7 +58,14 @@ export class SyncService {
 	}
 
 	showAlert(positive: boolean) {
-		this.alertService.set(positive ? "You're all up to date!" : "Could not connect to database!", true, positive ? 3000 : 10000, true, positive ? undefined : "Retry", () => {this.sync()})
+		this.alertService.reset();
+		this.alertService.showAlert = true;
+		this.alertService.showCountdown = false;
+		this.alertService.message = positive ? "Everything up to date!" : "Could not connect to database!";
+		if (!positive) {
+			this.alertService.linkText = "Retry";
+			this.alertService.onLinkClick = () => {this.sync()}
+		}
 	}
 
 }
