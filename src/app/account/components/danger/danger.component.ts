@@ -4,6 +4,7 @@ import { UserService } from '../../../service/user/user.service';
 import { AlertService } from '../../../alert/service/alert.service';
 import { SignUpService } from '../../../service/sign-up/sign-up.service';
 import { SyncService } from '../../../service/sync/sync.service';
+import { AccountService } from '../../../service/account/account.service';
 
 @Component({
 	selector: 'app-danger',
@@ -22,6 +23,7 @@ export class DangerComponent implements OnInit {
 		private alert: AlertService,
 		private signUpService: SignUpService,
 		private sync: SyncService,
+		private accountService: AccountService,
 	) { }
 
 	ngOnInit() {
