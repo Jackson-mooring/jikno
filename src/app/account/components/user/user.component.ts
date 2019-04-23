@@ -5,6 +5,7 @@ import { ChangeValuesService } from '../../../service/change-values/change-value
 import { CheckTypingService } from 'src/app/service/check-typing/check-typing.service';
 import { ValidateValuesService } from 'src/app/service/validate-values/validate-values.service';
 import { CheckEmailService } from 'src/app/service/validate-email/check-email.service';
+import { DataService } from 'src/app/service/data/data.service';
 
 @Component({
 	selector: 'app-user',
@@ -20,6 +21,7 @@ export class UserComponent implements OnInit {
 		private checkTyping: CheckTypingService,
 		private validateValuesService: ValidateValuesService,
 		private checkEmailService: CheckEmailService,
+		private dataService: DataService,
 	) { }
 
 	username: string = '';
@@ -60,6 +62,7 @@ export class UserComponent implements OnInit {
 	goToNew(pass: string) {
 		if (pass == this.user.getUser().password) {
 			this.status = 'new-password';
+			this.dataService.resetPassword = true;
 		}
 	}
 
