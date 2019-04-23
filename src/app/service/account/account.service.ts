@@ -47,7 +47,6 @@ export class AccountService {
 			timeout(40000)
 		)
 		.subscribe((res: ValidationResponse) => {
-			console.log(res)
 			if (res.correct) {
 				this.userInfo = res.message;
 				this.dataService.isInternet = true;
@@ -64,7 +63,6 @@ export class AccountService {
 	}
 
 	private changeValues(res: API_Response): ValidationResponse {
-		console.log(res);
 		if (res.code == "OK") return { correct: true, message: res.data };
 		else return { correct: false, message: res.data };
 	}
