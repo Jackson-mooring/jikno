@@ -60,6 +60,8 @@ export class DangerComponent implements OnInit {
 		this.loading = false;
 		this.selectedOption = 'none';
 		this.showDanger = false;
+
+		this.accountService.userInfo = {};
 	}
 
 	private fail(message: string, copy: boolean) {
