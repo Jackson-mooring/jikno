@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../service/user/user.service';
 import { AccountService } from '../../../service/account/account.service';
+import { ChangeValuesService } from '../../../service/change-values/change-values.service';
 
 @Component({
 	selector: 'app-user',
@@ -9,16 +10,32 @@ import { AccountService } from '../../../service/account/account.service';
 })
 export class UserComponent implements OnInit {
 
-	username: string = '';
-
 	constructor(
 		public user: UserService,
 		public accountService: AccountService,
+		private changeValuesService: ChangeValuesService,
 	) { }
 
+	username: string = '';
+	email: string = this.user.getUser().email;
+
 	ngOnInit() {
-		console.log(this.accountService.userInfo)
-		if (this.accountService.userInfo.username !== undefined) this.username = this.accountService.userInfo.username;
+	}
+
+	timeout;
+	checkTyping(then: Function, time: number) {
+		clearTimeout(this.timeout);
+		this.timeout = setTimeout(() => {
+			then();
+		}, time);
+	}
+
+	
+	changeValues() {
+		this.changeValuesService.changeValues(this.email, this.user.getUser().password, this.user.getUser().email)
+			.subscribe(res => {
+				if (res == "CHANGED") this.user.setUser(this.email, this.user.getUser().password);
+			})
 	}
 
 }

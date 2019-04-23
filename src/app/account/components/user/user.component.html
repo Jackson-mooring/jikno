@@ -4,21 +4,21 @@
 		<p></p>
 		<div class="row">
 			<div class="label">Username</div>
-			<input type="text" class="username" placeholder="Username" [value]="username">
+			<input type="text" class="username" placeholder="Username" (keyup)="checkTyping(accountService.subData(), 2000" [(ngModel)]="accountService.userInfo.username" name="username">
 		</div>
 		<p></p>
 
 		<label>
 			<div class="row">
 				<div class="label">Email</div>
-				<input type="text" placeholder="Email" [value]="user.getUser().email">
+				<input type="text" placeholder="Email" (keyup)="checkTyping(() => this.changeValues(), 2000)" [(ngModel)]="email" name="email">
 			</div>
 		</label>
 
 		<p></p>
 		<div class="row">
 			<div class="label">Password</div>
-			<input type="password" disabled="true" placeholder="Password" [(ngModel)]="password">
+			<input type="password" disabled="true" placeholder="Password" [value]="this.user.getUser().password">
 		</div>
 		<div style="max-width: 450px; margin: auto; text-align: right">
 			<a>Change password</a>
