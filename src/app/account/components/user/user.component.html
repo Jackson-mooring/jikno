@@ -18,10 +18,8 @@
 		<p></p>
 		<div class="row">
 			<div class="label">Password</div>
-			<input type="password" disabled="true" placeholder="Password" [value]="this.user.getUser().password">
-		</div>
-		<div style="max-width: 450px; margin: auto; text-align: right">
-			<a>Change password</a>
+			<input type="password" class="password" disabled="true" placeholder="Password" [value]="this.user.getUser().password">
+			<button style="margin-bottom: 4px">Change</button>
 		</div>
 		
 		<p></p>
