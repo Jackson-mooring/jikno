@@ -67,6 +67,7 @@ export class UserComponent implements OnInit {
 		if (pass == this.user.getUser().password) {
 			this.status = 'new-password';
 			this.dataService.resetPassword = true;
+			this.dataService.emailForForgotPassword = this.user.getUser().email;
 		}
 	}
 
