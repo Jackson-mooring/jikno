@@ -4,6 +4,7 @@ import { AccountService } from '../../../service/account/account.service';
 import { ChangeValuesService } from '../../../service/change-values/change-values.service';
 import { CheckTypingService } from 'src/app/service/check-typing/check-typing.service';
 import { ValidateValuesService } from 'src/app/service/validate-values/validate-values.service';
+import { CheckEmailService } from 'src/app/service/validate-email/check-email.service';
 
 @Component({
 	selector: 'app-user',
@@ -18,6 +19,7 @@ export class UserComponent implements OnInit {
 		private changeValuesService: ChangeValuesService,
 		private checkTyping: CheckTypingService,
 		private validateValuesService: ValidateValuesService,
+		private checkEmailService: CheckEmailService,
 	) { }
 
 	username: string = '';
@@ -27,25 +29,30 @@ export class UserComponent implements OnInit {
 
 	ngOnInit() {
 	}
-	
+
 	changeValues() {
+		this.emailIsValid = true;
 		if (this.email !== '' && this.validateValuesService.validateEmail(this.email).correct) {
-			if (true) {
-				this.changeValuesService.changeValues(this.email, this.user.getUser().password, this.user.getUser().email)
-					.subscribe(res => {
-						if (res == "CHANGED") this.user.setUser(this.email, this.user.getUser().password);
-					})
-			} else {
-				this.emailInUse = true;
-			}
+			this.checkEmailService.validate(this.email)
+				.subscribe(res => {
+					this.emailInUse = false;
+					if (!res) {
+						this.changeValuesService.changeValues(this.email, this.user.getUser().password, this.user.getUser().email)
+							.subscribe(res => {
+								if (res == "CHANGED") this.user.setUser(this.email, this.user.getUser().password);
+							})
+					} else if (this.user.getUser().email !== this.email) {
+						this.emailInUse = true;
+					}
+				})
 		} else {
-			this.emailIsValid == false;
+			this.emailIsValid = false;
 		}
 	}
 
 	keyUp(what: string) {
-		if (what == 'username') this.checkTyping.check(() => {this.accountService.subData()}, 2000);
-		else if (what == 'email') this.checkTyping.check(() => {this.changeValues()}, 2000);
+		if (what == 'username') this.checkTyping.check(() => { this.accountService.subData() }, 2000);
+		else if (what == 'email') this.checkTyping.check(() => { this.changeValues() }, 1000);
 	}
 
 }

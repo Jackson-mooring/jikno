@@ -10,7 +10,10 @@
 
 		<label>
 			<div class="row">
-				<div class="label">Email</div>
+				<div class="label">Email&nbsp;<span style="color: var(--danger)">
+					<span *ngIf="!emailIsValid">(Please use a valid email)</span>
+					<span *ngIf="emailInUse">(This email is already being used)</span>
+				</span></div>
 				<input type="text" placeholder="Email" (keyup)="keyUp('email')" [(ngModel)]="email" name="email">
 			</div>
 		</label>
