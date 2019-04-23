@@ -38,4 +38,9 @@ export class UserComponent implements OnInit {
 			})
 	}
 
+	keyUp(what: string) {
+		if (what == 'username') this.checkTyping(() => {this.accountService.subData()}, 200);
+		else if (what == 'email') this.checkTyping(() => {this.changeValues()}, 200)
+	}
+
 }

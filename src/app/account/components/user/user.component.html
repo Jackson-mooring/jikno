@@ -4,14 +4,14 @@
 		<p></p>
 		<div class="row">
 			<div class="label">Username</div>
-			<input type="text" class="username" placeholder="Username" (keyup)="checkTyping(accountService.subData(), 2000" [(ngModel)]="accountService.userInfo.username" name="username">
+			<input type="text" class="username" placeholder="Username" (keyup)="keyUp('username')" [(ngModel)]="accountService.userInfo.username" name="username">
 		</div>
 		<p></p>
 
 		<label>
 			<div class="row">
 				<div class="label">Email</div>
-				<input type="text" placeholder="Email" (keyup)="checkTyping(() => this.changeValues(), 2000)" [(ngModel)]="email" name="email">
+				<input type="text" placeholder="Email" (keyup)="keyUp('email')" [(ngModel)]="email" name="email">
 			</div>
 		</label>
 
