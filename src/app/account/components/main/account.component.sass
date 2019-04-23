@@ -3,6 +3,10 @@ h1
 
 .avatar-container
 	display: inline-block
+	@media (max-width: 450px)
+		display: block
+		width: 100%
+		margin-bottom: 16px
 	width: 120px
 	text-align: center
 	vertical-align: top
@@ -32,6 +36,9 @@ h1
 
 .user
 	display: inline-block
+	@media (max-width: 450px)
+		display: block
+		width: 100%
 	width: calc(100% - 120px - 16px)
 	margin-left: 16px
 
