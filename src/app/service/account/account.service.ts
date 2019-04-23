@@ -27,7 +27,7 @@ export class AccountService {
 		}, 1000 * 60 * 10)
 	}
 
-	public userInfo: UserInfo;
+	public userInfo: UserInfo = { }
 	public loading = true;
 	public error: string;
 
@@ -47,6 +47,7 @@ export class AccountService {
 			timeout(40000)
 		)
 		.subscribe((res: ValidationResponse) => {
+			console.log(res)
 			if (res.correct) {
 				this.userInfo = res.message;
 				this.dataService.isInternet = true;
@@ -55,12 +56,15 @@ export class AccountService {
 				this.error = res.message;
 				this.dataService.isInternet = false;
 			}
+			
+			if (this.userInfo.username === undefined) this.userInfo.username = '';
 
 			this.loading = false;
 		})
 	}
 
 	private changeValues(res: API_Response): ValidationResponse {
+		console.log(res);
 		if (res.code == "OK") return { correct: true, message: res.data };
 		else return { correct: false, message: res.data };
 	}
