@@ -27,6 +27,8 @@ export class UserComponent implements OnInit {
 	emailIsValid: boolean = true;
 	emailInUse: boolean = false;
 
+	status = 'none';
+
 	ngOnInit() {
 	}
 
@@ -53,6 +55,12 @@ export class UserComponent implements OnInit {
 	keyUp(what: string) {
 		if (what == 'username') this.checkTyping.check(() => { this.accountService.subData() }, 2000);
 		else if (what == 'email') this.checkTyping.check(() => { this.changeValues() }, 1000);
+	}
+
+	goToNew(pass: string) {
+		if (pass == this.user.getUser().password) {
+			this.status = 'new-password';
+		}
 	}
 
 }

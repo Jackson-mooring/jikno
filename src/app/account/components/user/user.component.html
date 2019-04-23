@@ -19,10 +19,21 @@
 		</label>
 
 		<p></p>
-		<div class="row">
-			<div class="label">Password</div>
-			<input type="password" class="password" disabled="true" placeholder="Password" [value]="this.user.getUser().password">
-			<button style="margin-bottom: 4px">Change</button>
+		<div class="row" *ngIf="status !== 'new-password' ">
+			<div class="label">
+				<span *ngIf="status == 'old=password' ">Old </span>
+				password 
+				<span *ngIf="status == 'old-password' " style="color: var(--danger)">(Incorrect)</span>
+			</div>
+			<input
+				type="password"
+				class="password"
+				[disabled]="status == 'none' "
+				placeholder="Old password..."
+				[value]="status == 'none' ? this.user.getUser().password : '' "
+				(keyup)="goToNew($event.target.value)"
+			>
+			<button [style.opacity]="status == 'none' ? '1' : '0' " style="margin-bottom: 4px" (click)="status = 'old-password' ">Change</button>
 		</div>
 		
 		<p></p>

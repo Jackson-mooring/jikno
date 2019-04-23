@@ -6,12 +6,14 @@ import { SharedModule } from '../shared/shared.module';
 import { DangerComponent } from './components/danger/danger.component';
 import { UserComponent } from './components/user/user.component';
 import { FormsModule } from '@angular/forms';
+import { OldPasswordComponent } from './components/old-password/old-password.component';
 
 @NgModule({
 	declarations: [
 		AccountComponent,
 		DangerComponent,
-		UserComponent
+		UserComponent,
+		OldPasswordComponent
 	],
 	imports: [
 		CommonModule,
