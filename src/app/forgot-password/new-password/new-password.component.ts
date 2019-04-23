@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ValidateValuesService } from '../../service/validate-values/validate-values.service';
 import { ChangeValuesService } from 'src/app/service/change-values/change-values.service';
 import { DataService } from 'src/app/service/data/data.service';
@@ -30,6 +30,8 @@ export class NewPasswordComponent implements OnInit, OnDestroy {
 	error = '';
 	loading = false;
 
+	@Input() onComplete: Function = () => {this.router.navigateByUrl("/forgot-password/continue")};
+
 	passwordTooltip = false;
 	confirmTooltip = false;
 
@@ -54,7 +56,7 @@ export class NewPasswordComponent implements OnInit, OnDestroy {
 		event.preventDefault();
 		this.changeValuesService.changeValues(this.dataService.emailForForgotPassword, this.password)
 		.subscribe(res => {
-			if (res == "CHANGED") this.router.navigateByUrl("/forgot-password/continue");
+			if (res == "CHANGED") this.onComplete();
 			else this.error = res;
 			this.loading = false;
 		})

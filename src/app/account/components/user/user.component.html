@@ -43,7 +43,7 @@
 				<app-icon iconName="angle-left" iconSize="10" isButton="true" class="icon"></app-icon>
 			</div>
 
-			<app-new-password *ngIf="status == 'new-password' "></app-new-password>
+			<app-new-password *ngIf="status == 'new-password' " [onComplete]="newPasswordOncomplete"></app-new-password>
 		</div>
 		
 		<p></p>

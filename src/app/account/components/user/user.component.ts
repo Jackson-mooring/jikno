@@ -31,6 +31,10 @@ export class UserComponent implements OnInit {
 
 	status = 'none';
 
+	newPasswordOncomplete = () => {
+		this.status = 'none';
+	}
+
 	ngOnInit() {
 	}
 
