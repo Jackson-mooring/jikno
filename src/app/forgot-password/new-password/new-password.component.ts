@@ -4,6 +4,7 @@ import { ChangeValuesService } from 'src/app/service/change-values/change-values
 import { DataService } from 'src/app/service/data/data.service';
 import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
 	selector: 'app-new-password',
@@ -31,6 +32,7 @@ export class NewPasswordComponent implements OnInit, OnDestroy {
 	loading = false;
 
 	@Input() onComplete: Function = () => {this.router.navigateByUrl("/forgot-password/continue")};
+	@Input() setUserPassword: boolean = false;
 
 	passwordTooltip = false;
 	confirmTooltip = false;
@@ -40,6 +42,7 @@ export class NewPasswordComponent implements OnInit, OnDestroy {
 		private dataService: DataService,
 		private changeValuesService: ChangeValuesService,
 		private router: Router,
+		private user: UserService,
 	) { }
 
 	ngOnInit() {
@@ -56,7 +59,10 @@ export class NewPasswordComponent implements OnInit, OnDestroy {
 		event.preventDefault();
 		this.changeValuesService.changeValues(this.dataService.emailForForgotPassword, this.password)
 		.subscribe(res => {
-			if (res == "CHANGED") this.onComplete();
+			if (res == "CHANGED") {
+				if (this.setUserPassword) this.user.setUser(this.user.getUser().email, this.password);
+				this.onComplete();
+			}
 			else this.error = res;
 			this.loading = false;
 		})
