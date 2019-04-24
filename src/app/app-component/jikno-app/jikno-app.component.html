@@ -73,11 +73,9 @@
 	</div>
 
 	<div
-		class="whole main"
+		class="whole main scroll"
 		id="scrollContainer"
 		[@blurInOut]="dataService.blur ? 'in' : 'out'"
-		[class.scrolling]="scrolling"
-		[class.no-scroll]="!scrolling"
 	>
 		<router-outlet></router-outlet>
 	</div>

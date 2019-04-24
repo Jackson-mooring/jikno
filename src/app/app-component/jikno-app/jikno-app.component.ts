@@ -34,10 +34,7 @@ export class JiknoAppComponent implements OnInit {
 		private routeLocation: Location,
 		private router: Router,
 		public touchscreen: TouchscreenService,
-		private timeoutService: CheckTypingService,
 	) { }
-
-	public scrolling: boolean = false;
 
 	ngOnInit() {
 	}
