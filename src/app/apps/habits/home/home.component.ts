@@ -17,4 +17,9 @@ export class HomeComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	onScroll(top: number, header: HTMLElement) {
+		if (top >= header.offsetHeight + 42.88) this.isFixed = true;
+		else this.isFixed = false;
+	}
+
 }

@@ -1,17 +1,22 @@
-<div class="over">
-	<div class="main container">
-		<h1 id="header">Habits</h1>
-		<div class="options" [class.bar]="isFixed">
-			<div class="third">
-				dashboard
-			</div>
-			<div class="third">
-				reorder
-			</div>
-			<div class="third">
-				new habit
-			</div>
+<div class="over no-scroll" (scroll)="onScroll($event.target.scrollTop, header)">
+
+	<h1 #header>Habits</h1>
+	
+	<div class="options" [class.bar]="isFixed">
+		<div style="padding: 10px"></div>
+		<div class="third">
+			<button>Dashboard</button>
 		</div>
+		<div class="third">
+			<button>Reorder</button>
+		</div>
+		<div class="third">
+			<button>New Habit</button>
+		</div>
+		<hr>
+	</div>
+
+	<div class="main container">
 
 		<br>
 		<br>
@@ -80,7 +85,7 @@
 		<br>
 		<br>
 		<br>
-		
+
 
 	</div>
 </div>
