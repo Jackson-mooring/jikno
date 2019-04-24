@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NewPasswordModule } from './new-password.module';
 
 import { EnterEmailComponent } from './enter-email/enter-email.component';
 import { EnterCodeComponent } from './enter-code/enter-code.component';
 import { MainComponent } from './main/main.component';
-import { NewPasswordComponent } from './new-password/new-password.component';
 import { ContinueComponent } from './continue/continue.component';
 
 
@@ -16,7 +16,6 @@ import { ContinueComponent } from './continue/continue.component';
 		EnterEmailComponent,
 		EnterCodeComponent,
 		MainComponent,
-		NewPasswordComponent,
 		ContinueComponent
 	],
 	imports: [
@@ -24,6 +23,7 @@ import { ContinueComponent } from './continue/continue.component';
 		SharedModule,
 		FormsModule,
 		RouterModule,
+		NewPasswordModule,
 	]
 })
 export class ForgotPasswordModule { }

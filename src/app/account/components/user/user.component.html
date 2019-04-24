@@ -1,0 +1,52 @@
+<div class="over">
+	<div class="main w3-card">
+
+		<div *ngIf="status !== 'new-password' ">
+			<p></p>
+			<div class="row">
+				<div class="label">Username</div>
+				<input type="text" class="username" placeholder="Username" (keyup)="keyUp('username')" [(ngModel)]="accountService.userInfo.username" name="username">
+			</div>
+			<p></p>
+
+			<label>
+				<div class="row">
+					<div class="label">Email&nbsp;<span style="color: var(--danger)">
+						<span *ngIf="!emailIsValid">(Please use a valid email)</span>
+						<span *ngIf="emailInUse">(This email is already being used)</span>
+					</span></div>
+					<input type="text" placeholder="Email" (keyup)="keyUp('email')" [(ngModel)]="email" name="email">
+				</div>
+			</label>
+
+			<p></p>
+			<div class="row">
+				<div class="label">
+					<span *ngIf="status == 'old=password' ">Old </span>
+					password 
+					<span *ngIf="status == 'old-password' " style="color: var(--danger)">(Incorrect)</span>
+				</div>
+				<input
+					type="password"
+					class="password"
+					[disabled]="status == 'none' "
+					placeholder="Old password..."
+					[value]="status == 'none' ? this.user.getUser().password : '' "
+					(keyup)="goToNew($event.target.value)"
+				>
+				<button [style.opacity]="status == 'none' ? '1' : '0' " style="margin-bottom: 4px" (click)="status = 'old-password' ">Change</button>
+			</div>
+		</div>
+
+		<div *ngIf="status == 'new-password' ">
+			<div class="icon-container" (click)="status = 'none' ">
+				<app-icon iconName="angle-left" iconSize="10" isButton="true" class="icon"></app-icon>
+			</div>
+
+			<app-new-password *ngIf="status == 'new-password' " [onComplete]="newPasswordOncomplete" setUserPassword="true"></app-new-password>
+		</div>
+		
+		<p></p>
+
+	</div>
+</div>

@@ -25,13 +25,21 @@ export class SubDataService {
 		.pipe(
 			retry(3),
 			timeout(5000),
-			catchError(err => of(false)),
+			catchError(err => {
+				this.logFailure(content, branch);
+				return of(false)
+			}),
 			map((res: API_Response) => {
 				const data = res.code == "OK" ? true : false;
 				this.dataService.isInternet = data;
+				if (!data) this.logFailure(content, branch);
 				return data;
 			})
 		)
+	}
+
+	logFailure(content: string, branch: string) {
+		localStorage.setItem(branch, content);
 	}
 
 }

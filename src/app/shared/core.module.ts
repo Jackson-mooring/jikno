@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core
 
 //Services
 import { DataService } from '../service/data/data.service';
+import { AccountService } from '../service/account/account.service';
 
 @NgModule({
 	imports: [],
@@ -17,7 +18,8 @@ export class CoreModule {
 		return {
 			ngModule: CoreModule,
 			providers: [
-				DataService
+				DataService,
+				AccountService,
 			]
 		}
 	}

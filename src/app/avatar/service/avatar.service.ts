@@ -45,11 +45,13 @@ export class AvatarService {
 				image: '',
 				error: true
 			}
-		}if (this.user.isUser) {
+		}if (this.user.isUser()) {
 			this.dataService.isInternet = true;
 			return {
 				color: values.data.avatar ? '' : (values.data.color ? values.data.color : '#021c55'),
-				letter: values.data.avatar ? '' : (this.user.getUser().email.charAt(0).toUpperCase()),
+				letter: values.data.avatar ? '' : (
+					values.data.username.length != 0 ? values.data.username.charAt(0).toUpperCase() : this.user.getUser().email.charAt(0).toUpperCase()
+				),
 				image: values.data.avatar ? values.data.avatar : '',
 				error: false
 			}
