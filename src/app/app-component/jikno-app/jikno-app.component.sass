@@ -21,11 +21,20 @@
     position: relative
     margin: 0 auto
 .main
-    min-height: calc(100vh - 75px)
+    height: calc(100vh - 75px)
     margin-top: 75px
     box-shadow: 3px 0 20px 2px rgba(0, 0, 0, 0.1), -3px 0 20px 2px rgba(0, 0, 0, 0.1)
     background-color: var(--primary)
-    overflow: hidden
+    overflow: auto
+.main::-webkit-scrollbar
+	width: 5px
+	height: 8px
+	background-color: rgba(0, 0, 0, 0)
+.scrolling::-webkit-scrollbar-thumb
+	background: var(--theme2)
+.no-scroll::-webkit-scrollbar-thumb
+	background: rgba(0, 0, 0, 0)
+
 .menu
     position: absolute
     top: 20px

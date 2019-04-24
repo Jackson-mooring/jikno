@@ -5,10 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class ScrollService {
 
-	constructor() {
-		document.addEventListener('scroll', () => this.onScroll());
-	}
+	constructor() { }
 
+	private eventIsSet: boolean = false;
 	private scrollFuncs = [];
 
 	private onScroll() {
@@ -17,7 +16,14 @@ export class ScrollService {
 		})
 	}
 
+	private scrollEvent(set: boolean) {
+		const scroll = document.getElementById("scrollContainer")
+		if (set) scroll.addEventListener('scroll', () => this.onScroll());
+		else scroll.removeEventListener('scroll', () => {});
+	}
+
 	addOnScrollFunc(func: Function, id: string) {
+		if (!this.eventIsSet) this.scrollEvent(true);
 		this.scrollFuncs.push({ func: func, id: id });
 	}
 
@@ -27,5 +33,6 @@ export class ScrollService {
 			if (obj.id != id) newArr.push(obj);
 			this.scrollFuncs = newArr;
 		})
+		if (this.scrollFuncs.length == 0) this.scrollEvent(false);
 	}
 }

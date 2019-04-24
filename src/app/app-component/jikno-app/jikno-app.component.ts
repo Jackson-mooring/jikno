@@ -7,6 +7,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { DataService } from '../../service/data/data.service';
 import { AppRoutes } from '../../routing/app-routes';
 import { TouchscreenService } from '../../service/touchscreen/touchscreen.service';
+import { ScrollService } from 'src/app/service/scroll/scroll.service';
+import { CheckTypingService } from 'src/app/service/check-typing/check-typing.service';
 
 @Component({
 	selector: 'jikno-app',
@@ -33,9 +35,23 @@ export class JiknoAppComponent implements OnInit {
 		private routeLocation: Location,
 		private router: Router,
 		public touchscreen: TouchscreenService,
+		private scroll: ScrollService,
+		private timeoutService: CheckTypingService,
 	) { }
 
+	public scrolling: boolean = false;
+
 	ngOnInit() {
+		this.scroll.addOnScrollFunc(() => {
+			this.onScroll();
+		}, String(new Date().getTime()))
+	}
+
+	onScroll() {
+		this.scrolling = true;
+		this.timeoutService.check(()  => {
+			this.scrolling = false;
+		}, 2000)
 	}
 
 	goBack() {
