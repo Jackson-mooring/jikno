@@ -78,6 +78,7 @@
 		[@blurInOut]="dataService.blur ? 'in' : 'out'"
 	>
 		<router-outlet></router-outlet>
+		<div class="space" *ngIf="dataService.showBottomSpace"></div>
 	</div>
 
 	<app-sidebar></app-sidebar>

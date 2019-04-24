@@ -15,6 +15,7 @@ export class DataService {
 	secondaryRoute = false;
 	routes = [];
 	isInternet = true;
+	showBottomSpace = true;
 
 	constructor(
 		private router: Router,
@@ -23,6 +24,7 @@ export class DataService {
 		this.router.events.forEach((event) => {
 			if (event instanceof NavigationStart) {
 				this.secondaryRoute = true;
+				this.showBottomSpace = true;
 				this.routes.push(this.routeLocation.path());
 			}
 		});
