@@ -5,6 +5,7 @@ import { HabitsRoutes } from '../apps/habits/routes/routes';
 import { ForgotPasswordRoutes } from '../forgot-password/routes/routes';
 import { NotiRoutes } from '../notifications/routes/routes'
 import { AccountRoutes } from '../account/routes/routes';
+import { TasksRoutes } from '../apps/tasks/routes/routes'
 
 export const RoutesFromApps = [
     HomeRoutes,
@@ -13,4 +14,5 @@ export const RoutesFromApps = [
 	ForgotPasswordRoutes,
 	NotiRoutes,
 	AccountRoutes,
+	TasksRoutes,
 ];

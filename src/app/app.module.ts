@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NotiModule } from './notifications/noti.module';
 import { AccountModule } from './account/account.module';
+import { TasksModule } from './apps/tasks/tasks.module';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app-component/app.component';
@@ -50,6 +51,7 @@ import { NoSpacesPipe } from './pipes/no-spaces/no-spaces.pipe';
 		FormsModule,
 		NotiModule,
 		AccountModule,
+		TasksModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
