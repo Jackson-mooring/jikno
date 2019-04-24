@@ -19,9 +19,9 @@ export class GetDataService {
 		private dataService: DataService,
 	) { }
 
-	subData(content: string, branch: string): Observable<ValidationResponse> {
-		const params = `?key=${JIKNO_API_KEY}&action=sub_content`;
-		const body = `email=${this.user.getUser().email}&password=${this.user.getUser().password}&branch_name=${branch}&content=${content}`;
+	getData(branch: string): Observable<ValidationResponse> {
+		const params = `?key=${JIKNO_API_KEY}&action=get_content`;
+		const body = `email=${this.user.getUser().email}&password=${this.user.getUser().password}&branch_name=${branch}`;
 		return this.http.post<API_Response>(JIKNO_API_ROOT + params, body, POST_HEADERS)
 		.pipe(
 			retry(3),
