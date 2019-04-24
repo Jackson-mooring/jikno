@@ -46,7 +46,9 @@ export class SidebarComponent implements OnInit {
 	}
 
 	createRouteActions() {
-		this.route = this.routeLocation.path()
+		AppRoutes.map(route => {
+			if (this.routeLocation.path().indexOf(route) != -1) this.route = route;
+		})
 	}
 
 }
