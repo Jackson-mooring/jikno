@@ -1,8 +1,9 @@
 export class Noti  {
 		title: string;
 		description: string;
-		isSeen: boolean;
+		unread: boolean;
 		app: string;
 		warning: boolean;
 		link: string;
+		date: number
 }
