@@ -12,9 +12,7 @@ export class NotiComponent implements OnInit {
 	constructor(
 		private dataService: DataService,
 		public notiService: NotiService
-	) {
-		this.dataService.secondaryRoute = true;
-	}
+	) { }
 
 	ngOnInit() {
 	}

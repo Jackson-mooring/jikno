@@ -25,9 +25,7 @@ export class AccountComponent implements OnInit {
 		private syncService: SyncService,
 		private randomNumberService: RandomNumberService,
 		private alert: AlertService,
-	) {
-		this.dataService.secondaryRoute = true;
-	}
+	) { }
 
 	ngOnInit() {
 	}

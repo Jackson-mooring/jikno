@@ -22,7 +22,7 @@ export class DataService {
 		) {
 		this.router.events.forEach((event) => {
 			if (event instanceof NavigationStart) {
-				this.secondaryRoute = false;
+				this.secondaryRoute = true;
 				this.routes.push(this.routeLocation.path());
 			}
 		});

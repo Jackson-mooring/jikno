@@ -10,7 +10,9 @@ export class HomeComponent implements OnInit {
 
 	constructor(
 		private dataService: DataService,
-	) {	}
+	) {
+		this.dataService.secondaryRoute = false;
+	}
 
 	isFixed: boolean = false;
 
