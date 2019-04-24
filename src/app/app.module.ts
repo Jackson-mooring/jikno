@@ -24,7 +24,6 @@ import { DragoverComponent } from './app-component/jikno-app/apps-overlay/dragov
 import { AlertComponent } from './alert/component/alert.component';
 import { NoSpacesPipe } from './pipes/no-spaces/no-spaces.pipe';
 
-
 @NgModule({
 	declarations: [
 		AppComponent,
