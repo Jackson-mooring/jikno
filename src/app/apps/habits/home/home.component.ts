@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/service/data/data.service';
+import { DataService } from '../../../service/data/data.service';
 
 @Component({
 	selector: 'app-home',
@@ -10,9 +10,7 @@ export class HomeComponent implements OnInit {
 
 	constructor(
 		private dataService: DataService,
-	) {
-		this.dataService.secondaryRoute = true;
-	}
+	) {	}
 
 	ngOnInit() {
 	}

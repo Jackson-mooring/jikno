@@ -6,7 +6,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 
 import { DataService } from '../../service/data/data.service';
 import { AppRoutes } from '../../routing/app-routes';
-import { TouchscreenService } from 'src/app/service/touchscreen/touchscreen.service';
+import { TouchscreenService } from '../../service/touchscreen/touchscreen.service';
 
 @Component({
 	selector: 'jikno-app',
