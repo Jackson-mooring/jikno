@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
 		private dataService: DataService,
 	) {	}
 
+	isFixed: boolean = false;
+
 	ngOnInit() {
 	}
 
