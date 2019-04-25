@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GetDataService } from 'src/app/service/get-data/get-data.service';
+import { Habit } from '../../models/habit';
 
 @Injectable({
 	providedIn: 'root'
@@ -10,7 +11,7 @@ export class HabitsService {
 		private getDataService: GetDataService,
 	) { }
 
-	habits: any = []
+	habits: Habit;
 	loading: boolean = true;
 	error: boolean = false;
 	errorMsg: string;

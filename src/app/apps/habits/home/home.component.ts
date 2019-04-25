@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
 		private dataService: DataService,
 	) {
 		this.dataService.secondaryRoute = false;
+		this.dataService.showBottomSpace = false;
 	}
 
 	isFixed: boolean = false;
