@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { DataService } from '../../../service/data/data.service';
-import { SearchService } from 'src/app/service/search/search.service';
+import { SearchService } from '../../../service/search/search.service';
 import { AppsOverlayService } from '../../../service/apps-overlay/apps-overlay.service'; 
 
 @Component({

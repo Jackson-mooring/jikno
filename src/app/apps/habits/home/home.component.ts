@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/service/data/data.service';
+import { DataService } from '../../../service/data/data.service';
 
 @Component({
 	selector: 'app-home',
@@ -11,10 +11,18 @@ export class HomeComponent implements OnInit {
 	constructor(
 		private dataService: DataService,
 	) {
-		this.dataService.secondaryRoute = true;
+		this.dataService.secondaryRoute = false;
+		this.dataService.showBottomSpace = false;
 	}
 
+	isFixed: boolean = false;
+
 	ngOnInit() {
+	}
+
+	onScroll(top: number, header: HTMLElement) {
+		if (top >= header.offsetHeight + 42.88) this.isFixed = true;
+		else this.isFixed = false;
 	}
 
 }

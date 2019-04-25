@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RandomStringService } from 'src/app/service/random-string/random-string.service';
-import { SendEmailService } from 'src/app/service/send-email/send-email.service';
-import { DataService } from 'src/app/service/data/data.service';
+import { RandomStringService } from '../../service/random-string/random-string.service';
+import { SendEmailService } from '../../service/send-email/send-email.service';
+import { DataService } from '../../service/data/data.service';
 import { Router } from '@angular/router';
 
 import { RequestPasswordResset } from '../../../assets/emails/request-password-resset'

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { JIKNO_API_ROOT, POST_HEADERS, JIKNO_API_KEY } from '../../constants/constants';
 import { retry, map, catchError, timeout } from 'rxjs/operators';
 import { API_Response } from '../../model/api-response';
-import { ValidationResponse } from 'src/app/model/validationResponse';
+import { ValidationResponse } from '../../model/validationResponse';
 import { of, Observable } from 'rxjs';
 import { DataService } from '../data/data.service';
 import { UserService } from '../user/user.service';

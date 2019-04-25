@@ -21,11 +21,13 @@
     position: relative
     margin: 0 auto
 .main
-    min-height: calc(100vh - 75px)
+    height: calc(100vh - 75px)
     margin-top: 75px
     box-shadow: 3px 0 20px 2px rgba(0, 0, 0, 0.1), -3px 0 20px 2px rgba(0, 0, 0, 0.1)
     background-color: var(--primary)
-    overflow: hidden
+    overflow-y: auto
+    overflow-x: hidden
+
 .menu
     position: absolute
     top: 20px
@@ -53,3 +55,6 @@
 	position: absolute
     top: 20px
     right: calc(40px + var(--p-ipad))
+
+.space
+	height: 50px
