@@ -10,7 +10,9 @@ export class NotiService {
 
 	constructor(
 		public accountService: AccountService
-	) { }
+	) {
+		this.getNoti()
+	 }
 	public notifications: Noti[] = [
 	]
 
