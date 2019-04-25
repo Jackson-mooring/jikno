@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { AppData } from '../../model/app-data';
 import { HttpClient } from '@angular/common/http';
 import { API_Response } from '../../model/api-response';
-import { JIKNO_API_ROOT, POST_HEADERS, JIKNO_API_KEY } from 'src/app/constants/constants';
+import { JIKNO_API_ROOT, POST_HEADERS, JIKNO_API_KEY } from '../../constants/constants';
 import { map, retry, timeout, catchError } from 'rxjs/operators';
 import { ValidationResponse } from '../../model/validationResponse';
 import { of } from 'rxjs';

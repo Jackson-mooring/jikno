@@ -5,7 +5,8 @@ import { Router, NavigationEnd } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { DataService } from '../../../../service/data/data.service';
-import { TouchscreenService } from 'src/app/service/touchscreen/touchscreen.service';
+import { TouchscreenService } from '../../../../service/touchscreen/touchscreen.service';
+import { AppRoutes } from '../../../../routing/app-routes';
 
 @Component({
 	selector: 'app-sidebar',
@@ -45,7 +46,9 @@ export class SidebarComponent implements OnInit {
 	}
 
 	createRouteActions() {
-		this.route = this.routeLocation.path()
+		AppRoutes.map(route => {
+			if (this.routeLocation.path().indexOf(route) != -1) this.route = route;
+		})
 	}
 
 }

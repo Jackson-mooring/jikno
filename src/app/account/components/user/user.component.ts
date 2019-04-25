@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../service/user/user.service';
 import { AccountService } from '../../../service/account/account.service';
 import { ChangeValuesService } from '../../../service/change-values/change-values.service';
-import { CheckTypingService } from 'src/app/service/check-typing/check-typing.service';
-import { ValidateValuesService } from 'src/app/service/validate-values/validate-values.service';
-import { CheckEmailService } from 'src/app/service/validate-email/check-email.service';
-import { DataService } from 'src/app/service/data/data.service';
-import { SyncService } from 'src/app/service/sync/sync.service';
+import { CheckTypingService } from '../../../service/check-typing/check-typing.service';
+import { ValidateValuesService } from '../../../service/validate-values/validate-values.service';
+import { CheckEmailService } from '../../../service/validate-email/check-email.service';
+import { DataService } from '../../../service/data/data.service';
+import { SyncService } from '../../../service/sync/sync.service';
 
 @Component({
 	selector: 'app-user',
