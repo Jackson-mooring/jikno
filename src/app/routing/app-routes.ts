@@ -8,4 +8,5 @@ export const AppRoutes = [
 	'/habits',
 	'/notifications',
 	'/user-settings',
+	'/tasks',
 ]

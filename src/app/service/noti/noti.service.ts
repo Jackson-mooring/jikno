@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Noti } from '../../model/noti'
+import { Noti } from '../../model/noti';
+import { AccountService } from '../account/account.service';
+
 
 @Injectable({
 	providedIn: 'root'
 })
 export class NotiService {
 
-	constructor() { }
+	constructor(
+		public accountService: AccountService
+	) {
+		this.getNoti()
+	 }
 	public notifications: Noti[] = [
-		{
-			title: 'Deg',
-			description: 'fhjhfg',
-			unread: true,
-			app: 'butter',
-			warning: false,
-			link: 'fjdsfjs',
-			date: 1555975897884,
-		}
 	]
+
+	public getNoti() {
+		if (!this.accountService.getNotifications().correct) {
+			setTimeout(() => this.getNoti(), 200)
+		} else this.notifications.concat(this.accountService.getNotifications().message)
+	}
 }
