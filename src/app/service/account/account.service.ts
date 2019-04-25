@@ -31,6 +31,11 @@ export class AccountService {
 	public loading = true;
 	public error: string;
 
+	getNotifications(): ValidationResponse {
+		if (this.loading) return {correct: false, message: "Data has not com in yet."};
+		else return {correct: true, message: this.userInfo.notifications};
+	}
+
 	getUserInfo() {
 		this.loading = true;
 
