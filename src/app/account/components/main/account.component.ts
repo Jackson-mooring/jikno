@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/service/data/data.service';
-import { AccountService } from 'src/app/service/account/account.service';
-import { TouchscreenService } from 'src/app/service/touchscreen/touchscreen.service';
-import { UploadFileService } from 'src/app/service/upload-file/upload-file.service';
+import { DataService } from '../../../service/data/data.service';
+import { AccountService } from '../../../service/account/account.service';
+import { TouchscreenService } from '../../../service/touchscreen/touchscreen.service';
+import { UploadFileService } from '../../../service/upload-file/upload-file.service';
 import { UserService } from '../../../service/user/user.service';
 import { JIKNO_API_ROOT } from '../../../constants/constants';
 import { SyncService } from '../../../service/sync/sync.service';
-import { RandomNumberService } from 'src/app/service/random-number/random-number.service';
-import { AlertService } from 'src/app/alert/service/alert.service';
+import { RandomNumberService } from '../../../service/random-number/random-number.service';
+import { AlertService } from '../../../alert/service/alert.service';
 
 @Component({
 	selector: 'app-account',
@@ -25,9 +25,7 @@ export class AccountComponent implements OnInit {
 		private syncService: SyncService,
 		private randomNumberService: RandomNumberService,
 		private alert: AlertService,
-	) {
-		this.dataService.secondaryRoute = true;
-	}
+	) { }
 
 	ngOnInit() {
 	}

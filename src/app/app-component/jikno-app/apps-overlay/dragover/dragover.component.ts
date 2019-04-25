@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { DataService } from '../../../../service/data/data.service';
-import { AppsOverlayService } from 'src/app/service/apps-overlay/apps-overlay.service';
-import { AppData } from 'src/app/model/app-data';
+import { AppsOverlayService } from '../../../../service/apps-overlay/apps-overlay.service';
+import { AppData } from '../../../../model/app-data';
 
 @Component({
 	selector: 'app-dragover',
