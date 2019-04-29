@@ -4,9 +4,9 @@ import { Location } from '@angular/common';
 
 import { AppRoutes } from '../routing/app-routes';
 import { NoLogin } from '../routing/no-login';
-import { UserService } from '../service/user/user.service';
-import { DataService } from '../service/data/data.service';
-import { SyncService } from '../service/sync/sync.service';
+import { UserService } from '../services/user/user.service';
+import { DataService } from '../services/data/data.service';
+import { SyncService } from '../services/sync/sync.service';
 import { AlertService } from '../alert/service/alert.service';
 
 @Component({

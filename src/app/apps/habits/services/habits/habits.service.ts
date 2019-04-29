@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GetDataService } from 'src/app/service/get-data/get-data.service';
+import { GetDataService } from 'src/app/services/get-data/get-data.service';
 import { Habit } from '../../models/habit';
 
 @Injectable({

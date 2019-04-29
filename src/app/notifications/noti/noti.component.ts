@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../service/data/data.service';
-import { NotiService } from '../../service/noti/noti.service';
+import { DataService } from '../../services/data/data.service';
+import { NotiService } from '../../services/noti/noti.service';
  
 @Component({
 	selector: 'app-noti',

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { DataService } from '../../../../service/data/data.service';
-import { AppsOverlayService } from '../../../../service/apps-overlay/apps-overlay.service';
+import { DataService } from '../../../../services/data/data.service';
+import { AppsOverlayService } from '../../../../services/apps-overlay/apps-overlay.service';
 import { AppData } from '../../../../model/app-data';
 
 @Component({

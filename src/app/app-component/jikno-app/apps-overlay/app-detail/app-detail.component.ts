@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { AppData } from '../../../../model/app-data';
-import { SearchService } from '../../../../service/search/search.service';
-import { DataService } from '../../../../service/data/data.service';
+import { SearchService } from '../../../../services/search/search.service';
+import { DataService } from '../../../../services/data/data.service';
 
 @Component({
 	selector: 'app-detail',

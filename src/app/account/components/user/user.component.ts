@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../service/user/user.service';
-import { AccountService } from '../../../service/account/account.service';
-import { ChangeValuesService } from '../../../service/change-values/change-values.service';
-import { CheckTypingService } from '../../../service/check-typing/check-typing.service';
-import { ValidateValuesService } from '../../../service/validate-values/validate-values.service';
-import { CheckEmailService } from '../../../service/validate-email/check-email.service';
-import { DataService } from '../../../service/data/data.service';
-import { SyncService } from '../../../service/sync/sync.service';
+import { UserService } from '../../../services/user/user.service';
+import { AccountService } from '../../../services/account/account.service';
+import { ChangeValuesService } from '../../../services/change-values/change-values.service';
+import { CheckTypingService } from '../../../services/check-typing/check-typing.service';
+import { ValidateValuesService } from '../../../services/validate-values/validate-values.service';
+import { CheckEmailService } from '../../../services/validate-email/check-email.service';
+import { DataService } from '../../../services/data/data.service';
+import { SyncService } from '../../../services/sync/sync.service';
 
 @Component({
 	selector: 'app-user',

@@ -1,8 +1,8 @@
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
 
 //Services
-import { DataService } from '../service/data/data.service';
-import { AccountService } from '../service/account/account.service';
+import { DataService } from '../services/data/data.service';
+import { AccountService } from '../services/account/account.service';
 
 @NgModule({
 	imports: [],

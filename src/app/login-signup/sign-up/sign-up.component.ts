@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ValidateValuesService } from '../../service/validate-values/validate-values.service';
-import { SignUpService } from '../../service/sign-up/sign-up.service';
+import { ValidateValuesService } from '../../services/validate-values/validate-values.service';
+import { SignUpService } from '../../services/sign-up/sign-up.service';
 import { trigger, state, style, animate, transition, } from '@angular/animations';
 import { Router } from '@angular/router';
 

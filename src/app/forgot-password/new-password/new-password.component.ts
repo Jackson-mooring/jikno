@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { ValidateValuesService } from '../../service/validate-values/validate-values.service';
-import { ChangeValuesService } from '../../service/change-values/change-values.service';
-import { DataService } from '../../service/data/data.service';
+import { ValidateValuesService } from '../../services/validate-values/validate-values.service';
+import { ChangeValuesService } from '../../services/change-values/change-values.service';
+import { DataService } from '../../services/data/data.service';
 import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { UserService } from '../../service/user/user.service';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
 	selector: 'app-new-password',

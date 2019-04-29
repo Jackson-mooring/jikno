@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
-import { DataService } from '../../../service/data/data.service';
-import { SearchService } from '../../../service/search/search.service';
-import { AppsOverlayService } from '../../../service/apps-overlay/apps-overlay.service'; 
+import { DataService } from '../../../services/data/data.service';
+import { SearchService } from '../../../services/search/search.service';
+import { AppsOverlayService } from '../../../services/apps-overlay/apps-overlay.service'; 
 
 @Component({
 	selector: 'apps-overlay',

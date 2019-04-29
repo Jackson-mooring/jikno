@@ -4,8 +4,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { Router, NavigationEnd } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { DataService } from '../../../../service/data/data.service';
-import { TouchscreenService } from '../../../../service/touchscreen/touchscreen.service';
+import { DataService } from '../../../../services/data/data.service';
+import { TouchscreenService } from '../../../../services/touchscreen/touchscreen.service';
 import { AppRoutes } from '../../../../routing/app-routes';
 
 @Component({

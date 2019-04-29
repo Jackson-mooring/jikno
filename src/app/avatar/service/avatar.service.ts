@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { API_Response } from '../../model/api-response';
 import { JIKNO_API_ROOT, POST_HEADERS, JIKNO_API_KEY } from '../../constants/constants';
 import { retry, timeout, catchError, map } from 'rxjs/operators';
-import { UserService } from '../../service/user/user.service';
-import { DataService } from '../../service/data/data.service';
+import { UserService } from '../../services/user/user.service';
+import { DataService } from '../../services/data/data.service';
 
 @Injectable({
 	providedIn: 'root'

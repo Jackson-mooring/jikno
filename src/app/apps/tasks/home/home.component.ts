@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
 import { StickScrollBarComponent } from '../../../stick-scroll-bar/stick-scroll-bar.component'
-import { DataService } from 'src/app/service/data/data.service';
+import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
 	selector: 'app-home',

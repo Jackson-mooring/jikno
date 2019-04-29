@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../../service/data/data.service';
-import { AccountService } from '../../../service/account/account.service';
-import { TouchscreenService } from '../../../service/touchscreen/touchscreen.service';
-import { UploadFileService } from '../../../service/upload-file/upload-file.service';
-import { UserService } from '../../../service/user/user.service';
+import { DataService } from '../../../services/data/data.service';
+import { AccountService } from '../../../services/account/account.service';
+import { TouchscreenService } from '../../../services/touchscreen/touchscreen.service';
+import { UploadFileService } from '../../../services/upload-file/upload-file.service';
+import { UserService } from '../../../services/user/user.service';
 import { JIKNO_API_ROOT } from '../../../constants/constants';
-import { SyncService } from '../../../service/sync/sync.service';
-import { RandomNumberService } from '../../../service/random-number/random-number.service';
+import { SyncService } from '../../../services/sync/sync.service';
+import { RandomNumberService } from '../../../services/random-number/random-number.service';
 import { AlertService } from '../../../alert/service/alert.service';
 
 @Component({

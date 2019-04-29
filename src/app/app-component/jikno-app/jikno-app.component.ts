@@ -4,10 +4,10 @@ import { Router } from '@angular/router';
 
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
-import { DataService } from '../../service/data/data.service';
+import { DataService } from '../../services/data/data.service';
 import { AppRoutes } from '../../routing/app-routes';
-import { TouchscreenService } from '../../service/touchscreen/touchscreen.service';
-import { CheckTypingService } from 'src/app/service/check-typing/check-typing.service';
+import { TouchscreenService } from '../../services/touchscreen/touchscreen.service';
+import { CheckTypingService } from 'src/app/services/check-typing/check-typing.service';
 
 @Component({
 	selector: 'jikno-app',

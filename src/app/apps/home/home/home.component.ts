@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TouchscreenService } from '../../../service/touchscreen/touchscreen.service';
+import { TouchscreenService } from '../../../services/touchscreen/touchscreen.service';
 
 @Component({
 	selector: 'app-home',

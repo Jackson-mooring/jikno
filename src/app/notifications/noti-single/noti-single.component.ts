@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DateService } from 'src/app/service/date/date.service';
+import { DateService } from 'src/app/services/date/date.service';
 
 @Component({
 	selector: 'app-noti-single',

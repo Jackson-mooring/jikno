@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ChangeValuesService } from '../../../service/change-values/change-values.service';
-import { UserService } from '../../../service/user/user.service';
+import { ChangeValuesService } from '../../../services/change-values/change-values.service';
+import { UserService } from '../../../services/user/user.service';
 import { AlertService } from '../../../alert/service/alert.service';
-import { SignUpService } from '../../../service/sign-up/sign-up.service';
-import { SyncService } from '../../../service/sync/sync.service';
-import { AccountService } from '../../../service/account/account.service';
+import { SignUpService } from '../../../services/sign-up/sign-up.service';
+import { SyncService } from '../../../services/sync/sync.service';
+import { AccountService } from '../../../services/account/account.service';
 
 @Component({
 	selector: 'app-danger',
