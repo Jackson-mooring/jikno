@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { AppData } from '../../../../model/app-data';
+import { AppData } from '../../../../models/app-data';
 import { SearchService } from '../../../../services/search/search.service';
 import { DataService } from '../../../../services/data/data.service';
 
