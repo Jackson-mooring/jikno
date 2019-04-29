@@ -9,7 +9,7 @@ import { StickScrollBarComponent } from '../stick-scroll-bar/stick-scroll-bar.co
 	declarations: [
 		IconComponent,
 		AvatarComponent,
-		StickScrollBarComponent
+		StickScrollBarComponent,
 	],
 	imports: [
 		CommonModule,
@@ -19,6 +19,7 @@ import { StickScrollBarComponent } from '../stick-scroll-bar/stick-scroll-bar.co
 		IconComponent,
 		NgxPopperModule,
 		AvatarComponent,
+		StickScrollBarComponent,
 	]
 })
 export class SharedModule { }
