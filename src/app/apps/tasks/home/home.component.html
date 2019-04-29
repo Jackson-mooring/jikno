@@ -1,3 +1,22 @@
-<div class="over">
-	<h1 class="title">Tasks</h1>
+<div class="over no-scroll" (scroll)="onScroll($event.target.scrollTop, header)">
+
+  <h1 #header>Tasks</h1>
+
+  <div class="options" [class.bar]="isFixed">
+    <div style="padding: 10px"></div>
+    <div class="third">
+      <button routerLink="dashboard">Dashboard</button>
+    </div>
+    <div class="third">
+      <button routerLink="reorder">Reorder</button>
+    </div>
+    <div class="third">
+      <button routerLink="new-task">New Task</button>
+    </div>
+    <hr>
+  </div>
+
+  <div class="main container no-scroll">
+		
+  </div>
 </div>
