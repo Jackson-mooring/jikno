@@ -23,7 +23,6 @@ import { AppDetailComponent } from './app-component/jikno-app/apps-overlay/app-d
 import { DragoverComponent } from './app-component/jikno-app/apps-overlay/dragover/dragover.component';
 import { AlertComponent } from './alert/component/alert.component';
 import { NoSpacesPipe } from './pipes/no-spaces/no-spaces.pipe';
-import { TasksSingleComponent } from './tasks-single/tasks-single.component';
 
 @NgModule({
 	declarations: [
@@ -35,7 +34,6 @@ import { TasksSingleComponent } from './tasks-single/tasks-single.component';
 		DragoverComponent,
 		AlertComponent,
 		NoSpacesPipe,
-		TasksSingleComponent,
 	],
 	imports: [
 		BrowserModule,

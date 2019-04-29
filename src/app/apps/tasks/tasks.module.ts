@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TasksHomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+
+import { TasksHomeComponent } from './home/home.component';
+import { TasksSingleComponent } from './tasks-single/tasks-single.component'
 
 
 @NgModule({
 	declarations: [
-		TasksHomeComponent
+		TasksHomeComponent,
+		TasksSingleComponent,
 	],
 	imports: [
 		CommonModule,
