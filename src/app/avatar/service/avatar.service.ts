@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { AvatarResponse } from './avatar-response';
 import { HttpClient } from '@angular/common/http';
-import { API_Response } from '../../model/api-response';
+import { API_Response } from '../../models/api-response';
 import { JIKNO_API_ROOT, POST_HEADERS, JIKNO_API_KEY } from '../../constants/constants';
 import { retry, timeout, catchError, map } from 'rxjs/operators';
 import { UserService } from '../../services/user/user.service';

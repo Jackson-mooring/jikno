@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { ValidationResponse } from '../../model/validationResponse';
-import { API_Response } from '../../model/api-response';
+import { ValidationResponse } from '../../models/validationResponse';
+import { API_Response } from '../../models/api-response';
 import { JIKNO_API_ROOT, JIKNO_API_KEY } from '../../constants/constants';
 import { timeout, retry, catchError, map } from 'rxjs/operators';
 import { DataService } from '../data/data.service';

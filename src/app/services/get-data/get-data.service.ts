@@ -4,9 +4,9 @@ import { UserService } from '../user/user.service';
 import { HttpClient } from '@angular/common/http';
 import { of, Observable } from 'rxjs';
 import { timeout, retry, catchError, map } from 'rxjs/operators';
-import { API_Response } from '../../model/api-response';
+import { API_Response } from '../../models/api-response';
 import { DataService } from '../data/data.service';
-import { ValidationResponse } from 'src/app/model/validationResponse';
+import { ValidationResponse } from 'src/app/models/validationResponse';
 
 @Injectable({
 	providedIn: 'root'

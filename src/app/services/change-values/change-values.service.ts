@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { JIKNO_API_ROOT, POST_HEADERS, JIKNO_API_KEY } from '../../constants/constants';
 import { retry, timeout, catchError, map } from 'rxjs/operators';
 
-import { API_Response } from '../../model/api-response';
+import { API_Response } from '../../models/api-response';
 
 @Injectable({
 	providedIn: 'root'

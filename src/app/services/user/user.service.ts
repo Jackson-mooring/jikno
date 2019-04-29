@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { UserVals } from '../../model/user-vals';
+import { UserVals } from '../../models/user-vals';
 
 @Injectable({
 	providedIn: 'root'

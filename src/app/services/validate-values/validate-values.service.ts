@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { ValidationResponse } from '../../model/validationResponse';
+import { ValidationResponse } from '../../models/validationResponse';
 
 @Injectable({
 	providedIn: 'root'

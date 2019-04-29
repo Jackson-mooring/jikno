@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Noti } from '../../model/noti';
+import { Noti } from '../../models/noti';
 import { AccountService } from '../account/account.service';
 
 

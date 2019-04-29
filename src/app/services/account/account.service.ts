@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JIKNO_API_ROOT, POST_HEADERS, JIKNO_API_KEY } from '../../constants/constants';
 import { retry, map, catchError, timeout } from 'rxjs/operators';
-import { API_Response } from '../../model/api-response';
-import { ValidationResponse } from '../../model/validationResponse';
+import { API_Response } from '../../models/api-response';
+import { ValidationResponse } from '../../models/validationResponse';
 import { of, Observable } from 'rxjs';
 import { DataService } from '../data/data.service';
 import { UserService } from '../user/user.service';
 import { SubDataService } from '../sub-data/sub-data.service';
-import { UserInfo } from '../../model/user-info';
+import { UserInfo } from '../../models/user-info';
 
 @Injectable({
 	providedIn: 'root'
